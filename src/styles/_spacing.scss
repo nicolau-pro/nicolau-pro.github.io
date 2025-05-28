@@ -1,0 +1,54 @@
+@use "sass:math";
+
+@mixin padding-classes {
+  @for $i from 1 through 12 {
+    .pt-#{$i} {
+      padding-top: #{$i}em;
+    }
+    .pb-#{$i} {
+      padding-bottom: #{$i}em;
+    }
+    .py-#{$i} {
+      padding-top: #{$i}em;
+      padding-bottom: #{$i}em;
+    }
+    .pl-#{$i} {
+      padding-left: #{$i}em;
+    }
+    .pr-#{$i} {
+      padding-right: #{$i}em;
+    }
+    .px-#{$i} {
+      padding-left: #{$i}em;
+      padding-right: #{$i}em;
+    }
+  }
+}
+
+@mixin margin-classes {
+  @for $i from 1 through 12 {
+    .pt-#{$i} {
+      margin-top: #{$i}em;
+    }
+    .pb-#{$i} {
+      margin-bottom: #{$i}em;
+    }
+    .py-#{$i} {
+      margin-top: #{$i}em;
+      margin-bottom: #{$i}em;
+    }
+    .pl-#{$i} {
+      margin-left: #{$i}em;
+    }
+    .pr-#{$i} {
+      margin-right: #{$i}em;
+    }
+    .px-#{$i} {
+      margin-left: #{$i}em;
+      margin-right: #{$i}em;
+    }
+  }
+}
+
+@include margin-classes;
+@include padding-classes;

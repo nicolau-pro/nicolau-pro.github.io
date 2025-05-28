@@ -1,0 +1,31 @@
+import { Outlet } from "react-router";
+
+function Dashboard() {
+  const rootPath = "/";
+
+  return (
+    <>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href={rootPath}>Home</a>
+            </li>
+            <li>
+              <a href={rootPath + "career"}>Career</a>
+            </li>
+            <li>
+              <a href={rootPath + "career/blippar"}>blippar</a>
+            </li>
+            <li>
+              <a href={rootPath + "career/mrmc"}>MRMC</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <Outlet />
+    </>
+  );
+}
+
+export default Dashboard;

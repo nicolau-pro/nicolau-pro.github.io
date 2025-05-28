@@ -1,0 +1,52 @@
+@use "sass:math";
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+html,
+body {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin heading-font($coef: 1) {
+  $heading-font-weight: 600;
+  $heading-font-size: 64px;
+  font-weight: math.div($heading-font-weight, $coef);
+  font-size: $heading-font-size * $coef;
+}
+
+h1 {
+  @include heading-font(1);
+
+  &.hero {
+    font-size: 120px;
+    padding: 0.5em 0;
+  }
+}
+
+h2 {
+  @include heading-font(0.8);
+
+  &.hero {
+    font-size: 96px;
+  }
+}
+
+h3 {
+  @include heading-font(0.4);
+
+  &.hero {
+    font-size: 96px;
+  }
+}

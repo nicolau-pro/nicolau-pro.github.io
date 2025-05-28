@@ -1,0 +1,49 @@
+@use "sass:math";
+
+@mixin page-theme($name, $color-light, $color-dark, $color-text) {
+  .theme-#{$name} {
+    background-image: linear-gradient(160deg, $color-light, $color-dark);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    color: $color-text;
+
+    .gradient-text {
+      background-image: linear-gradient(160deg, $color-light, $color-dark);
+      color: transparent;
+      background-clip: text;
+      background-attachment: fixed;
+      background-size: 100vw 100vh;
+    }
+
+    .background-solid {
+      background-color: $color-text;
+    }
+
+    .crosshatch {
+      $size: 5em;
+      height: $size;
+      width: 100%;
+      $eith: math.div(100%, 8);
+      background-image: linear-gradient(
+        45deg,
+        $color-text 0%,
+        $color-text 1 * $eith,
+        transparent 1 * $eith,
+        transparent 3 * $eith,
+        $color-text 3 * $eith,
+        $color-text 5 * $eith,
+        transparent 5 * $eith,
+        transparent 7 * $eith,
+        $color-text 7 * $eith,
+        $color-text 100%
+      );
+      background-size: $size $size;
+      background-repeat: repeat;
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+  }
+}
+
+@include page-theme("blippar", #f49522, #ff4500, #000000);
+@include page-theme("mrmc", #2d64aa, #1e4372, #ffffff);
