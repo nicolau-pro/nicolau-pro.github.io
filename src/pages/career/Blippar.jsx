@@ -41,6 +41,7 @@ function Page() {
       <Section>
         <Row>
           <Col className="py-3">
+            <h3>Stylist</h3>
             <p className="pt-1">
               Stylist used the augmented reality app Blippar to present Olympic
               fever at its finest, with their exclusive blippable issue.
