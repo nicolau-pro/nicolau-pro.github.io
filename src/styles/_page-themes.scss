@@ -21,7 +21,9 @@
 
     .crosshatch {
       $size: 5em;
-      height: $size;
+      margin-top: -1px;
+      margin-bottom: -1px;
+      height: calc($size + 2px);
       width: 100%;
       $eith: math.div(100%, 8);
       background-image: linear-gradient(
@@ -39,8 +41,6 @@
       );
       background-size: $size $size;
       background-repeat: repeat;
-      margin-top: -1px;
-      margin-bottom: -1px;
     }
   }
 }

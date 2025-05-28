@@ -1,6 +1,7 @@
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
+import Crosshatch from "../../components/decorators/Crosshatch";
 
 function Page() {
   return (
@@ -12,9 +13,8 @@ function Page() {
           </Col>
         </Row>
       </Section>
-      <Section>
-        <div className="crosshatch"></div>
-      </Section>
+
+      <Crosshatch />
 
       <Section className="background-solid">
         <Row>
@@ -36,9 +36,7 @@ function Page() {
         </Row>
       </Section>
 
-      <Section>
-        <div className="crosshatch"></div>
-      </Section>
+      <Crosshatch />
 
       <Section>
         <Row>
