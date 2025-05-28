@@ -4,15 +4,20 @@ import Section from "../../components/layout/Section";
 
 function Page() {
   return (
-    <main>
-      <Section>
-        <Row>
-          <Col>
-            <h1 className="hero">Career</h1>
-          </Col>
-        </Row>
-      </Section>
-    </main>
+    <>
+      <title>Career - Radu Nicolau</title>
+      <meta name="description" content="My career" />
+
+      <main>
+        <Section>
+          <Row>
+            <Col>
+              <h1 className="hero">Career</h1>
+            </Col>
+          </Row>
+        </Section>
+      </main>
+    </>
   );
 }
 

@@ -7,11 +7,12 @@ function Page() {
   return (
     <>
       <title>BLIPPAR - Radu Nicolau</title>
-      <meta
-        name="description"
-        content="RADU NICOLAU. A brief history of my work: the most successful projects and campaigns, the awards they brought and quotes from the team leads and product owners."
-      />
       <main className="theme-blippar">
+        <meta
+          name="description"
+          content="RADU NICOLAU. A brief history of my work: the most successful projects and campaigns, the awards they brought and quotes from the team leads and product owners."
+        />
+
         <Section>
           <Row>
             <Col>
