@@ -185,7 +185,7 @@ function Page() {
                   <h3>Finalist</h3>
                   <h3>Mobile World Congress</h3>
                   <p>2015</p>
-                  <h4>Client: Pepsi</h4>
+                  <h4>With Pepsi</h4>
                 </li>
                 <li>
                   <h3>Gold Winner</h3>
