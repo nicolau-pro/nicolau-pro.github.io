@@ -37,10 +37,14 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm ci
+      - name: Install pip dependency
+        run: pip install beautifulsoup4
       - name: Build
         run: npm run build
       - name: Presite
         run: npm run presite
+      - name: Post process pages
+        run: npm run post-process
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

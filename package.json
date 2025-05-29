@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build-presite": "vite build && presite ./dist && python src/post.py",
     "build": "vite build",
-    "build-presite": "vite build && presite ./dist",
     "presite": "presite ./dist",
+    "post-process": "python src/post.py",
     "lint": "eslint .",
     "preview": "vite preview"
   },
