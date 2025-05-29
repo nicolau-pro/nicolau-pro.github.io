@@ -2,8 +2,43 @@ import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Crosshatch from "../../components/decorators/Crosshatch";
+import { TechIcon } from "../../data/tech";
 
 function Page() {
+  const tech1 = [
+    "3DS Max",
+    "JavaScript",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+    "Adobe Audition",
+    "Adobe Premiere",
+    "Python",
+    "Blender",
+    "HTML",
+    "CSS",
+    "GIT",
+    "NODE",
+    "iOS",
+    "Android",
+  ];
+  const tech2 = [
+    "3DS Max",
+    "REACT",
+    "JavaScript",
+    "TypeScript",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+    "Adobe Audition",
+    "Adobe Premiere",
+    "Python",
+    "Blender",
+    "HTML",
+    "CSS",
+    "GIT",
+    "NODE",
+    "iOS",
+    "Android",
+  ];
   return (
     <>
       <title>BLIPPAR - Radu Nicolau</title>
@@ -16,7 +51,9 @@ function Page() {
         <Section>
           <Row>
             <Col>
-              <h1 className="hero">BLIPPAR</h1>
+              <h1 className="hero">
+                <span className="material-icons">token</span>BLIPPAR
+              </h1>
             </Col>
           </Row>
         </Section>
@@ -47,130 +84,134 @@ function Page() {
 
         <Section>
           <Row>
-            <Col className="pt-3 pb-1">
-              <h2>My roles</h2>
+            <Col className="pt-3">
+              <h2>My roles at Blippar</h2>
             </Col>
           </Row>
 
-          <Row>
-            <Col>
-              <h3>Mobile Augmented Reality Developer / UX-UI Designer</h3>
-              <p>May 2012 - April 2018</p>
-            </Col>
+          <Row className="mt-2">
+            <details>
+              <summary>
+                <Row>
+                  <Col>
+                    <h3>Lead Engineer/Senior Developer/UX-UI Specialist</h3>
+                    <p>May 2014 - April 2018</p>
+                  </Col>
+                </Row>
+              </summary>
+              <Row>
+                <Col className="span-4">
+                  <p className="large">
+                    Directed, mentored, and supported a team of developers in
+                    the UK, US, Turkey, and Japan. Significantly increased the
+                    social media presence of various services and products by
+                    managing key client campaigns. Initiated internal controls
+                    by establishing and adhering standards for development.
+                    Projected a polished and professional demeanour throughout
+                    the service to successfully manage client campaigns with
+                    minimal negative feedback and quick turnarounds.
+                  </p>
+                  <ul>
+                    <li>
+                      Streamlined and operationalized application
+                      functionalities by developing and optimizing Blippar's
+                      developer's portal, scripting front end languages
+                      (React/JS), and creating demos.
+                    </li>
+                    <li>
+                      Led development programme aimed at training, coaching, and
+                      mentoring team of developers across globe, including UK,
+                      USA, Turkey, Japan, and India, resulting in augmenting
+                      developers' skills for UX/UI functional design alongside
+                      building AR experiences.
+                    </li>
+                    <li>
+                      Originated and launched an automation system for asset
+                      compression that ensured the delivery of experiences on
+                      mobile 30 times faster.
+                    </li>
+                    <li>
+                      Commended by top management for exemplary performance and
+                      won many awards for big campaigns.
+                    </li>
+                  </ul>
+                </Col>
+                <Col>
+                  <article className="tech-stack">
+                    <h4>TECH STACK:</h4>
+                    <ul className="small no-bullets">
+                      {tech2.map((tech, index) => (
+                        <li key={index}>
+                          <span className="material-icons">
+                            {TechIcon(tech).icon}
+                          </span>
+                          <span> {tech}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </Col>
+              </Row>
+            </details>
           </Row>
-          <Row>
-            <Col className="span-4">
-              <p className="large">
-                Directed, mentored, and supported a team of developers in the
-                UK, US, Turkey, and Japan. Significantly increased the social
-                media presence of various services and products by managing key
-                client campaigns. Initiated internal controls by establishing
-                and adhering standards for development. Projected a polished and
-                professional demeanour throughout the service to successfully
-                manage client campaigns with minimal negative feedback and quick
-                turnarounds.
-              </p>
-              <ul>
-                <li>
-                  Defined UX/UI standards and supported the team with hands-on
-                  approach and follow-up for development.
-                </li>
-                <li>
-                  Optimized and enhanced departmental performance by overseeing
-                  writing standards, documentation as well as established staff
-                  induction sessions to boost staff skills and expertise.
-                </li>
-                <li>
-                  Attained numerous awards and countless nominations for
-                  cutting-edge campaigns.
-                </li>
-              </ul>
-            </Col>
 
-            <Col>
-              <h4>TECH STACK:</h4>
-              <ul className="small no-bullets">
-                <li>3DS Max</li>
-                <li>JavaScript</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Illustrator</li>
-                <li>Adobe Audition</li>
-                <li>Adobe Premiere</li>
-                <li>Python</li>
-                <li>Blender</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>GIT</li>
-                <li>NODE</li>
-                <li>iOS</li>
-                <li>Android</li>
-              </ul>
-            </Col>
-          </Row>
+          <Row className="mt-2">
+            <details>
+              <summary>
+                <Row>
+                  <Col>
+                    <h3>Mobile Augmented Reality Developer / UX-UI Designer</h3>
+                    <p>May 2012 - April 2018</p>
+                  </Col>
+                </Row>
+              </summary>
+              <Row>
+                <Col className="span-4">
+                  <p className="large">
+                    Directed, mentored, and supported a team of developers in
+                    the UK, US, Turkey, and Japan. Significantly increased the
+                    social media presence of various services and products by
+                    managing key client campaigns. Initiated internal controls
+                    by establishing and adhering standards for development.
+                    Projected a polished and professional demeanour throughout
+                    the service to successfully manage client campaigns with
+                    minimal negative feedback and quick turnarounds.
+                  </p>
+                  <ul>
+                    <li>
+                      Defined UX/UI standards and supported the team with
+                      hands-on approach and follow-up for development.
+                    </li>
+                    <li>
+                      Optimized and enhanced departmental performance by
+                      overseeing writing standards, documentation as well as
+                      established staff induction sessions to boost staff skills
+                      and expertise.
+                    </li>
+                    <li>
+                      Attained numerous awards and countless nominations for
+                      cutting-edge campaigns.
+                    </li>
+                  </ul>
+                </Col>
 
-          <Row>
-            <Col>
-              <h3>Lead Engineer/Senior Developer/UX-UI Specialist</h3>
-              <p>May 2014 - April 2018</p>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="span-4">
-              <p className="large">
-                Directed, mentored, and supported a team of developers in the
-                UK, US, Turkey, and Japan. Significantly increased the social
-                media presence of various services and products by managing key
-                client campaigns. Initiated internal controls by establishing
-                and adhering standards for development. Projected a polished and
-                professional demeanour throughout the service to successfully
-                manage client campaigns with minimal negative feedback and quick
-                turnarounds.
-              </p>
-              <ul>
-                <li>
-                  Streamlined and operationalized application functionalities by
-                  developing and optimizing Blippar's developer's portal,
-                  scripting front end languages (React/JS), and creating demos.
-                </li>
-                <li>
-                  Led development programme aimed at training, coaching, and
-                  mentoring team of developers across globe, including UK, USA,
-                  Turkey, Japan, and India, resulting in augmenting developers'
-                  skills for UX/UI functional design alongside building AR
-                  experiences.
-                </li>
-                <li>
-                  Originated and launched an automation system for asset
-                  compression that ensured the delivery of experiences on mobile
-                  30 times faster.
-                </li>
-                <li>
-                  Commended by top management for exemplary performance and won
-                  many awards for big campaigns.
-                </li>
-              </ul>
-            </Col>
-            <Col>
-              <h4>TECH STACK:</h4>
-              <ul className="small no-bullets">
-                <li>3DS Max</li>
-                <li>REACT</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Illustrator</li>
-                <li>Adobe Audition</li>
-                <li>Adobe Premiere</li>
-                <li>Python</li>
-                <li>Blender</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>GIT</li>
-                <li>NODE</li>
-                <li>iOS</li>
-                <li>Android</li>
-              </ul>
-            </Col>
+                <Col>
+                  <article className="tech-stack">
+                    <h4>TECH STACK:</h4>
+                    <ul className="small no-bullets">
+                      {tech1.map((tech, index) => (
+                        <li key={index}>
+                          <span className="material-icons">
+                            {TechIcon(tech).icon}
+                          </span>
+                          <span> {tech}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </Col>
+              </Row>
+            </details>
           </Row>
         </Section>
 

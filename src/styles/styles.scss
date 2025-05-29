@@ -1,8 +1,10 @@
 @use "sass:math";
+@use "sass:color";
 @use "spacing";
 @use "typography";
 @use "page-themes";
 @use "header";
+@use "material-icons";
 
 html,
 body {
@@ -60,5 +62,106 @@ main {
         flex: 4;
       }
     }
+  }
+}
+
+details {
+  position: relative;
+  width: 100%;
+  margin: -1em;
+  padding: 0;
+
+  $background: color.adjust(
+    $color: white,
+    $alpha: -0.8,
+  );
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+
+  summary {
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    background-color: $background;
+  }
+
+  &:after {
+    transition: all 0.1s ease-out;
+    content: "";
+    width: 2em;
+    height: 1em;
+    background-color: $background;
+    position: absolute;
+    right: 1em;
+    clip-path: polygon(50% 0, 50% 0, 50% 0);
+  }
+
+  &:hover,
+  &:focus-visible {
+    &:after {
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+    summary {
+      opacity: 0.8;
+    }
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:open {
+    summary {
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        calc(100% - 1em) 100%,
+        calc(100% - 3em) 100%,
+        0 100%
+      );
+    }
+  }
+
+  &:open {
+    &:after {
+      visibility: hidden;
+    }
+
+    summary {
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        calc(100% - 2em) 100%,
+        calc(100% - 2em) 100%,
+        calc(100% - 2em) 100%,
+        0 100%
+      );
+
+      &:hover,
+      &:focus-visible {
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 100%,
+          calc(100% - 1em) 100%,
+          calc(100% - 2em) calc(100% - 1em),
+          calc(100% - 3em) 100%,
+          0 100%
+        );
+      }
+    }
+  }
+}
+
+.tech-stack {
+  .material-icons {
+    margin-right: 0.33em;
   }
 }
