@@ -92,12 +92,8 @@ function Page() {
           <Row className="mt-2">
             <details>
               <summary>
-                <Row>
-                  <Col>
-                    <h3>Lead Engineer/Senior Developer/UX-UI Specialist</h3>
-                    <p>May 2014 - April 2018</p>
-                  </Col>
-                </Row>
+                <h3>Lead Engineer/Senior Developer/UX-UI Specialist</h3>
+                <p>May 2014 - April 2018</p>
               </summary>
               <Row>
                 <Col className="span-4">
@@ -158,12 +154,8 @@ function Page() {
           <Row className="mt-2">
             <details>
               <summary>
-                <Row>
-                  <Col>
-                    <h3>Mobile Augmented Reality Developer / UX-UI Designer</h3>
-                    <p>May 2012 - April 2018</p>
-                  </Col>
-                </Row>
+                <h3>Mobile Augmented Reality Developer / UX-UI Designer</h3>
+                <p>May 2012 - April 2018</p>
               </summary>
               <Row>
                 <Col className="span-4">

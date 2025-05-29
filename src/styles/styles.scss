@@ -79,17 +79,17 @@ details {
   summary::-webkit-details-marker {
     display: none;
   }
+
   summary::marker {
     display: none;
-  }
-  summary {
-    list-style: none;
   }
 
   summary {
     cursor: pointer;
     transition: all 0.1s ease-out;
     background-color: $background;
+    list-style: none;
+    padding: 1em;
   }
 
   &:after {
