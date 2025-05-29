@@ -160,14 +160,10 @@ function Page() {
               <Row>
                 <Col className="span-4">
                   <p className="large">
-                    Directed, mentored, and supported a team of developers in
-                    the UK, US, Turkey, and Japan. Significantly increased the
-                    social media presence of various services and products by
-                    managing key client campaigns. Initiated internal controls
-                    by establishing and adhering standards for development.
-                    Projected a polished and professional demeanour throughout
-                    the service to successfully manage client campaigns with
-                    minimal negative feedback and quick turnarounds.
+                    Directed a competent team of three, including web designer,
+                    media specialist, and graphic artist and elevated the
+                    expertise and skill levels of the members through coaching
+                    and development activities.
                   </p>
                   <ul>
                     <li>
