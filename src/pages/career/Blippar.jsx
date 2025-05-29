@@ -93,7 +93,7 @@ function Page() {
             <details>
               <summary>
                 <h3>Lead Engineer/Senior Developer/UX-UI Specialist</h3>
-                <p>May 2014 - April 2018</p>
+                <span>May 2014 - April 2018</span>
               </summary>
               <Row>
                 <Col className="span-4">
@@ -155,7 +155,7 @@ function Page() {
             <details>
               <summary>
                 <h3>Mobile Augmented Reality Developer / UX-UI Designer</h3>
-                <p>May 2012 - April 2018</p>
+                <span>May 2012 - April 2018</span>
               </summary>
               <Row>
                 <Col className="span-4">
