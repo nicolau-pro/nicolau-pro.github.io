@@ -182,11 +182,15 @@ function Page() {
               <h2 className="gradient-text">Awards</h2>
               <ul className="gradient-text no-bullets spaced">
                 <li>
-                  <h3>Finalist • Mobile World Congress 2015</h3>
+                  <h3>Finalist</h3>
+                  <h3>Mobile World Congress</h3>
+                  <p>2015</p>
                   <h4>Client: Pepsi</h4>
                 </li>
                 <li>
-                  <h3>Gold Winner • Digital Impact Award 2015</h3>
+                  <h3>Gold Winner</h3>
+                  <h3>Digital Impact Award</h3>
+                  <p>2015</p>
                   <h4>Best Use of Digital from the Food & Beverage Sector</h4>
                 </li>
               </ul>
