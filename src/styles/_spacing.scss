@@ -27,23 +27,23 @@
 
 @mixin margin-classes {
   @for $i from 1 through 12 {
-    .pt-#{$i} {
+    .mt-#{$i} {
       margin-top: #{$i}em;
     }
-    .pb-#{$i} {
+    .mb-#{$i} {
       margin-bottom: #{$i}em;
     }
-    .py-#{$i} {
+    .my-#{$i} {
       margin-top: #{$i}em;
       margin-bottom: #{$i}em;
     }
-    .pl-#{$i} {
+    .ml-#{$i} {
       margin-left: #{$i}em;
     }
-    .pr-#{$i} {
+    .mr-#{$i} {
       margin-right: #{$i}em;
     }
-    .px-#{$i} {
+    .mx-#{$i} {
       margin-left: #{$i}em;
       margin-right: #{$i}em;
     }
