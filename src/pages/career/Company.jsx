@@ -150,19 +150,15 @@ function Page(props) {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <div
-                            className={`face ${testimonial.name
-                              .toLocaleLowerCase()
-                              .replaceAll(" ", "-")}`}
-                          >
+                          <div className="portrait">
                             {[...Array(4)].map((_, index) => (
                               <div
                                 key={index}
-                                className={`portrait layer-${index}`}
+                                className={`layer-${index}`}
                                 style={{
                                   backgroundImage: `url(/portraits/${testimonial.media}/${testimonial.media}-${index}.jpg)`,
                                 }}
-                              ></div>
+                              />
                             ))}
                           </div>
                         </Link>
