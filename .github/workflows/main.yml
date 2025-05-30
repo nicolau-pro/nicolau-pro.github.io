@@ -64,20 +64,3 @@ jobs:
           protocol: ftp
           local-dir: "./.presite/"
           server-dir: "./vite.r5.ro/"
-  ftp_upload:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: FTP upload
-        # https://github.com/SamKirkland/FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ftp.r5.ro
-          port: 21
-          username: ${{ secrets.R5_FTP_USER }}
-          password: ${{ secrets.R5_FTP_PASS }}
-          protocol: ftp
-          local-dir: "./.presite/"
-          server-dir: "./vite.r5.ro/"
