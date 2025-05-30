@@ -61,5 +61,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           protocol: ftp
-          local-dir: "./.presite"
+          local-dir: "./.presite/"
           server-dir: public_html/test-push-ftp/
