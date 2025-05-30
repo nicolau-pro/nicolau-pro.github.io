@@ -6,6 +6,7 @@ import { GetCompany } from "../../data/companies";
 import { GetJobs } from "../../data/jobs";
 import { GetTech } from "../../data/tech";
 import { GetAwards } from "../../data/awards";
+import { MonthYear } from "../../data/utils";
 
 function Page() {
   const Company = GetCompany("Blippar");
@@ -42,7 +43,7 @@ function Page() {
 
         <Crosshatch />
 
-        <Section>
+        <Section className="pb-5">
           <Row>
             <Col className="pt-3">
               <h2>
@@ -56,9 +57,9 @@ function Page() {
               <details>
                 <summary>
                   <h3>{job.title}</h3>
-                  <span>{job.dates.from}</span>
+                  <span>{MonthYear(job.dates.from)}</span>
                   <span> - </span>
-                  <span>{job.dates.to}</span>
+                  <span>{MonthYear(job.dates.to)}</span>
                 </summary>
                 <Row>
                   <Col className="span-4">
@@ -90,25 +91,28 @@ function Page() {
           ))}
         </Section>
 
-        <Crosshatch className="mt-5" />
-
-        <Section className="background-solid">
-          <Row>
-            <Col className="py-5">
-              <h2 className="gradient-text">Awards</h2>
-              <ul className="gradient-text no-bullets spaced">
-                {Awards.map((award, index) => (
-                  <li key={index}>
-                    <h3>{award.prize}</h3>
-                    <h3>{award.event}</h3>
-                    <p>{award.year}</p>
-                    <h4>{award.description}</h4>
-                  </li>
-                ))}
-              </ul>
-            </Col>
-          </Row>
-        </Section>
+        {Awards.length > 0 && (
+          <>
+            <Crosshatch />
+            <Section className="background-solid">
+              <Row>
+                <Col className="py-5">
+                  <h2 className="gradient-text">Awards</h2>
+                  <ul className="gradient-text no-bullets spaced">
+                    {Awards.map((award, index) => (
+                      <li key={index}>
+                        <h3>{award.prize}</h3>
+                        <h3>{award.event}</h3>
+                        <p>{award.year}</p>
+                        <h4>{award.description}</h4>
+                      </li>
+                    ))}
+                  </ul>
+                </Col>
+              </Row>
+            </Section>
+          </>
+        )}
       </main>
     </>
   );

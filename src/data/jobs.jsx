@@ -3,8 +3,8 @@ const Jobs = [
     title: "Lead Engineer/Senior Developer/UX-UI Specialist",
     companyName: "Blippar",
     dates: {
-      from: "May 2014",
-      to: "April 2018",
+      from: { month: 5, year: 2014 },
+      to: { month: 4, year: 2018 },
     },
     description:
       "Directed, mentored, and supported a team of developers in the UK, US, Turkey, and Japan. Significantly increased the social media presence of various services and products by managing key client campaigns. Initiated internal controls by establishing and adhering standards for development. Projected a polished and professional demeanour throughout the service to successfully manage client campaigns with minimal negative feedback and quick turnarounds.",
@@ -37,8 +37,8 @@ const Jobs = [
     title: "Mobile Augmented Reality Developer / UX-UI Designer",
     companyName: "Blippar",
     dates: {
-      from: "May 2012",
-      to: "April 2018",
+      from: { month: 5, year: 2012 },
+      to: { month: 4, year: 2018 },
     },
     description:
       "Directed a competent team of three, including web designer, media specialist, and graphic artist and elevated the expertise and skill levels of the members through coaching and development activities.",
