@@ -64,4 +64,4 @@ jobs:
           password: ${{ secrets.R5_FTP_PASS }}
           protocol: ftp
           local-dir: "./.presite/"
-          server-dir: "/vite.r5.ro/"
+          server-dir: "./vite.r5.ro/"
