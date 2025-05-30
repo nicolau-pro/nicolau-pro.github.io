@@ -90,21 +90,18 @@ details {
     background-color: $background;
     list-style: none;
     padding: 1em;
-  }
-
-  &:after {
-    transition: all 0.1s ease-out;
-    content: "";
-    width: 1.2em;
-    height: 1.2em;
-    margin: -1em;
-    position: absolute;
-    bottom: 2.4em;
-    right: 2.4em;
-    transform: rotate(45deg);
-    border-right: 2px dotted white;
-    border-bottom: 2px dotted white;
-    pointer-events: none;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      calc(100% - 2em) 100%,
+      calc(100% - 2em) calc(100% - 1em),
+      calc(100% - 1em) calc(100% - 2em),
+      calc(100% - 3em) calc(100% - 2em),
+      calc(100% - 2em) calc(100% - 1em),
+      calc(100% - 2em) 100%,
+      0 100%
+    );
   }
 
   &:hover,
@@ -115,9 +112,6 @@ details {
   }
 
   &:open {
-    &:after {
-      visibility: hidden;
-    }
     summary {
       clip-path: polygon(
         0 0,
