@@ -160,7 +160,9 @@ function Page(props) {
                                 key={index}
                                 src={face}
                                 className={`portrait layer-${index}`}
-                                style={{ backgroundImage: `url(${face})` }}
+                                style={{
+                                  backgroundImage: `url(/portraits/${testimonial.media}/${testimonial.media}-${index}.jpg)`,
+                                }}
                               />
                             ))}
                           </div>
@@ -177,12 +179,7 @@ function Page(props) {
                         >
                           <span>{testimonial.name} on LinkedIn </span>
                           <span className="material-icons">open_in_new</span>
-                        </Link>{" "}
-                        <img
-                          src={`/portraits/${testimonial.media}/${testimonial.media}-0.jpg`}
-                          alt={testimonial.name}
-                          loading="lazy"
-                        />
+                        </Link>
                       </Col>
                     </Row>
                   </details>
