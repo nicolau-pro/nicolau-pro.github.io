@@ -1,4 +1,4 @@
-const Icons = [
+const Technologies = [
   { name: "3DS Max", icon: "view_in_ar" },
   { name: "REACT", icon: "hive" },
   { name: "JavaScript", icon: "javascript" },
@@ -17,9 +17,11 @@ const Icons = [
   { name: "Android", icon: "phone_android" },
 ];
 
-function TechIcon(name) {
-  const icon = Icons.find((icon) => icon.name === name);
-  return icon ? icon : null;
+function GetTech(name) {
+  const output = Technologies.find(
+    (item) => item.name.toLowerCase() === name.toLowerCase()
+  );
+  return output ? output : null;
 }
 
-export { TechIcon };
+export { GetTech };
