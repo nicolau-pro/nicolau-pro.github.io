@@ -60,9 +60,8 @@ jobs:
         with:
           server: ftp.r5.ro
           port: 21
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
+          username: ${{ secrets.R5_FTP_USER }}
+          password: ${{ secrets.R5_FTP_PASS }}
           protocol: ftp
           local-dir: "./.presite/"
-          # server-dir: "public_html/test-push-ftp/"
-          server-dir: "/public_html/"
+          server-dir: "/vite.r5.ro/"
