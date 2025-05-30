@@ -7,11 +7,10 @@ import { GetCompany } from "../../data/companies";
 import { GetJobs } from "../../data/jobs";
 import { GetTech } from "../../data/tech";
 import { GetAwards } from "../../data/awards";
-import { MonthYear } from "../../data/utils";
-// import { EmploymentPeriod } from "../../data/utils";
+import { MonthYear, EmploymentPeriod } from "../../data/utils";
 
-function Page() {
-  const companyName = "Blippar";
+function Page(props) {
+  const { companyName } = props;
 
   const Company = GetCompany(companyName);
   const Jobs = GetJobs(companyName);
@@ -20,7 +19,7 @@ function Page() {
   return (
     <>
       <title>{`RADU NICOLAU > Careers > ${Company.name}`}</title>
-      <main className="theme-blippar">
+      <main className={`theme-${companyName.toLowerCase()}`}>
         <meta
           name="description"
           content={`RADU NICOLAU > Careers > ${Company.name} - ${Company.meta.description}`}
@@ -30,11 +29,6 @@ function Page() {
           <Row>
             <Col>
               <h1 className="hero">{Company.name.toUpperCase()}</h1>
-              {/* <p>
-                <span>{MonthYear(EmploymentPeriod(companyName).from)}</span>
-                <span> - </span>
-                <span>{MonthYear(EmploymentPeriod(companyName).to)}</span>
-              </p> */}
             </Col>
           </Row>
         </Section>

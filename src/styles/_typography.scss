@@ -90,13 +90,13 @@ ul {
   }
 
   &.spaced-1 {
-    li {
+    > li {
       margin-bottom: 1em;
     }
   }
 
   &.spaced-2 {
-    li {
+    > li {
       margin-bottom: 2em;
     }
   }

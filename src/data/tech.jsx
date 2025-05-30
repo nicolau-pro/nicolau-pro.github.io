@@ -15,6 +15,8 @@ const Technologies = [
   { name: "NODE", icon: "hub" },
   { name: "iOS", icon: "phone_iphone" },
   { name: "Android", icon: "phone_android" },
+  { name: "Three.js", icon: "screenshot_monitor" },
+  { name: "WebGL", icon: "laptop_mac" },
 ];
 
 function GetTech(name) {

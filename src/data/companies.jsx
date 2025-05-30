@@ -10,7 +10,20 @@ const Companies = [
         "One of the UK's first tech unicorns, specialises in Augmented Reality (AR) content creation and publishing to any smart phone, tablet and the web.",
     },
   },
+  {
+    name: "MRMC",
+    description:
+      "Mark Roberts Motion Control is a leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
+    details:
+      "Delivering Oscar-Winning Engineering for over 50 Years! The leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
+    meta: {
+      description:
+        "Mark Roberts Motion Control (MRMC) is a leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
+    },
+  },
 ];
+
+const CompaniesList = Companies.map((item) => item.name.toLowerCase());
 
 function GetCompany(name) {
   const output = Companies.find(
@@ -19,4 +32,4 @@ function GetCompany(name) {
   return output ? output : null;
 }
 
-export { GetCompany };
+export { Companies, CompaniesList, GetCompany };

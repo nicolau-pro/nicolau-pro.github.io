@@ -64,9 +64,31 @@ const Jobs = [
       "Android",
     ],
   },
+  {
+    title: "UX/UI Designer",
+    companyName: "MRMC",
+    dates: {
+      from: { month: 4, year: 2018 },
+      to: { month: 10, year: 2018 },
+    },
+    description:
+      "Directed all UX/UI components including 3D models and full documentation for implementation with Flair, MRMC's premier motion control software. This involved extensive expert user and client feedback gathering and loopback.",
+    bulletpoints: [
+      "Designed exceptional command features over camera movement. Flair precisely controls up to 500 axes of motion, is fully compatible with all motion control rigs, heads and accessories. Interfaces seamlessly with CGI packages. “Flair is the tool that makes your vision reality.”",
+      "Created UX/UI for new websites and company web presence aligned with modern trends and fully responsive. Developing email signature, newsletter templates, and publishing creative standards to accommodate for limitations due to email sharing.",
+    ],
+    tech: [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "3DS Max",
+      "Three.js",
+      "WebGL",
+    ],
+  },
 ];
 
 function GetJobs(companyName) {
+  console.log(companyName);
   const output = Jobs.filter(
     (item) => item.companyName.toLowerCase() === companyName.toLowerCase()
   );
