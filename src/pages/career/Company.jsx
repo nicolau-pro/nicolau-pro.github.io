@@ -179,7 +179,7 @@ function Page(props) {
                           <span className="material-icons">open_in_new</span>
                         </Link>{" "}
                         <img
-                          src={`/portratis/${testimonial.media}/${testimonial.media}-0.jpg`}
+                          src={`/portraits/${testimonial.media}/${testimonial.media}-0.jpg`}
                           alt={testimonial.name}
                           loading="lazy"
                         />
