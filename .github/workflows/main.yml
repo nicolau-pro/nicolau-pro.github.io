@@ -65,4 +65,4 @@ jobs:
           protocol: ftp
           local-dir: "./.presite/"
           # server-dir: "public_html/test-push-ftp/"
-          server-dir: "/var/www/html/vite.r5.ro/"
+          server-dir: "/"
