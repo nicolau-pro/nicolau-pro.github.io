@@ -2,6 +2,7 @@ const Awards = [
   {
     companyName: "Blippar",
     prize: "Finalist",
+    icon: "workspace_premium",
     event: "Mobile World Congress",
     year: 2015,
     description: "With Pepsi",
@@ -12,6 +13,7 @@ const Awards = [
   {
     companyName: "Blippar",
     prize: "Gold Winner",
+    icon: "emoji_events",
     event: "Digital Impact Award",
     year: 2015,
     description: "Best Use of Digital from the Food & Beverage Sector",

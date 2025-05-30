@@ -2,16 +2,20 @@ import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Crosshatch from "../../components/decorators/Crosshatch";
+
 import { GetCompany } from "../../data/companies";
 import { GetJobs } from "../../data/jobs";
 import { GetTech } from "../../data/tech";
 import { GetAwards } from "../../data/awards";
 import { MonthYear } from "../../data/utils";
+// import { EmploymentPeriod } from "../../data/utils";
 
 function Page() {
-  const Company = GetCompany("Blippar");
-  const Jobs = GetJobs("Blippar");
-  const Awards = GetAwards("Blippar");
+  const companyName = "Blippar";
+
+  const Company = GetCompany(companyName);
+  const Jobs = GetJobs(companyName);
+  const Awards = GetAwards(companyName);
 
   return (
     <>
@@ -26,6 +30,11 @@ function Page() {
           <Row>
             <Col>
               <h1 className="hero">{Company.name.toUpperCase()}</h1>
+              {/* <p>
+                <span>{MonthYear(EmploymentPeriod(companyName).from)}</span>
+                <span> - </span>
+                <span>{MonthYear(EmploymentPeriod(companyName).to)}</span>
+              </p> */}
             </Col>
           </Row>
         </Section>
@@ -98,13 +107,16 @@ function Page() {
               <Row>
                 <Col className="py-5">
                   <h2 className="gradient-text">Awards</h2>
-                  <ul className="gradient-text no-bullets spaced">
+                  <ul className="gradient-text no-bullets spaced-2 mt-2">
                     {Awards.map((award, index) => (
                       <li key={index}>
-                        <h3>{award.prize}</h3>
-                        <h3>{award.event}</h3>
-                        <p>{award.year}</p>
-                        <h4>{award.description}</h4>
+                        <h3 className="award">
+                          <span className="prize">{award.prize} </span>
+                          <span className="material-icons">{award.icon}</span>
+                          <span className="event"> {award.event}</span>
+                          <span className="event"> {award.year}</span>
+                        </h3>
+                        <h4 className="description">{award.description}</h4>
                       </li>
                     ))}
                   </ul>

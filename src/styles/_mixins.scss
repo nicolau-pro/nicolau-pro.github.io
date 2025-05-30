@@ -1,0 +1,25 @@
+@function crosshatch-gradient($color) {
+  @return linear-gradient(
+    45deg,
+    $color 0%,
+    $color 1 * 12.5%,
+    transparent 1 * 12.5%,
+    transparent 3 * 12.5%,
+    $color 3 * 12.5%,
+    $color 5 * 12.5%,
+    transparent 5 * 12.5%,
+    transparent 7 * 12.5%,
+    $color 7 * 12.5%,
+    $color 100%
+  );
+}
+
+@mixin crosshatch-background($size: 5em) {
+  background-size: $size $size;
+  background-repeat: repeat;
+}
+
+@mixin crosshatch($color, $size: 5em) {
+  @include crosshatch-background($size);
+  background-image: crosshatch-gradient($color);
+}

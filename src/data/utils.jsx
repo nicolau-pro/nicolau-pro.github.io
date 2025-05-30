@@ -1,3 +1,5 @@
+import { GetJobs } from "./jobs";
+
 function MonthYear(monthYearObject) {
   const months = [
     "January",
@@ -16,7 +18,13 @@ function MonthYear(monthYearObject) {
   return `${months[monthYearObject.month - 1]} ${monthYearObject.year}`;
 }
 
-function EmploymentPeriod(jobs) {
+function EmploymentPeriod(companyName) {
+  const jobs = GetJobs(companyName);
+
+  if (!jobs || jobs.length === 0) {
+    return null;
+  }
+
   const jobDatesArray = jobs.map((job) => ({
     from: job.dates.from,
     to: job.dates.to,

@@ -24,6 +24,9 @@ function Dashboard() {
         </nav>
       </header>
       <Outlet />
+      <footer>
+        <p>© 2025 Radu Nicolau</p>
+      </footer>
     </>
   );
 }

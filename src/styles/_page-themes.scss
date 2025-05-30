@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "mixins" as mixins;
 
 @mixin page-theme($name, $color-light, $color-dark, $color-text) {
   .theme-#{$name} {
@@ -29,22 +30,7 @@
         height: calc($size + 2px);
         margin-top: -1px;
         margin-bottom: -1px;
-        $eith: math.div(100%, 8);
-        background-size: $size $size;
-        background-repeat: repeat;
-        background-image: linear-gradient(
-          45deg,
-          $color-text 0%,
-          $color-text 1 * $eith,
-          transparent 1 * $eith,
-          transparent 3 * $eith,
-          $color-text 3 * $eith,
-          $color-text 5 * $eith,
-          transparent 5 * $eith,
-          transparent 7 * $eith,
-          $color-text 7 * $eith,
-          $color-text 100%
-        );
+        @include mixins.crosshatch($color-text, $size);
       }
     }
   }
