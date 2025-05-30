@@ -9,6 +9,23 @@ const Companies = [
       description:
         "One of the UK's first tech unicorns, specialises in Augmented Reality (AR) content creation and publishing to any smart phone, tablet and the web.",
     },
+    testimonials: [
+      {
+        name: "Erwan Maigret",
+        position: "Lead Augmented Reality API Engineer",
+        link: "https://www.linkedin.com/in/erwanmaigret/",
+        quote: "Nothing stops him",
+        testimonial:
+          "Radu is the swiss-army knife of 3D and AR. You can ask him to build anything and he'll manage to make it work in no time, covering all aspects from programming to 3D authoring and animation. On top of that he's got a great sense of design and provides compelling solutions ready to be used as-is. He's definitely a key contributor if you're on aggressive schedule and need to cover complex technical challenges. Nothing stops him.",
+        media: "Erwan",
+        face: [
+          "https://www.r5.ro/media/people/Erwan-0.jpg",
+          "https://www.r5.ro/media/people/Erwan-1.jpg",
+          "https://www.r5.ro/media/people/Erwan-2.jpg",
+          "https://www.r5.ro/media/people/Erwan-3.jpg",
+        ],
+      },
+    ],
   },
   {
     name: "MRMC",
@@ -20,6 +37,21 @@ const Companies = [
       description:
         "Mark Roberts Motion Control (MRMC) is a leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
     },
+    testimonials: [
+      {
+        name: "Erwan Maigret",
+        position: "Lead Augmented Reality API Engineer",
+        quote: "Nothing stops him",
+        testimonial:
+          "Radu is the swiss-army knife of 3D and AR. You can ask him to build anything and he'll manage to make it work in no time, covering all aspects from programming to 3D authoring and animation. On top of that he's got a great sense of design and provides compelling solutions ready to be used as-is. He's definitely a key contributor if you're on aggressive schedule and need to cover complex technical challenges. Nothing stops him.",
+        face: [
+          "https://www.r5.ro/media/people/Erwan-0.jpg",
+          "https://www.r5.ro/media/people/Erwan-1.jpg",
+          "https://www.r5.ro/media/people/Erwan-2.jpg",
+          "https://www.r5.ro/media/people/Erwan-3.jpg",
+        ],
+      },
+    ],
   },
 ];
 

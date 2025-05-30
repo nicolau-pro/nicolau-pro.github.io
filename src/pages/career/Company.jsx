@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
@@ -7,7 +9,7 @@ import { GetCompany } from "../../data/companies";
 import { GetJobs } from "../../data/jobs";
 import { GetTech } from "../../data/tech";
 import { GetAwards } from "../../data/awards";
-import { MonthYear, EmploymentPeriod } from "../../data/utils";
+import { MonthYear } from "../../data/utils";
 
 function Page(props) {
   const { companyName } = props;
@@ -15,6 +17,7 @@ function Page(props) {
   const Company = GetCompany(companyName);
   const Jobs = GetJobs(companyName);
   const Awards = GetAwards(companyName);
+  const Testimonials = Company.testimonials || [];
 
   return (
     <>
@@ -116,6 +119,75 @@ function Page(props) {
                   </ul>
                 </Col>
               </Row>
+            </Section>
+          </>
+        )}
+
+        {Testimonials.length > 0 && (
+          <>
+            <Crosshatch />
+            <Section>
+              <Row>
+                <Col className="pt-5">
+                  <h2>Testimonials</h2>
+                </Col>
+              </Row>
+
+              {Testimonials.map((testimonial, index) => (
+                <Row className="mt-2" key={index}>
+                  <details>
+                    <summary className="testimonial">
+                      <h3>{testimonial.name}</h3>
+                      <p className="small">{testimonial.position}</p>
+                      <p className="large mt-1">
+                        <em>"{testimonial.quote}"</em>
+                      </p>
+                    </summary>
+                    <Row>
+                      <Col>
+                        <Link
+                          to={testimonial.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <div
+                            className={`face ${testimonial.name
+                              .toLocaleLowerCase()
+                              .replaceAll(" ", "-")}`}
+                          >
+                            {testimonial.face.map((face, index) => (
+                              <div
+                                key={index}
+                                src={face}
+                                className={`portrait layer-${index}`}
+                                style={{ backgroundImage: `url(${face})` }}
+                              />
+                            ))}
+                          </div>
+                        </Link>
+                      </Col>
+                      <Col className="span-3">
+                        <p className="mb-2">
+                          <em>{testimonial.testimonial}</em>
+                        </p>
+                        <Link
+                          to={testimonial.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span>{testimonial.name} on LinkedIn </span>
+                          <span className="material-icons">open_in_new</span>
+                        </Link>{" "}
+                        <img
+                          src={`/portratis/${testimonial.media}/${testimonial.media}-0.jpg`}
+                          alt={testimonial.name}
+                          loading="lazy"
+                        />
+                      </Col>
+                    </Row>
+                  </details>
+                </Row>
+              ))}
             </Section>
           </>
         )}

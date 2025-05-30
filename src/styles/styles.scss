@@ -8,6 +8,7 @@
 @use "header";
 @use "material-icons";
 @use "footer";
+@use "faces";
 
 html,
 body {
@@ -89,11 +90,13 @@ details {
   }
 
   summary {
+    position: relative;
     cursor: pointer;
     transition: all 0.1s ease-out;
     background-color: $background;
     list-style: none;
     padding: 1em;
+    overflow: hidden;
     clip-path: polygon(
       0 0,
       100% 0,
@@ -106,6 +109,19 @@ details {
       calc(100% - 2em) 100%,
       0 100%
     );
+
+    &.testimonial {
+      padding-left: 11em;
+      &:after {
+        opacity: 0.2;
+        position: absolute;
+        content: '"';
+        top: -0.11em;
+        left: 0.018em;
+        font-size: 23em;
+        line-height: 1em;
+      }
+    }
   }
 
   &:hover,

@@ -1,7 +1,7 @@
 const Jobs = [
   {
-    title: "Lead Engineer/Senior Developer/UX-UI Specialist",
     companyName: "Blippar",
+    title: "Lead Engineer/Senior Developer/UX-UI Specialist",
     dates: {
       from: { month: 5, year: 2014 },
       to: { month: 4, year: 2018 },
@@ -34,8 +34,8 @@ const Jobs = [
     ],
   },
   {
-    title: "Mobile Augmented Reality Developer / UX-UI Designer",
     companyName: "Blippar",
+    title: "Mobile Augmented Reality Developer / UX-UI Designer",
     dates: {
       from: { month: 5, year: 2012 },
       to: { month: 4, year: 2018 },
@@ -65,8 +65,8 @@ const Jobs = [
     ],
   },
   {
-    title: "UX/UI Designer",
     companyName: "MRMC",
+    title: "UX/UI Designer",
     dates: {
       from: { month: 4, year: 2018 },
       to: { month: 10, year: 2018 },
