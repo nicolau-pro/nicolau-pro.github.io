@@ -45,7 +45,7 @@ main {
       gap: 3em;
       width: 100%;
       max-width: 1000px;
-      padding: 1em;
+      padding: 2em;
     }
 
     div.col {
@@ -71,7 +71,7 @@ main {
 
 details {
   position: relative;
-  width: 100%;
+  flex: 1;
   margin: -1em;
   padding: 0;
 

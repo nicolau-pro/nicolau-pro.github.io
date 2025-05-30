@@ -88,7 +88,6 @@ const Jobs = [
 ];
 
 function GetJobs(companyName) {
-  console.log(companyName);
   const output = Jobs.filter(
     (item) => item.companyName.toLowerCase() === companyName.toLowerCase()
   );
