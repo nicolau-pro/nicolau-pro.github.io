@@ -55,11 +55,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: Sync files
+        # https://github.com/SamKirkland/FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.r5.ro
+          port: 21
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           protocol: ftp
           local-dir: "./.presite/"
-          server-dir: public_html/test-push-ftp/
+          # server-dir: "public_html/test-push-ftp/"
+          server-dir: "/var/www/html/vite.r5.ro/"
