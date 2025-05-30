@@ -95,36 +95,22 @@ details {
   &:after {
     transition: all 0.1s ease-out;
     content: "";
-    width: 2em;
-    height: 1em;
-    background-color: $background;
+    width: 1.2em;
+    height: 1.2em;
+    margin: -1em;
     position: absolute;
-    right: 1em;
-    clip-path: polygon(50% 0, 50% 0, 50% 0);
+    bottom: 2.4em;
+    right: 2.4em;
+    transform: rotate(45deg);
+    border-right: 2px dotted white;
+    border-bottom: 2px dotted white;
+    pointer-events: none;
   }
 
   &:hover,
   &:focus-visible {
-    &:after {
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-    }
     summary {
       opacity: 0.8;
-    }
-  }
-
-  &:hover,
-  &:focus-visible,
-  &:open {
-    summary {
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 100%,
-        calc(100% - 1em) 100%,
-        calc(100% - 3em) 100%,
-        0 100%
-      );
     }
   }
 
@@ -132,30 +118,16 @@ details {
     &:after {
       visibility: hidden;
     }
-
     summary {
       clip-path: polygon(
         0 0,
         100% 0,
         100% 100%,
-        calc(100% - 2em) 100%,
-        calc(100% - 2em) 100%,
-        calc(100% - 2em) 100%,
+        calc(100% - 1em) 100%,
+        calc(100% - 2em) calc(100% - 1em),
+        calc(100% - 3em) 100%,
         0 100%
       );
-
-      &:hover,
-      &:focus-visible {
-        clip-path: polygon(
-          0 0,
-          100% 0,
-          100% 100%,
-          calc(100% - 1em) 100%,
-          calc(100% - 2em) calc(100% - 1em),
-          calc(100% - 3em) 100%,
-          0 100%
-        );
-      }
     }
   }
 }
