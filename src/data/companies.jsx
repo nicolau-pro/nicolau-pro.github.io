@@ -18,12 +18,6 @@ const Companies = [
         testimonial:
           "Radu is the swiss-army knife of 3D and AR. You can ask him to build anything and he'll manage to make it work in no time, covering all aspects from programming to 3D authoring and animation. On top of that he's got a great sense of design and provides compelling solutions ready to be used as-is. He's definitely a key contributor if you're on aggressive schedule and need to cover complex technical challenges. Nothing stops him.",
         media: "Erwan",
-        face: [
-          "https://www.r5.ro/media/people/Erwan-0.jpg",
-          "https://www.r5.ro/media/people/Erwan-1.jpg",
-          "https://www.r5.ro/media/people/Erwan-2.jpg",
-          "https://www.r5.ro/media/people/Erwan-3.jpg",
-        ],
       },
     ],
   },

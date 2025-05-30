@@ -138,10 +138,10 @@ function Page(props) {
                   <details>
                     <summary className="testimonial">
                       <h3>{testimonial.name}</h3>
-                      <p className="small">{testimonial.position}</p>
-                      <p className="large mt-1">
+                      <span className="p small">{testimonial.position}</span>
+                      <span className="p large mt-1">
                         <em>"{testimonial.quote}"</em>
-                      </p>
+                      </span>
                     </summary>
                     <Row>
                       <Col>
@@ -155,15 +155,14 @@ function Page(props) {
                               .toLocaleLowerCase()
                               .replaceAll(" ", "-")}`}
                           >
-                            {testimonial.face.map((face, index) => (
+                            {[...Array(4)].map((_, index) => (
                               <div
                                 key={index}
-                                src={face}
                                 className={`portrait layer-${index}`}
                                 style={{
                                   backgroundImage: `url(/portraits/${testimonial.media}/${testimonial.media}-${index}.jpg)`,
                                 }}
-                              />
+                              ></div>
                             ))}
                           </div>
                         </Link>
