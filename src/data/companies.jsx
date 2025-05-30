@@ -33,17 +33,13 @@ const Companies = [
     },
     testimonials: [
       {
-        name: "Erwan Maigret",
-        position: "Lead Augmented Reality API Engineer",
-        quote: "Nothing stops him",
+        name: "Assaff Rawner",
+        position: "CEO at Mark Roberts Motion Control",
+        link: "https://www.linkedin.com/in/assaff-rawner-08371626/",
+        quote: "Better than anyone I have ever met before or since",
         testimonial:
-          "Radu is the swiss-army knife of 3D and AR. You can ask him to build anything and he'll manage to make it work in no time, covering all aspects from programming to 3D authoring and animation. On top of that he's got a great sense of design and provides compelling solutions ready to be used as-is. He's definitely a key contributor if you're on aggressive schedule and need to cover complex technical challenges. Nothing stops him.",
-        face: [
-          "https://www.r5.ro/media/people/Erwan-0.jpg",
-          "https://www.r5.ro/media/people/Erwan-1.jpg",
-          "https://www.r5.ro/media/people/Erwan-2.jpg",
-          "https://www.r5.ro/media/people/Erwan-3.jpg",
-        ],
+          "Radu did some amazing UI/UX work for us at MRMC. Not only is he skilled at easily understand and breaking down complex software tasks into fantastic and beautiful UI's for our desktop robotic control software, he is also a very skilled developer and programmer in his own right and seemed to understand front-end website and web-app development better than anyone I have ever met before or since. It was a sad day when he left.",
+        media: "Assaff",
       },
     ],
   },
