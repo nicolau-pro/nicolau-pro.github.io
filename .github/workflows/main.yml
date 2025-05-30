@@ -54,17 +54,20 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Upload files to FTP
-        uses: matteodf/lftp-upload@v1
+      - name: Deploy files via FTP
+        uses: pressidium/lftp-mirror-action@v1
         with:
+          # FTP credentials
           host: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          forceSsl: "true"
+          port: ${{ secrets.FTP_PORT }}
+          user: ${{ secrets.FTP_USER }}
+          pass: ${{ secrets.FTP_PASS }}
+          # lftp settings
+          onlyNewer: true
+          settings: "ftp:auto-confirm=yes"
+          # Mirror command options
           localDir: "."
           remoteDir: "/var/www/html/vite.r5.ro/"
-          timeout: "120"
-          retries: "5"
-          multiplier: "2.0"
-          baseInterval: "10"
-          pConn: "10"
+          reverse: true
+          ignoreFile: ".lftp_ignore"
+          options: "--verbose"
