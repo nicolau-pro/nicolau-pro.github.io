@@ -109,8 +109,10 @@ details {
       calc(100% - 2em) 100%,
       0 100%
     );
+  }
 
-    &.testimonial {
+  &.testimonial {
+    summary {
       padding-left: 11em;
       &:after {
         opacity: 0.2;

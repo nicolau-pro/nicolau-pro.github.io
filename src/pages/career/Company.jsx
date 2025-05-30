@@ -135,8 +135,8 @@ function Page(props) {
 
               {Testimonials.map((testimonial, index) => (
                 <Row className="mt-2" key={index}>
-                  <details>
-                    <summary className="testimonial">
+                  <details className="testimonial">
+                    <summary>
                       <h3>{testimonial.name}</h3>
                       <span className="p small">{testimonial.position}</span>
                       <span className="p large mt-1">
