@@ -123,6 +123,7 @@ function Page(props) {
                 <Row key={index}>
                   <Col>
                     <img
+                      loading="lazy"
                       className="award-logo"
                       src={`/awards/${award.logo}`}
                       alt={`${award.prize} ${award.event} ${award.year}`}
