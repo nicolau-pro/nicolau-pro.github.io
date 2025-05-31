@@ -1,4 +1,4 @@
-import { GetJobs } from "./jobs";
+import { GetJobsByCompanyId } from "./jobs";
 
 function MonthYear(monthYearObject) {
   const months = [
@@ -18,8 +18,9 @@ function MonthYear(monthYearObject) {
   return `${months[monthYearObject.month - 1]} ${monthYearObject.year}`;
 }
 
-function EmploymentPeriod(companyName) {
-  const jobs = GetJobs(companyName);
+function EmploymentPeriod(companyId) {
+  const jobs = GetJobsByCompanyId(companyId);
+  console.log(jobs);
 
   if (!jobs || jobs.length === 0) {
     return null;

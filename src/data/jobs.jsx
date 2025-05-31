@@ -1,6 +1,6 @@
 const Jobs = [
   {
-    companyName: "Blippar",
+    companyId: 1,
     title: "Lead Engineer/Senior Developer/UX-UI Specialist",
     dates: {
       from: { month: 5, year: 2014 },
@@ -34,7 +34,7 @@ const Jobs = [
     ],
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     title: "Mobile Augmented Reality Developer / UX-UI Designer",
     dates: {
       from: { month: 5, year: 2012 },
@@ -65,7 +65,7 @@ const Jobs = [
     ],
   },
   {
-    companyName: "MRMC",
+    companyId: 2,
     title: "UX/UI Designer",
     dates: {
       from: { month: 4, year: 2018 },
@@ -85,13 +85,96 @@ const Jobs = [
       "WebGL",
     ],
   },
+  {
+    companyId: 3,
+    title: "UX UI Front End Developer",
+    dates: {
+      from: { month: 10, year: 2018 },
+      to: { month: 9, year: 2019 },
+    },
+    description:
+      "Developed https://www.aquacard.co.uk/ in a team of two developers along with many UX/UI design tasks. The website surpassed expected sales by 30% and got multiple awards! With fast loading on any device - far ahead of similar websites.",
+    bulletpoints: [
+      "Used React for rapid prototyping and fragment creation/testing/AMP validation and Umbraco CMS with ASP.net, passes all WCAG 2.0 accessibility standards, AMP ready and SEO friendly.",
+    ],
+    tech: [
+      "REACT",
+      "HTML",
+      "Umbraco CMS",
+      "C#",
+      "ASP .NET",
+      "SCSS",
+      "JavaScript",
+      "SEO",
+      "Accessibility",
+      "PWA",
+      "GIT",
+      "NODE",
+      "AZURE",
+    ],
+  },
+  {
+    companyId: 4,
+    title: "Senior Front End Developer",
+    dates: {
+      from: { month: 10, year: 2019 },
+      to: { month: 2, year: 2021 },
+    },
+    description:
+      "Leading the front end development for the main products' websites in a complex international team.",
+    bulletpoints: [
+      "My role is to set standards for React driven pages, SASS modular/flexible styles and integrate in a CMS solution.",
+      "The results are 100% responsive, accessible, performant, SEO friendly and PWA/AMP ready websites.",
+    ],
+    tech: [
+      "REACT",
+      "HTML",
+      "Freemarker",
+      "CMS",
+      "SCSS",
+      "JaveScript",
+      "SEO",
+      "Accessibility",
+      "PWA",
+      "AMP",
+      "GIT",
+      "WEBPACK",
+      "NODE",
+    ],
+  },
+  {
+    companyId: 5,
+    title: "Senior Front End Engineer",
+    dates: {
+      from: { month: 2, year: 2021 },
+      to: { month: 4, year: 2021 },
+    },
+    description:
+      "Tasked with developing and augmenting the dealer's website https://pro.motorway.co.uk/.",
+    bulletpoints: [
+      "Adding new components, improving on the existing architecture and creating unit / snapshot tests for all the modules involved, working on both Mac and Windows machines for impeccable cross-browser support.",
+    ],
+    tech: [
+      "REACT",
+      "HTML",
+      "JEST",
+      "Unit Testing",
+      "Storybook",
+      "SCSS",
+      "TypeScript",
+      "SEO",
+      "Accessibility",
+      "GIT",
+      "WEBPACK",
+      "NODE",
+      "PM2",
+    ],
+  },
 ];
 
-function GetJobs(companyName) {
-  const output = Jobs.filter(
-    (item) => item.companyName.toLowerCase() === companyName.toLowerCase()
-  );
+function GetJobsByCompanyId(id) {
+  const output = Jobs.filter((item) => item.companyId === id);
   return output ? output : null;
 }
 
-export { GetJobs };
+export { GetJobsByCompanyId };

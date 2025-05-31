@@ -6,23 +6,24 @@ import Section from "../../components/layout/Section";
 import Crosshatch from "../../components/decorators/Crosshatch";
 
 import { GetCompany } from "../../data/companies";
-import { GetJobs } from "../../data/jobs";
+import { GetJobsByCompanyId } from "../../data/jobs";
 import { GetTech } from "../../data/tech";
-import { GetAwards } from "../../data/awards";
+import { GetAwardsByCompanyId } from "../../data/awards";
+import { GetTestimonialsByCompanyId } from "../../data/testimonials";
 import { MonthYear } from "../../data/utils";
 
 function Page(props) {
   const { companyName } = props;
 
   const Company = GetCompany(companyName);
-  const Jobs = GetJobs(companyName);
-  const Awards = GetAwards(companyName);
-  const Testimonials = Company.testimonials || [];
+  const Jobs = GetJobsByCompanyId(Company.id) || [];
+  const Awards = GetAwardsByCompanyId(Company.id) || [];
+  const Testimonials = GetTestimonialsByCompanyId(Company.id) || [];
 
   return (
     <>
       <title>{`RADU NICOLAU > Careers > ${Company.name}`}</title>
-      <main className={`theme-${companyName.toLowerCase()}`}>
+      <main className={`theme-${Company.theme}`}>
         <meta
           name="description"
           content={`RADU NICOLAU > Careers > ${Company.name} - ${Company.meta.description}`}
@@ -41,8 +42,18 @@ function Page(props) {
         <Section className="background-solid">
           <Row>
             <Col className="py-3">
-              <h2 className="gradient-text">{Company.description}</h2>
-              <h3 className="pt-1 gradient-text">{Company.details}</h3>
+              <h2
+                className="gradient-text"
+                dangerouslySetInnerHTML={{
+                  __html: Company.description,
+                }}
+              />
+              <h3
+                className="pt-1 gradient-text"
+                dangerouslySetInnerHTML={{
+                  __html: Company.details,
+                }}
+              />
             </Col>
           </Row>
         </Section>
@@ -82,9 +93,11 @@ function Page(props) {
                       <ul className="small no-bullets">
                         {job.tech.map((tech, index) => (
                           <li key={index}>
-                            <span className="material-icons">
-                              {GetTech(tech).icon}
-                            </span>
+                            {GetTech(tech) && (
+                              <span className="material-icons">
+                                {GetTech(tech).icon}
+                              </span>
+                            )}
                             <span> {tech}</span>
                           </li>
                         ))}

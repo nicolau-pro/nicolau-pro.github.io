@@ -1,6 +1,7 @@
 const Awards = [
+  // Blippar
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "Grand Prix WINNER",
     icon: "star",
     event: "The Drum Marketing Awards",
@@ -13,7 +14,7 @@ const Awards = [
     logo: "dma-awards.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "GOLD Winner",
     icon: "emoji_events",
     event: "Effective Mobile Marketing Awards",
@@ -26,7 +27,7 @@ const Awards = [
     logo: "effective-mobile-marketing-awards.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "GOLD Winner",
     icon: "emoji_events",
     event: "Beverage Innovation Awards @ Drinktec",
@@ -39,7 +40,7 @@ const Awards = [
     logo: "beverige-innovation-awards.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "GOLD Winner",
     icon: "emoji_events",
     event: "Corpcomms Digi Awards",
@@ -52,7 +53,7 @@ const Awards = [
     logo: "compcomms-digi-awards.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "GOLD Winner",
     icon: "emoji_events",
     event: "The Drum Network Awards",
@@ -65,7 +66,7 @@ const Awards = [
     logo: "the-drum-network-awards.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "GOLD Winner",
     icon: "emoji_events",
     event: "Digital Impact Award",
@@ -78,7 +79,7 @@ const Awards = [
     logo: "digital-impact-awards.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "GOLD Winner",
     icon: "emoji_events",
     event: "APAC Effie",
@@ -91,7 +92,7 @@ const Awards = [
     logo: "apac-effie.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "GOLD Winner",
     icon: "emoji_events",
     event: "Iab MIXX Awards",
@@ -104,7 +105,7 @@ const Awards = [
     logo: "iab-mixx-gold.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "SILVER",
     icon: "workspace_premium",
     event: "iab MIXX Awards Turkey",
@@ -117,7 +118,7 @@ const Awards = [
     logo: "iab-mixx-silver.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "BRONZE",
     icon: "workspace_premium",
     event: "iab MIXX Awards Turkey",
@@ -130,7 +131,7 @@ const Awards = [
     logo: "iab-mixx-bronze.png",
   },
   {
-    companyName: "Blippar",
+    companyId: 1,
     prize: "Finalist",
     icon: "verified",
     event: "Mobile World Congress",
@@ -142,13 +143,92 @@ const Awards = [
     },
     logo: "global-mobile-awards.png",
   },
+  // MRMC
+  {
+    companyId: 2,
+    prize: "GOLD Winner",
+    icon: "emoji_events",
+    event: "NAB Show",
+    year: 2020,
+    description:
+      "Product of the Year - Camera Support, Control and Accessories",
+    meta: {
+      description:
+        "NAB Show 2020 Product of the Year - Camera Support, Control and Accessories.",
+    },
+    logo: "nab-show.png",
+  },
+  // NewDay Aquacard
+  {
+    companyId: 3,
+    prize: "GOLD Winner",
+    icon: "emoji_events",
+    event: "The UK Digital Experience Awards",
+    year: 2020,
+    description: "Digital Change & Transformation",
+    meta: {
+      description:
+        "The UK Digital Experience Awards 2020 for Digital Change & Transformation.",
+    },
+    logo: "the-uk-digital-experience-awards.png",
+  },
+  {
+    companyId: 3,
+    prize: "Finalist",
+    icon: "verified",
+    event: "Card and Payments Awards",
+    year: 2020,
+    description: "Best Marketing Campaign of the Year",
+    meta: {
+      description:
+        "Card and Payments Awards 2020 for Best Marketing Campaign of the Year.",
+    },
+    logo: "the-card-payments-awards.png",
+  },
+  {
+    companyId: 3,
+    prize: "Finalist",
+    icon: "verified",
+    event: "Card and Payments Awards",
+    year: 2020,
+    description: "Best Design of the Year",
+    meta: {
+      description: "Card and Payments Awards 2020 for Best Design of the Year.",
+    },
+    logo: "the-card-payments-awards.png",
+  },
+  // Gain Credit Lending Stream
+  {
+    companyId: 4,
+    prize: "GOLD Winner",
+    icon: "emoji_events",
+    event: "The Credit Excellence Awards",
+    year: 2021,
+    description: "Responsible Lender",
+    meta: {
+      description: "The Credit Excellence Awards 2021 for Responsible Lender.",
+    },
+    logo: "credit-excellence-awards.png",
+  },
+  // Motorway
+  {
+    companyId: 5,
+    prize: "GOLD Winner",
+    icon: "emoji_events",
+    event: "Motor Trader Industry Awards",
+    year: 2021,
+    description: "Online Used Car Trading Platform",
+    meta: {
+      description:
+        "Motor Trader Industry Awards 2021 for Online Used Car Trading Platform.",
+    },
+    logo: "motor-trader-industry-awards.png",
+  },
 ];
 
-function GetAwards(companyName) {
-  const output = Awards.filter(
-    (item) => item.companyName.toLowerCase() === companyName.toLowerCase()
-  );
+function GetAwardsByCompanyId(id) {
+  const output = Awards.filter((item) => item.companyId === id);
   return output ? output : null;
 }
 
-export { GetAwards };
+export { GetAwardsByCompanyId };

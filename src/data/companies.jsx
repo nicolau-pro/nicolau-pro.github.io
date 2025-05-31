@@ -1,6 +1,8 @@
 const Companies = [
   {
+    id: 1,
     name: "Blippar",
+    theme: "blippar",
     description:
       "One of the UK's first tech unicorns, specialises in Augmented Reality (AR) content creation and publishing to any smart phone, tablet and the web.",
     details:
@@ -9,38 +11,11 @@ const Companies = [
       description:
         "One of the UK's first tech unicorns, specialises in Augmented Reality (AR) content creation and publishing to any smart phone, tablet and the web.",
     },
-    testimonials: [
-      {
-        name: "Erwan Maigret",
-        position: "Lead Augmented Reality API Engineer",
-        link: "https://www.linkedin.com/in/erwanmaigret/",
-        quote: "Nothing stops him",
-        testimonial:
-          "Radu is the swiss-army knife of 3D and AR. You can ask him to build anything and he'll manage to make it work in no time, covering all aspects from programming to 3D authoring and animation. On top of that he's got a great sense of design and provides compelling solutions ready to be used as-is. He's definitely a key contributor if you're on aggressive schedule and need to cover complex technical challenges. Nothing stops him.",
-        media: "Erwan",
-      },
-      {
-        name: "Hermes Frangoudis",
-        position: "Augmented Reality Solutions engineer",
-        link: "https://www.linkedin.com/in/hermesfrangoudis/",
-        quote: "Never ceased to impress",
-        testimonial:
-          "Worked with Radu on various projects over the years at Blippar. It was a pleasure getting to work with Radu, he never ceased to impress me with his deep graphics and 3D knowledge. Every project that we worked on Radu always managed to show me something new.",
-        media: "Hermes",
-      },
-      {
-        name: "Can Saner",
-        position: "Senior JS/AR Developer - Team Lead",
-        link: "https://www.linkedin.com/in/cansaner/",
-        quote: "Always impressed with his remarkable problem solving ability",
-        testimonial:
-          "Radu worked with me at Blippar in many customer projects, on different fields such as managing image assets, 3D modelling, developing animations and coding pure Javascript. Radu takes a great deal of pride in making any digital scene and asset as realistic as it can be and he works very hard to achieve this through creative and innovative ways that no other can think of. He often offered to help other members in their projects and always impressed me with his remarkable problem solving ability.",
-        media: "Can",
-      },
-    ],
   },
   {
+    id: 2,
     name: "MRMC",
+    theme: "mrmc",
     description:
       "Mark Roberts Motion Control is a leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
     details:
@@ -49,26 +24,41 @@ const Companies = [
       description:
         "Mark Roberts Motion Control (MRMC) is a leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
     },
-    testimonials: [
-      {
-        name: "Assaff Rawner",
-        position: "CEO at Mark Roberts Motion Control",
-        link: "https://www.linkedin.com/in/assaff-rawner-08371626/",
-        quote: "Better than anyone I have ever met before or since",
-        testimonial:
-          "Radu did some amazing UI/UX work for us at MRMC. Not only is he skilled at easily understand and breaking down complex software tasks into fantastic and beautiful UIs for our desktop robotic control software, he is also a very skilled developer and programmer in his own right and seemed to understand front-end website and web-app development better than anyone I have ever met before or since. It was a sad day when he left.",
-        media: "Assaff",
-      },
-      {
-        name: "Rashad Kabbara",
-        position: "Director of eCommerce Robotics / Head of Embedded Systems",
-        link: "https://www.linkedin.com/in/assaff-rawner-08371626/",
-        quote: "Produced amazing results in half the time I was expecting",
-        testimonial:
-          "I had the pleasure to work with Radu on two cutting-edge robotic projects, in which he was responsible for the design, implementation and maintenance of the UI of a highly complex Software solution. Radu produced amazing results in often half the time I was expecting, showed a high degree of design integrity and attention to detail. I highly recommend Radu for any UI/UX, and hope to cross paths with him again on future projects!",
-        media: "Rashad",
-      },
-    ],
+  },
+  {
+    id: 3,
+    name: "NewDay Aquacard",
+    theme: "newday-aquacard",
+    description:
+      '<a target="_blank" rel="noopener noreferrer" href="https://www.aquacard.co.uk/">Aquacard.co.uk</a><br />Helping people move forward with credit.',
+    details: `"We're proud to serve close to 5 million customers across the UK through our diverse and growing business. So our purpose is straightforward, to help people move forward with credit. Our Customer Manifesto is made up of four core principles, we're a welcoming, understanding, knowing and rewarding business. These principles bring the Manifesto to life for our customers, colleagues and retail partners."`,
+    meta: {
+      description: "Aquacard.co.uk Helping people move forward with credit",
+    },
+  },
+  {
+    id: 4,
+    name: "Gain Credit Lending Stream",
+    theme: "gain-credit-lending-stream",
+    description: "A scaled global Fintech focused on responsible credit.",
+    details:
+      "Lending Stream is a 6-month digital loan provider in the UK. Serving as a viable alternative to payday loans since 2008, Lending Stream has been the go-to option for people in need of emergency funds; a fact acknowledged by the consistently high customer review ratings which it has received since inception. In December 2016, Lending Stream won the Alternative Lender of the Year at the F5 Awards.",
+    meta: {
+      description:
+        "Gain Credit Lending Stream - A scaled global Fintech focused on responsible credit.",
+    },
+  },
+  {
+    id: 5,
+    name: "Motorway",
+    theme: "motorway",
+    description: "The biggest online-only used car marketplace based in the UK",
+    details:
+      "Motorway uses a selling platform to allow users to sell their car directly to dealers. I assisted in a short contract for the final push of its award wining platform providing crucial accessibility touches alongside key refinements and optimisations.",
+    meta: {
+      description:
+        "Motorway - The biggest online-only used car marketplace based in the UK",
+    },
   },
 ];
 
@@ -81,4 +71,9 @@ function GetCompany(name) {
   return output ? output : null;
 }
 
-export { Companies, CompaniesList, GetCompany };
+function GetCompanyById(id) {
+  const output = Companies.find((item) => item.id === id);
+  return output ? output : null;
+}
+
+export { Companies, CompaniesList, GetCompany, GetCompanyById };

@@ -3,7 +3,7 @@ import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import { Companies } from "../../data/companies";
-import { GetJobs } from "../../data/jobs";
+import { GetJobsByCompanyId } from "../../data/jobs";
 import { MonthYear, EmploymentPeriod } from "../../data/utils";
 
 function Page() {
@@ -25,21 +25,21 @@ function Page() {
             <Col>
               <ul className="spaced-2 no-bullets">
                 {Companies.map((company) => (
-                  <li key={company.name}>
+                  <li key={company.id}>
                     <Link to={`/career/${company.name.toLowerCase()}`}>
                       <h2>{company.name}</h2>
                       <p>
                         <span>
-                          {MonthYear(EmploymentPeriod(company.name).from)}
+                          {MonthYear(EmploymentPeriod(company.id).from)}
                         </span>
                         <span> - </span>
                         <span>
-                          {MonthYear(EmploymentPeriod(company.name).to)}
+                          {MonthYear(EmploymentPeriod(company.id).to)}
                         </span>
                       </p>
                       <p className="large mt-1">{company.description}</p>
                       <ul>
-                        {GetJobs(company.name).map((job, index) => (
+                        {GetJobsByCompanyId(company.id).map((job, index) => (
                           <li key={index}>{job.title}</li>
                         ))}
                       </ul>
