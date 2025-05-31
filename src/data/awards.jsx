@@ -127,7 +127,7 @@ const Awards = [
       description:
         "Finalist at the Mobile World Congress 2015 for Best Mobile Advertising or Marketing.",
     },
-    logo: "mobile-world-congress.png",
+    logo: "global-mobile-awards.png",
   },
 ];
 

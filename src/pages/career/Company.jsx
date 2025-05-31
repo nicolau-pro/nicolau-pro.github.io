@@ -100,30 +100,57 @@ function Page(props) {
         {Awards.length > 0 && (
           <>
             <Crosshatch />
-            <Section className="background-solid">
+            <Section className="background-solid pt-3 pb-5">
               <Row>
                 <Col>
-                  <h2 className="gradient-text mt-1">Awards</h2>
+                  <h2 className="gradient-text">Awards</h2>
                 </Col>
               </Row>
               {Awards.map((award, index) => (
                 <Row key={index}>
-                  <Col>
-                    <p className="gradient-text">{award.logo}</p>
-                  </Col>
-                  <Col className="span-6">
-                    <h3 className="award gradient-text">
-                      <span className="prize">{award.prize} </span>
-                      <span className="material-icons">{award.icon}</span>
-                    </h3>
-                    <h4 className="award gradient-text">
-                      <span className="event"> {award.event}</span>
-                      <span className="event"> {award.year}</span>
-                    </h4>
-                    <h5 className="description gradient-text">
-                      {award.description}
-                    </h5>
-                  </Col>
+                  <details className="gradient-text">
+                    <summary>
+                      <img
+                        className="award-logo"
+                        src={`/awards/${award.logo}`}
+                        alt={`${award.prize} ${award.event} ${award.year}`}
+                      />
+                      <span>
+                        <h3 className="award gradient-text">
+                          <span className="prize">{award.prize} </span>
+                          <span className="material-icons">{award.icon}</span>
+                        </h3>
+                        <h4 className="award gradient-text">
+                          <span className="event"> {award.event}</span>
+                          <span className="event"> {award.year}</span>
+                        </h4>
+                        <h5 className="description gradient-text">
+                          {award.description}
+                        </h5>
+                      </span>
+                    </summary>
+                    awards
+                  </details>
+                  {/* <Col>
+                    <img
+                      className="award-logo"
+                      src={`/awards/${award.logo}`}
+                      alt={`${award.prize} ${award.event} ${award.year}`}
+                    />
+                    <span>
+                      <h3 className="award gradient-text">
+                        <span className="prize">{award.prize} </span>
+                        <span className="material-icons">{award.icon}</span>
+                      </h3>
+                      <h4 className="award gradient-text">
+                        <span className="event"> {award.event}</span>
+                        <span className="event"> {award.year}</span>
+                      </h4>
+                      <h5 className="description gradient-text">
+                        {award.description}
+                      </h5>
+                    </span>
+                  </Col> */}
                 </Row>
               ))}
             </Section>
@@ -133,9 +160,9 @@ function Page(props) {
         {Testimonials.length > 0 && (
           <>
             <Crosshatch />
-            <Section>
+            <Section className="pt-3 pb-5">
               <Row>
-                <Col className="pt-5">
+                <Col>
                   <h2>Testimonials</h2>
                 </Col>
               </Row>
