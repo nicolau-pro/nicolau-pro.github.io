@@ -62,8 +62,6 @@ const Companies = [
   },
 ];
 
-const CompaniesList = Companies.map((item) => item.name.toLowerCase());
-
 function GetCompany(name) {
   const output = Companies.find(
     (item) => item.name.toLowerCase() === name.toLowerCase()
@@ -76,4 +74,4 @@ function GetCompanyById(id) {
   return output ? output : null;
 }
 
-export { Companies, CompaniesList, GetCompany, GetCompanyById };
+export { Companies, GetCompany, GetCompanyById };
