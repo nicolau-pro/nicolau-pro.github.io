@@ -26,7 +26,7 @@ function Page() {
               <ul className="spaced-2 no-bullets">
                 {Companies.map((company) => (
                   <li key={company.id}>
-                    <Link to={`/career/${company.name.toLowerCase()}`}>
+                    <Link to={`/career/${company.theme}`}>
                       <h2>{company.name}</h2>
                       <p>
                         <span>

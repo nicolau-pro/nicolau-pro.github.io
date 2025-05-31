@@ -5,7 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Career from "./pages/career/Home";
 import Company from "./pages/career/Company";
-import { CompaniesList } from "./data/companies";
+import { Companies } from "./data/companies";
 import "./styles/styles.scss";
 
 const root = document.getElementById("root");
@@ -20,11 +20,11 @@ ReactDOM.createRoot(root).render(
         <Route index element={<Home />} />
         <Route path="career">
           <Route index element={<Career />} />
-          {CompaniesList.map((company) => (
+          {Companies.map((company) => (
             <Route
-              key={company}
-              path={company}
-              element={<Company companyName={company.toLowerCase()} />}
+              key={company.id}
+              path={company.theme}
+              element={<Company companyId={company.id} />}
             />
           ))}
         </Route>

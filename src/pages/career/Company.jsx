@@ -5,7 +5,7 @@ import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Crosshatch from "../../components/decorators/Crosshatch";
 
-import { GetCompany } from "../../data/companies";
+import { GetCompanyById } from "../../data/companies";
 import { GetJobsByCompanyId } from "../../data/jobs";
 import { GetTech } from "../../data/tech";
 import { GetAwardsByCompanyId } from "../../data/awards";
@@ -13,12 +13,12 @@ import { GetTestimonialsByCompanyId } from "../../data/testimonials";
 import { MonthYear } from "../../data/utils";
 
 function Page(props) {
-  const { companyName } = props;
+  const { companyId } = props;
 
-  const Company = GetCompany(companyName);
-  const Jobs = GetJobsByCompanyId(Company.id) || [];
-  const Awards = GetAwardsByCompanyId(Company.id) || [];
-  const Testimonials = GetTestimonialsByCompanyId(Company.id) || [];
+  const Company = GetCompanyById(companyId);
+  const Jobs = GetJobsByCompanyId(companyId) || [];
+  const Awards = GetAwardsByCompanyId(companyId) || [];
+  const Testimonials = GetTestimonialsByCompanyId(companyId) || [];
 
   return (
     <>
