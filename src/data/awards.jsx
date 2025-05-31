@@ -92,6 +92,19 @@ const Awards = [
   },
   {
     companyName: "Blippar",
+    prize: "GOLD Winner",
+    icon: "emoji_events",
+    event: "APAC Effie",
+    year: 2018,
+    description: "Best Media Campaign",
+    meta: {
+      description:
+        "Gold Winner at the APAC Effie 2018 for Best Media Campaign.",
+    },
+    logo: "apac-effie.png",
+  },
+  {
+    companyName: "Blippar",
     prize: "SILVER",
     icon: "workspace_premium",
     event: "iab MIXX Awards Turkey",

@@ -69,12 +69,10 @@ details {
   margin: -1em;
   padding: 0;
 
-  $background: white;
-
-  // color.adjust(
-  //   $color: white,
-  //   $alpha: -0.8,
-  // );
+  $background: color.adjust(
+    $color: white,
+    $alpha: -0.8,
+  );
 
   summary::-webkit-details-marker {
     display: none;
