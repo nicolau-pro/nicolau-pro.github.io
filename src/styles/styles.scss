@@ -69,10 +69,12 @@ details {
   margin: -1em;
   padding: 0;
 
-  $background: color.adjust(
-    $color: white,
-    $alpha: -0.8,
-  );
+  $background: white;
+
+  // color.adjust(
+  //   $color: white,
+  //   $alpha: -0.8,
+  // );
 
   summary::-webkit-details-marker {
     display: none;
@@ -90,18 +92,18 @@ details {
     list-style: none;
     padding: 1em;
     overflow: hidden;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 100%,
-      calc(100% - 2em) 100%,
-      calc(100% - 2em) calc(100% - 1em),
-      calc(100% - 1em) calc(100% - 2em),
-      calc(100% - 3em) calc(100% - 2em),
-      calc(100% - 2em) calc(100% - 1em),
-      calc(100% - 2em) 100%,
-      0 100%
-    );
+    // clip-path: polygon(
+    //   0 0,
+    //   100% 0,
+    //   100% 100%,
+    //   calc(100% - 2em) 100%,
+    //   calc(100% - 2em) calc(100% - 1em),
+    //   calc(100% - 1em) calc(100% - 2em),
+    //   calc(100% - 3em) calc(100% - 2em),
+    //   calc(100% - 2em) calc(100% - 1em),
+    //   calc(100% - 2em) 100%,
+    //   0 100%
+    // );
   }
 
   &.testimonial {
