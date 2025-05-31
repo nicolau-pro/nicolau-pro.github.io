@@ -119,6 +119,24 @@ details {
     }
   }
 
+  &.award {
+    summary {
+      display: flex;
+      gap: 1em;
+
+      .award-logo {
+        width: 100%;
+        max-width: 120px;
+        margin: -0.8em 0;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
   &:hover,
   &:focus-visible {
     summary {
@@ -145,11 +163,4 @@ details {
   .material-icons {
     margin-right: 0.33em;
   }
-}
-
-.award-logo {
-  width: 100%;
-  height: auto;
-  max-width: 50vw;
-  margin-top: -0.5em;
 }

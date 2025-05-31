@@ -39,7 +39,8 @@ h6 {
   font-size: $heading-font-size * $coef;
 }
 
-h1 {
+h1,
+.h1 {
   @include heading-font(1);
 
   &.hero {
@@ -48,20 +49,29 @@ h1 {
   }
 }
 
-h2 {
+h2,
+.h2 {
   @include heading-font(0.8);
-
-  &.hero {
-    font-size: 96px;
-  }
 }
 
-h3 {
+h3,
+.h3 {
   @include heading-font(0.4);
+}
 
-  &.hero {
-    font-size: 96px;
-  }
+h4,
+.h4 {
+  @include heading-font(0.3);
+}
+
+h5,
+.h5 {
+  @include heading-font(0.23);
+}
+
+h6,
+.h6 {
+  @include heading-font(0.18);
 }
 
 ul {

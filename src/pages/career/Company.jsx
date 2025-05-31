@@ -103,54 +103,36 @@ function Page(props) {
             <Section className="background-solid pt-3 pb-5">
               <Row>
                 <Col>
-                  <h2 className="gradient-text">Awards</h2>
+                  <h2 className="gradient-text pb-1">Awards</h2>
                 </Col>
               </Row>
               {Awards.map((award, index) => (
                 <Row key={index}>
-                  <details className="gradient-text">
+                  <details className="award ">
                     <summary>
                       <img
                         className="award-logo"
                         src={`/awards/${award.logo}`}
                         alt={`${award.prize} ${award.event} ${award.year}`}
                       />
-                      <span>
-                        <h3 className="award gradient-text">
+                      <span className="text">
+                        <span className="h3 gradient-text">
                           <span className="prize">{award.prize} </span>
                           <span className="material-icons">{award.icon}</span>
-                        </h3>
-                        <h4 className="award gradient-text">
+                        </span>
+                        <span className="h4 gradient-text">
                           <span className="event"> {award.event}</span>
                           <span className="event"> {award.year}</span>
-                        </h4>
-                        <h5 className="description gradient-text">
+                        </span>
+                        <span className="h5 gradient-text">
                           {award.description}
-                        </h5>
+                        </span>
                       </span>
                     </summary>
-                    awards
+                    <Row>
+                      <Col>awards</Col>
+                    </Row>
                   </details>
-                  {/* <Col>
-                    <img
-                      className="award-logo"
-                      src={`/awards/${award.logo}`}
-                      alt={`${award.prize} ${award.event} ${award.year}`}
-                    />
-                    <span>
-                      <h3 className="award gradient-text">
-                        <span className="prize">{award.prize} </span>
-                        <span className="material-icons">{award.icon}</span>
-                      </h3>
-                      <h4 className="award gradient-text">
-                        <span className="event"> {award.event}</span>
-                        <span className="event"> {award.year}</span>
-                      </h4>
-                      <h5 className="description gradient-text">
-                        {award.description}
-                      </h5>
-                    </span>
-                  </Col> */}
                 </Row>
               ))}
             </Section>
