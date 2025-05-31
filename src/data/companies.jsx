@@ -19,6 +19,24 @@ const Companies = [
           "Radu is the swiss-army knife of 3D and AR. You can ask him to build anything and he'll manage to make it work in no time, covering all aspects from programming to 3D authoring and animation. On top of that he's got a great sense of design and provides compelling solutions ready to be used as-is. He's definitely a key contributor if you're on aggressive schedule and need to cover complex technical challenges. Nothing stops him.",
         media: "Erwan",
       },
+      {
+        name: "Hermes Frangoudis",
+        position: "Augmented Reality Solutions engineer",
+        link: "https://www.linkedin.com/in/hermesfrangoudis/",
+        quote: "Never ceased to impress",
+        testimonial:
+          "Worked with Radu on various projects over the years at Blippar. It was a pleasure getting to work with Radu, he never ceased to impress me with his deep graphics and 3D knowledge. Every project that we worked on Radu always managed to show me something new.",
+        media: "Hermes",
+      },
+      {
+        name: "Can Saner",
+        position: "Senior JS/AR Developer - Team Lead",
+        link: "https://www.linkedin.com/in/cansaner/",
+        quote: "Always impressed with his remarkable problem solving ability",
+        testimonial:
+          "Radu worked with me at Blippar in many customer projects, on different fields such as managing image assets, 3D modelling, developing animations and coding pure Javascript. Radu takes a great deal of pride in making any digital scene and asset as realistic as it can be and he works very hard to achieve this through creative and innovative ways that no other can think of. He often offered to help other members in their projects and always impressed me with his remarkable problem solving ability.",
+        media: "Can",
+      },
     ],
   },
   {
@@ -38,8 +56,17 @@ const Companies = [
         link: "https://www.linkedin.com/in/assaff-rawner-08371626/",
         quote: "Better than anyone I have ever met before or since",
         testimonial:
-          "Radu did some amazing UI/UX work for us at MRMC. Not only is he skilled at easily understand and breaking down complex software tasks into fantastic and beautiful UI's for our desktop robotic control software, he is also a very skilled developer and programmer in his own right and seemed to understand front-end website and web-app development better than anyone I have ever met before or since. It was a sad day when he left.",
+          "Radu did some amazing UI/UX work for us at MRMC. Not only is he skilled at easily understand and breaking down complex software tasks into fantastic and beautiful UIs for our desktop robotic control software, he is also a very skilled developer and programmer in his own right and seemed to understand front-end website and web-app development better than anyone I have ever met before or since. It was a sad day when he left.",
         media: "Assaff",
+      },
+      {
+        name: "Rashad Kabbara",
+        position: "Director of eCommerce Robotics / Head of Embedded Systems",
+        link: "https://www.linkedin.com/in/assaff-rawner-08371626/",
+        quote: "Produced amazing results in half the time I was expecting",
+        testimonial:
+          "I had the pleasure to work with Radu on two cutting-edge robotic projects, in which he was responsible for the design, implementation and maintenance of the UI of a highly complex Software solution. Radu produced amazing results in often half the time I was expecting, showed a high degree of design integrity and attention to detail. I highly recommend Radu for any UI/UX, and hope to cross paths with him again on future projects!",
+        media: "Rashad",
       },
     ],
   },

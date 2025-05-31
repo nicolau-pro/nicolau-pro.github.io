@@ -102,23 +102,28 @@ function Page(props) {
             <Crosshatch />
             <Section className="background-solid">
               <Row>
-                <Col className="py-5">
-                  <h2 className="gradient-text">Awards</h2>
-                  <ul className="gradient-text no-bullets spaced-2 mt-2">
-                    {Awards.map((award, index) => (
-                      <li key={index}>
-                        <h3 className="award">
-                          <span className="prize">{award.prize} </span>
-                          <span className="material-icons">{award.icon}</span>
-                          <span className="event"> {award.event}</span>
-                          <span className="event"> {award.year}</span>
-                        </h3>
-                        <h4 className="description">{award.description}</h4>
-                      </li>
-                    ))}
-                  </ul>
+                <Col>
+                  <h2 className="gradient-text mt-1">Awards</h2>
                 </Col>
               </Row>
+              {Awards.map((award, index) => (
+                <Row key={index}>
+                  <Col>
+                    <img src="" />
+                  </Col>
+                  <Col className="span-5">
+                    <h3 className="award gradient-text">
+                      <span className="prize">{award.prize} </span>
+                      <span className="material-icons">{award.icon}</span>
+                      <span className="event"> {award.event}</span>
+                      <span className="event"> {award.year}</span>
+                    </h3>
+                    <h4 className="description gradient-text">
+                      {award.description}
+                    </h4>
+                  </Col>
+                </Row>
+              ))}
             </Section>
           </>
         )}
