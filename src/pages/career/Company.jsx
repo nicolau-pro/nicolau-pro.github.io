@@ -178,7 +178,7 @@ function Page(props) {
                                 key={index}
                                 className={`layer-${index}`}
                                 style={{
-                                  backgroundImage: `url(/portraits/${testimonial.media}/${testimonial.media}-${index}.jpg)`,
+                                  backgroundImage: `url(/portraits/${testimonial.media}/${testimonial.media}-${index}.webp)`,
                                 }}
                               />
                             ))}

@@ -11,7 +11,7 @@ const Awards = [
       description:
         "Grand Prix Winner at The Drum Marketing Awards 2013 for Best Augmented Reality Experience.",
     },
-    logo: "dma-awards.png",
+    logo: "dma-awards.webp",
   },
   {
     companyId: 1,
@@ -24,7 +24,7 @@ const Awards = [
       description:
         "Gold Winner at the Effective Mobile Marketing Awards 2012 for Best Mobile Augmented Reality Campaign / Solution.",
     },
-    logo: "effective-mobile-marketing-awards.png",
+    logo: "effective-mobile-marketing-awards.webp",
   },
   {
     companyId: 1,
@@ -37,7 +37,7 @@ const Awards = [
       description:
         "Gold Winner at the Beverage Innovation Awards 2013 for Best Technology Innovation.",
     },
-    logo: "beverige-innovation-awards.png",
+    logo: "beverige-innovation-awards.webp",
   },
   {
     companyId: 1,
@@ -50,7 +50,7 @@ const Awards = [
       description:
         "Gold Winner at the Corpcomms Digi Awards 2013 for Best Use Of Mobile.",
     },
-    logo: "compcomms-digi-awards.png",
+    logo: "compcomms-digi-awards.webp",
   },
   {
     companyId: 1,
@@ -63,7 +63,7 @@ const Awards = [
       description:
         "Gold Winner at The Drum Network Awards 2014 for Mobile Marketing Campaign / Strategy of the Year.",
     },
-    logo: "the-drum-network-awards.png",
+    logo: "the-drum-network-awards.webp",
   },
   {
     companyId: 1,
@@ -76,7 +76,7 @@ const Awards = [
       description:
         "Gold Winner at the Digital Impact Award 2015 for Best Use of Digital from the Food & Beverage Sector.",
     },
-    logo: "digital-impact-awards.png",
+    logo: "digital-impact-awards.webp",
   },
   {
     companyId: 1,
@@ -89,7 +89,7 @@ const Awards = [
       description:
         "Gold Winner at the APAC Effie 2018 for Best Media Campaign.",
     },
-    logo: "apac-effie.png",
+    logo: "apac-effie.webp",
   },
   {
     companyId: 1,
@@ -102,7 +102,7 @@ const Awards = [
       description:
         "Gold Winner at the Iab MIXX Awards 2014 for Best Cross-Media Integration.",
     },
-    logo: "iab-mixx-gold.png",
+    logo: "iab-mixx-gold.webp",
   },
   {
     companyId: 1,
@@ -115,7 +115,7 @@ const Awards = [
       description:
         "Silver Winner at the iab MIXX Awards Turkey 2014 for Best Augmented Reality.",
     },
-    logo: "iab-mixx-silver.png",
+    logo: "iab-mixx-silver.webp",
   },
   {
     companyId: 1,
@@ -128,7 +128,7 @@ const Awards = [
       description:
         "Bronze Winner at the iab MIXX Awards Turkey 2014 for Best Mobile Campaign.",
     },
-    logo: "iab-mixx-bronze.png",
+    logo: "iab-mixx-bronze.webp",
   },
   {
     companyId: 1,
@@ -141,7 +141,7 @@ const Awards = [
       description:
         "Finalist at the Mobile World Congress 2015 for Best Mobile Advertising or Marketing.",
     },
-    logo: "global-mobile-awards.png",
+    logo: "global-mobile-awards.webp",
   },
   // MRMC
   {
@@ -156,7 +156,7 @@ const Awards = [
       description:
         "NAB Show 2020 Product of the Year - Camera Support, Control and Accessories.",
     },
-    logo: "nab-show.png",
+    logo: "nab-show.webp",
   },
   // NewDay Aquacard
   {
@@ -170,7 +170,7 @@ const Awards = [
       description:
         "The UK Digital Experience Awards 2020 for Digital Change & Transformation.",
     },
-    logo: "the-uk-digital-experience-awards.png",
+    logo: "the-uk-digital-experience-awards.webp",
   },
   {
     companyId: 3,
@@ -183,7 +183,7 @@ const Awards = [
       description:
         "Card and Payments Awards 2020 for Best Marketing Campaign of the Year.",
     },
-    logo: "the-card-payments-awards.png",
+    logo: "the-card-payments-awards.webp",
   },
   {
     companyId: 3,
@@ -195,7 +195,7 @@ const Awards = [
     meta: {
       description: "Card and Payments Awards 2020 for Best Design of the Year.",
     },
-    logo: "the-card-payments-awards.png",
+    logo: "the-card-payments-awards.webp",
   },
   // Gain Credit Lending Stream
   {
@@ -208,7 +208,7 @@ const Awards = [
     meta: {
       description: "The Credit Excellence Awards 2021 for Responsible Lender.",
     },
-    logo: "credit-excellence-awards.png",
+    logo: "credit-excellence-awards.webp",
   },
   // Motorway
   {
@@ -222,7 +222,7 @@ const Awards = [
       description:
         "Motor Trader Industry Awards 2021 for Online Used Car Trading Platform.",
     },
-    logo: "motor-trader-industry-awards.png",
+    logo: "motor-trader-industry-awards.webp",
   },
 ];
 
