@@ -109,7 +109,7 @@ function Page(props) {
               {Awards.map((award, index) => (
                 <Row key={index}>
                   <Col>
-                    <img src="" />
+                    <p className="gradient-text">{award.logo}</p>
                   </Col>
                   <Col className="span-5">
                     <h3 className="award gradient-text">
