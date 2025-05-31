@@ -90,18 +90,22 @@ details {
     list-style: none;
     padding: 1em;
     overflow: hidden;
-    // clip-path: polygon(
-    //   0 0,
-    //   100% 0,
-    //   100% 100%,
-    //   calc(100% - 2em) 100%,
-    //   calc(100% - 2em) calc(100% - 1em),
-    //   calc(100% - 1em) calc(100% - 2em),
-    //   calc(100% - 3em) calc(100% - 2em),
-    //   calc(100% - 2em) calc(100% - 1em),
-    //   calc(100% - 2em) 100%,
-    //   0 100%
-    // );
+
+    &:before {
+      position: absolute;
+      content: "arrow_forward_ios";
+      bottom: 0;
+      right: 0.2em;
+      width: 1.5em;
+      height: 1.5em;
+      opacity: 0.5;
+      font-size: 1.5em;
+      transform: rotate(90deg);
+      transition: all 0.1s ease-out;
+      font-family: "Material Icons";
+      text-align: center;
+      color: white;
+    }
   }
 
   &.testimonial {
@@ -119,24 +123,6 @@ details {
     }
   }
 
-  &.award {
-    summary {
-      display: flex;
-      gap: 1em;
-
-      .award-logo {
-        width: 100%;
-        max-width: 120px;
-        margin: -0.8em 0;
-      }
-
-      .text {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-
   &:hover,
   &:focus-visible {
     summary {
@@ -146,15 +132,9 @@ details {
 
   &:open {
     summary {
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 100%,
-        calc(100% - 1em) 100%,
-        calc(100% - 2em) calc(100% - 1em),
-        calc(100% - 3em) 100%,
-        0 100%
-      );
+      &:before {
+        transform: rotate(-90deg);
+      }
     }
   }
 }
@@ -163,4 +143,10 @@ details {
   .material-icons {
     margin-right: 0.33em;
   }
+}
+
+.award-logo {
+  width: 100%;
+  max-width: min(160px, 50vw);
+  margin: -0.8em 0;
 }

@@ -55,19 +55,6 @@ const Awards = [
     companyName: "Blippar",
     prize: "GOLD Winner",
     icon: "emoji_events",
-    event: "Iab MIXX Awards",
-    year: 2014,
-    description: "Best Cross-Media Integration",
-    meta: {
-      description:
-        "Gold Winner at the Iab MIXX Awards 2014 for Best Cross-Media Integration.",
-    },
-    logo: "iab-mixx-gold.png",
-  },
-  {
-    companyName: "Blippar",
-    prize: "GOLD Winner",
-    icon: "emoji_events",
     event: "The Drum Network Awards",
     year: 2014,
     description: "Mobile Marketing Campaign / Strategy of the Year",
@@ -102,6 +89,19 @@ const Awards = [
         "Gold Winner at the APAC Effie 2018 for Best Media Campaign.",
     },
     logo: "apac-effie.png",
+  },
+  {
+    companyName: "Blippar",
+    prize: "GOLD Winner",
+    icon: "emoji_events",
+    event: "Iab MIXX Awards",
+    year: 2014,
+    description: "Best Cross-Media Integration",
+    meta: {
+      description:
+        "Gold Winner at the Iab MIXX Awards 2014 for Best Cross-Media Integration.",
+    },
+    logo: "iab-mixx-gold.png",
   },
   {
     companyName: "Blippar",
