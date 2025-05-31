@@ -111,16 +111,18 @@ function Page(props) {
                   <Col>
                     <p className="gradient-text">{award.logo}</p>
                   </Col>
-                  <Col className="span-5">
+                  <Col className="span-6">
                     <h3 className="award gradient-text">
                       <span className="prize">{award.prize} </span>
                       <span className="material-icons">{award.icon}</span>
+                    </h3>
+                    <h4 className="award gradient-text">
                       <span className="event"> {award.event}</span>
                       <span className="event"> {award.year}</span>
-                    </h3>
-                    <h4 className="description gradient-text">
-                      {award.description}
                     </h4>
+                    <h5 className="description gradient-text">
+                      {award.description}
+                    </h5>
                   </Col>
                 </Row>
               ))}
