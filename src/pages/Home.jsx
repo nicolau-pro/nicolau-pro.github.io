@@ -28,7 +28,7 @@ function Page() {
           <Row>
             <Col>
               <h2 className="hero">Users</h2>
-              {users.length > 0 && (
+              {users.length > 0 ? (
                 <ul>
                   {users.map((user) => (
                     <li key={user.id}>
@@ -39,6 +39,8 @@ function Page() {
                     </li>
                   ))}
                 </ul>
+              ) : (
+                <p>Loading...</p>
               )}
             </Col>
           </Row>

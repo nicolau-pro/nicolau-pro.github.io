@@ -19,7 +19,7 @@ function Page() {
     fetchCompanies();
   }, []);
 
-  if (!Companies) return null;
+  if (!Companies) return <p className="my-6">Loading...</p>;
 
   return (
     <>

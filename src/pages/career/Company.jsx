@@ -33,7 +33,7 @@ function Page(props) {
     fetchCompany();
   }, [companyId]);
 
-  if (!Company) return null;
+  if (!Company) return <p className="my-6">Loading...</p>;
 
   return (
     <>
