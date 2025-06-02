@@ -62,17 +62,10 @@ const Companies = [
   },
 ];
 
-function GetCompany(name) {
-  const output = Companies.find(
-    (item) => item.name.toLowerCase() === name.toLowerCase()
-  );
-  return output ? output : null;
-}
-
-function GetCompanyById(id) {
-  const output = Companies.find((item) => item.id === id);
-  return output ? output : null;
-}
+// function GetCompanyById(id) {
+//   const output = Companies.find((item) => item.id === id);
+//   return output ? output : null;
+// }
 
 async function API_GetCompanyById(id) {
   try {
@@ -81,7 +74,6 @@ async function API_GetCompanyById(id) {
       return null;
     }
     const company = await response.json();
-    console.log("✅ Fetched company:", company);
     return company;
   } catch (error) {
     console.error("Error fetching company:", error);
@@ -89,4 +81,18 @@ async function API_GetCompanyById(id) {
   }
 }
 
-export { Companies, GetCompany, GetCompanyById, API_GetCompanyById };
+async function API_GetCompanies() {
+  try {
+    const response = await fetch(`http://localhost:3000/companies`);
+    if (!response.ok) {
+      return null;
+    }
+    const company = await response.json();
+    return company;
+  } catch (error) {
+    console.error("Error fetching companies:", error);
+    return null;
+  }
+}
+
+export { Companies, API_GetCompanyById, API_GetCompanies };

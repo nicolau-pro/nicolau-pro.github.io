@@ -1,12 +1,26 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import { Companies } from "../../data/companies";
+import { API_GetCompanies } from "../../data/companies";
 import { GetJobsByCompanyId } from "../../data/jobs";
 import { MonthYear, EmploymentPeriod } from "../../data/utils";
 
 function Page() {
+  const [Companies, setCompanies] = useState(null);
+
+  useEffect(() => {
+    async function fetchCompanies() {
+      const data = await API_GetCompanies();
+      setCompanies(data);
+    }
+
+    fetchCompanies();
+  }, []);
+
+  if (!Companies) return null;
+
   return (
     <>
       <title>Career - Radu Nicolau</title>

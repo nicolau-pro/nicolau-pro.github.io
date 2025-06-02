@@ -9,10 +9,7 @@ function Page() {
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then((res) => res.json())
-      .then((data) => {
-        console.log("✅ Fetched users:", data);
-        setUsers(data);
-      })
+      .then((data) => setUsers(data))
       .catch((err) => console.error("Error fetching users:", err));
   }, []);
 
