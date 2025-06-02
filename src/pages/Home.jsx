@@ -25,10 +25,10 @@ function Page() {
               <h1 className="hero">Home</h1>
             </Col>
           </Row>
-          {users.length > 0 && (
-            <Row>
-              <Col>
-                <h2 className="hero">Users</h2>
+          <Row>
+            <Col>
+              <h2 className="hero">Users</h2>
+              {users.length > 0 && (
                 <ul>
                   {users.map((user) => (
                     <li key={user.id}>
@@ -39,9 +39,9 @@ function Page() {
                     </li>
                   ))}
                 </ul>
-              </Col>
-            </Row>
-          )}
+              )}
+            </Col>
+          </Row>
         </Section>
       </main>
     </>
