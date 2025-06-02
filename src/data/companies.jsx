@@ -81,6 +81,7 @@ async function API_GetCompanyById(id) {
       return null;
     }
     const company = await response.json();
+    console.log("✅ Fetched company:", company);
     return company;
   } catch (error) {
     console.error("Error fetching company:", error);
