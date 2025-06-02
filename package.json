@@ -2,6 +2,7 @@
   "name": "nicolau-pro",
   "homepage": "https://nicolau-pro.github.io",
   "private": true,
+  "proxy": "http://localhost:3000/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
