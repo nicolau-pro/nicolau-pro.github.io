@@ -38,6 +38,13 @@ jobs:
         run: npm ci
       - name: Install pip dependency
         run: pip install beautifulsoup4
+      - name: Create .env file
+        run: |
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
+          echo "DB_USER=${{ secrets.DB_USER }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
       - name: Backend
         run: node src/backend/index.cjs
       - name: Build
