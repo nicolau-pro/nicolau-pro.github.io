@@ -46,7 +46,7 @@ jobs:
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
           echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
       - name: Backend
-        run: node src/backend/index.cjs
+        run: node src/backend/index.cjs &
       - name: Build
         run: npm run build
       - name: Presite
