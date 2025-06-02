@@ -38,6 +38,8 @@ jobs:
         run: npm ci
       - name: Install pip dependency
         run: pip install beautifulsoup4
+      - name: Backend
+        run: node src/backend/index.cjs
       - name: Build
         run: npm run build
       - name: Presite

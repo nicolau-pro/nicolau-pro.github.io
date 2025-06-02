@@ -20,7 +20,7 @@ function MonthYear(monthYearObject) {
 
 function EmploymentPeriod(companyId) {
   const jobs = GetJobsByCompanyId(companyId);
-  console.log(jobs);
+  // console.log(jobs);
 
   if (!jobs || jobs.length === 0) {
     return null;

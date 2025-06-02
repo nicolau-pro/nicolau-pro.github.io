@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 
 import Row from "../../components/layout/Row";
@@ -5,7 +6,7 @@ import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Crosshatch from "../../components/decorators/Crosshatch";
 
-import { GetCompanyById } from "../../data/companies";
+import { API_GetCompanyById } from "../../data/companies";
 import { GetJobsByCompanyId } from "../../data/jobs";
 import { GetTech } from "../../data/tech";
 import { GetAwardsByCompanyId } from "../../data/awards";
@@ -15,10 +16,24 @@ import { MonthYear } from "../../data/utils";
 function Page(props) {
   const { companyId } = props;
 
-  const Company = GetCompanyById(companyId);
-  const Jobs = GetJobsByCompanyId(companyId) || [];
-  const Awards = GetAwardsByCompanyId(companyId) || [];
-  const Testimonials = GetTestimonialsByCompanyId(companyId) || [];
+  const [Company, setCompany] = useState(null);
+  const [Jobs, setJobs] = useState([]);
+  const [Awards, setAwards] = useState([]);
+  const [Testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    async function fetchCompany() {
+      const data = await API_GetCompanyById(companyId);
+      setCompany(data);
+      setJobs(GetJobsByCompanyId(companyId) || []);
+      setAwards(GetAwardsByCompanyId(companyId) || []);
+      setTestimonials(GetTestimonialsByCompanyId(companyId) || []);
+    }
+
+    fetchCompany();
+  }, [companyId]);
+
+  if (!Company) return null;
 
   return (
     <>
