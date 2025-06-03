@@ -1,8 +1,104 @@
 @use "sass:math";
+@use "sass:map";
 @use "mixins" as mixins;
 
-@mixin page-theme($name, $color-light, $color-dark, $color-text) {
-  .theme-#{$name} {
+a[role="button"] {
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  border: 0;
+  color: inherit;
+  width: fit-content;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+
+  &.career-read-more {
+    $size: 60px;
+    height: $size;
+    padding: 0 $size * 1.5;
+    clip-path: polygon(0 0, calc(100% - $size) 0, 100% 100%, $size 100%);
+    text-transform: uppercase;
+    transition: all 0.1s ease-out;
+
+    .material-icons {
+      transition: all 0.1s ease-out;
+      margin-left: 0.2em;
+      scale: 1;
+    }
+
+    &:hover,
+    &:focus-visible {
+      letter-spacing: 0.05em;
+      filter: brightness(1.1);
+
+      .material-icons {
+        margin-left: 2em;
+        scale: 2;
+      }
+    }
+  }
+}
+
+$brand-primary-color: (
+  "blippar": #f49522,
+  "mrmc": #2d64aa,
+  "newday-aquacard": #04f4c9,
+  "gain-credit-lending-stream": #7a0ce1,
+  "motorway": #ffe14c,
+);
+
+$brand-secondary-color: (
+  "blippar": #ff4500,
+  "mrmc": #1e4372,
+  "newday-aquacard": #0408a3,
+  "gain-credit-lending-stream": #0feba1,
+  "motorway": #ffd500,
+);
+
+$brand-text-color: (
+  "blippar": #000000,
+  "mrmc": #ffffff,
+  "newday-aquacard": #ccfafb,
+  "gain-credit-lending-stream": #f7f9fb,
+  "motorway": #242424,
+);
+
+$brands: (
+  "blippar",
+  "mrmc",
+  "newday-aquacard",
+  "gain-credit-lending-stream",
+  "motorway"
+);
+
+@mixin crosshatch-theme($brand) {
+  $color-text: map.get($brand-text-color, $brand);
+
+  .crosshatch {
+    $size: 5em;
+    height: $size;
+    width: 100%;
+
+    > div {
+      width: 100%;
+      height: calc($size + 2px);
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+
+    &.theme-#{$brand} {
+      @include mixins.crosshatch($color-text, $size);
+    }
+  }
+}
+
+@mixin page-theme($brand) {
+  $color-light: map.get($brand-primary-color, $brand);
+  $color-dark: map.get($brand-secondary-color, $brand);
+  $color-text: map.get($brand-text-color, $brand);
+
+  .theme-#{$brand} {
     background-image: linear-gradient(160deg, $color-light, $color-dark);
     background-attachment: fixed;
     background-size: 100vw 100vh;
@@ -19,25 +115,40 @@
     .background-solid {
       background-color: $color-text;
     }
+  }
+}
 
-    .crosshatch {
-      $size: 5em;
-      height: $size;
-      width: 100%;
+@mixin section-career($brand) {
+  $color-light: map.get($brand-primary-color, $brand);
+  $color-dark: map.get($brand-secondary-color, $brand);
+  $color-text: map.get($brand-text-color, $brand);
 
-      > div {
-        width: 100%;
-        height: calc($size + 2px);
-        margin-top: -1px;
-        margin-bottom: -1px;
-        @include mixins.crosshatch($color-text, $size);
+  .section-career {
+    &.#{$brand} {
+      color: $color-text;
+      background-image: linear-gradient(160deg, $color-light, $color-dark);
+
+      &-jobs {
+        background-position: center;
+        background-size: cover;
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.7) 90%,
+            rgba(0, 0, 0, 0.8) 100%
+          ),
+          url("/social/#{$brand}.jpg");
+
+        a {
+          color: $color-text;
+        }
       }
     }
   }
 }
 
-@include page-theme("blippar", #f49522, #ff4500, #000000);
-@include page-theme("mrmc", #2d64aa, #1e4372, #ffffff);
-@include page-theme("newday-aquacard", #04f4c9, #0408a3, #ccfafb);
-@include page-theme("gain-credit-lending-stream", #7a0ce1, #0feba1, #f7f9fb);
-@include page-theme("motorway", #ffe14c, #ffd500, #242424);
+@each $brand in $brands {
+  @include page-theme($brand);
+  @include crosshatch-theme($brand);
+  @include section-career($brand);
+}

@@ -52,7 +52,7 @@ function Page(props) {
           </Row>
         </Section>
 
-        <Crosshatch />
+        <Crosshatch className={`theme-${Company.theme}`} />
 
         <Section className="background-solid">
           <Row>
@@ -73,7 +73,7 @@ function Page(props) {
           </Row>
         </Section>
 
-        <Crosshatch />
+        <Crosshatch className={`theme-${Company.theme}`} />
 
         <Section className="pb-5">
           <Row>
@@ -127,7 +127,7 @@ function Page(props) {
 
         {Awards.length > 0 && (
           <>
-            <Crosshatch />
+            <Crosshatch className={`theme-${Company.theme}`} />
             <Section className="background-solid pt-3 pb-5">
               <Row>
                 <Col>
@@ -163,7 +163,7 @@ function Page(props) {
 
         {Testimonials.length > 0 && (
           <>
-            <Crosshatch />
+            <Crosshatch className={`theme-${Company.theme}`} />
             <Section className="pt-3 pb-5">
               <Row>
                 <Col>

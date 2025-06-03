@@ -6,6 +6,7 @@ import Section from "../../components/layout/Section";
 import { API_GetCompanies } from "../../data/companies";
 import { GetJobsByCompanyId } from "../../data/jobs";
 import { MonthYear, EmploymentPeriod } from "../../data/utils";
+import Crosshatch from "../../components/decorators/Crosshatch";
 
 function Page() {
   const [Companies, setCompanies] = useState(null);
@@ -34,36 +35,47 @@ function Page() {
             </Col>
           </Row>
         </Section>
-        <Section>
-          <Row>
-            <Col>
-              <ul className="spaced-2 no-bullets">
-                {Companies.map((company) => (
-                  <li key={company.id}>
-                    <Link to={`/career/${company.theme}`}>
-                      <h2>{company.name}</h2>
-                      <p>
-                        <span>
-                          {MonthYear(EmploymentPeriod(company.id).from)}
-                        </span>
-                        <span> - </span>
-                        <span>
-                          {MonthYear(EmploymentPeriod(company.id).to)}
-                        </span>
-                      </p>
-                      <p className="large mt-1">{company.description}</p>
-                      <ul>
-                        {GetJobsByCompanyId(company.id).map((job, index) => (
-                          <li key={index}>{job.title}</li>
-                        ))}
-                      </ul>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Col>
-          </Row>
-        </Section>
+        {Companies.map((company) => (
+          <React.Fragment key={company.id}>
+            <Section className={`section-career ${company.theme} py-1`}>
+              <Row>
+                <Col>
+                  <h2>{company.name}</h2>
+                  <p>
+                    <span>{MonthYear(EmploymentPeriod(company.id).from)}</span>
+                    <span> - </span>
+                    <span>{MonthYear(EmploymentPeriod(company.id).to)}</span>
+                  </p>
+                </Col>
+              </Row>
+            </Section>
+            <Section
+              key={company.id}
+              className={`section-career ${company.theme}-jobs pt-2 pb-6`}
+            >
+              <Row>
+                <Col>
+                  {GetJobsByCompanyId(company.id).map((job, index) => (
+                    <h3 key={index}>{job.title}</h3>
+                  ))}
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Link
+                    role="button"
+                    className={`career-read-more theme-${company.theme}`}
+                    aria-label={`Read more about my career at ${company.name}`}
+                    to={`/career/${company.theme}`}
+                  >
+                    <span>Read more</span>
+                    <span className="material-icons">arrow_forward_ios</span>
+                  </Link>
+                </Col>
+              </Row>
+            </Section>
+          </React.Fragment>
+        ))}
       </main>
     </>
   );
