@@ -47,11 +47,29 @@ jobs:
           echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
       - name: Backend
         run: node src/backend/index.cjs &
+      - name: Poll API until 200 response
+        run: |
+          MAX_RETRIES=5
+          SLEEP_SECONDS=2
+          URL="http://localhost:3000/users"
+
+          for ((i=1; i<=MAX_RETRIES; i++)); do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+            echo "Attempt $i: HTTP status $STATUS"
+
+            if [ "$STATUS" -eq 200 ]; then
+              echo "API is ready."
+              exit 0
+            fi
+
+            echo "Waiting $SLEEP_SECONDS seconds..."
+            sleep $SLEEP_SECONDS
+          done
+
+          echo "API did not return 200 within timeout. Failing job."
+          exit 1
       - name: Build
         run: npm run build
-      - name: Wait
-        run: |
-          sleep 10
       - name: Presite
         run: npm run presite
       - name: Post process pages
