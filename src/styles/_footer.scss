@@ -9,7 +9,7 @@ footer {
   color: color.adjust(white, $lightness: -50%);
 
   $size: 5em;
-  $shade: color.adjust($background-color, $lightness: 1%);
+  $shade: color.adjust($background-color, $lightness: 2%);
 
   background-size: $size $size, cover;
   background-repeat: repeat;
@@ -28,11 +28,7 @@ footer {
     left: 0;
     width: 100%;
     height: $size;
-
-    background-size: $size $size;
-    background-repeat: repeat;
-
-    background-image: mixins.crosshatch-gradient($shade);
+    @include mixins.crosshatch($shade);
 
     mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
   }

@@ -37,7 +37,7 @@ function Page() {
         </Section>
         {Companies.map((company) => (
           <React.Fragment key={company.id}>
-            <Section className={`section-career ${company.theme} py-1`}>
+            <Section className={`section-career ${company.theme} py-2`}>
               <Row>
                 <Col>
                   <h2>{company.name}</h2>
@@ -51,7 +51,7 @@ function Page() {
             </Section>
             <Section
               key={company.id}
-              className={`section-career ${company.theme}-jobs pt-2 pb-6`}
+              className={`section-career ${company.theme}-jobs pt-3 pb-12`}
             >
               <Row>
                 <Col>

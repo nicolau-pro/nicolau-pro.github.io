@@ -1,0 +1,77 @@
+@use "sass:color";
+
+details {
+  position: relative;
+  flex: 1;
+  margin: -1em;
+  padding: 0;
+
+  $background: color.adjust(
+    $color: white,
+    $alpha: -0.8,
+  );
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::marker {
+    display: none;
+  }
+
+  summary {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    background-color: $background;
+    list-style: none;
+    padding: 1em;
+    overflow: hidden;
+
+    &:before {
+      position: absolute;
+      content: "arrow_forward_ios";
+      bottom: 0;
+      right: 0.2em;
+      width: 1.5em;
+      height: 1.5em;
+      opacity: 0.5;
+      font-size: 1.5em;
+      transform: rotate(90deg);
+      transition: all 0.1s ease-out;
+      font-family: "Material Icons";
+      text-align: center;
+      color: white;
+    }
+  }
+
+  &.testimonial {
+    summary {
+      padding-left: 11em;
+      &:after {
+        opacity: 0.2;
+        position: absolute;
+        content: '"';
+        top: -0.11em;
+        left: 0.018em;
+        font-size: 23em;
+        line-height: 1em;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    summary {
+      opacity: 0.8;
+    }
+  }
+
+  &:open {
+    summary {
+      &:before {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

@@ -1,3 +1,13 @@
+@use "variables" as vars;
+
+@mixin fixed-background($color-light, $color-dark) {
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, $color-light, $color-dark);
+  background-attachment: fixed;
+  background-position: center;
+}
+
 @function crosshatch-gradient($color) {
   @return linear-gradient(
     45deg,
@@ -14,12 +24,31 @@
   );
 }
 
-@mixin crosshatch-background($size: 5em) {
+@mixin crosshatch-background($size: vars.$crosshatch-size) {
   background-size: $size $size;
   background-repeat: repeat;
+  background-attachment: initial;
 }
 
-@mixin crosshatch($color, $size: 5em) {
+@mixin crosshatch($color, $size: vars.$crosshatch-size) {
   @include crosshatch-background($size);
   background-image: crosshatch-gradient($color);
+}
+
+@mixin crosshatch-transparent-gradient(
+  $color-light,
+  $color-dark,
+  $size: vars.$crosshatch-size
+) {
+  content: "";
+  position: absolute;
+  top: -$size;
+  left: 0;
+  width: 100%;
+  height: $size;
+
+  @include fixed-background($color-light, $color-dark);
+  mask-image: crosshatch-gradient(black);
+  mask-repeat: repeat;
+  mask-size: $size;
 }
