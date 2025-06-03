@@ -35,14 +35,42 @@ function Page(props) {
 
   if (!Company) return <p className="my-6">Loading...</p>;
 
+  const social = {
+    author: "Radu Nicolau",
+    description: `RADU NICOLAU > Careers > ${Company.name} - ${Company.meta.description}`,
+    article: `Careers > ${Company.name}`,
+    image: `/social/${Company.theme}.jpg`,
+    imageAlt: `${Company.name} - ${Company.meta.description}`,
+  };
   return (
     <>
       <title>{`RADU NICOLAU > Careers > ${Company.name}`}</title>
       <main className={`theme-${Company.theme}`}>
-        <meta
-          name="description"
-          content={`RADU NICOLAU > Careers > ${Company.name} - ${Company.meta.description}`}
-        />
+        <meta name="description" content={social.description} />
+
+        <meta property="article:author" content={social.author} />
+        <meta property="article:publisher" content={social.author} />
+        <meta property="article:section" content={social.article} />
+
+        <meta property="fb:app_id" content="966242223397117" />
+        <meta property="og:title" content={social.description} />
+        <meta property="og:description" content={Company.meta.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="en_GB" />
+
+        <meta property="og:url" content="/" />
+        <meta property="og:site_name" content={social.author} />
+        <meta property="og:image" content={social.image} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={social.imageAlt} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={social.description} />
+        <meta name="twitter:description" content={Company.meta.description} />
+        <meta name="twitter:image" content={social.image} />
+        <meta name="twitter:image:alt" content={social.imageAlt} />
+        <meta name="twitter:domain" content="r5.ro" />
 
         <Section>
           <Row>
