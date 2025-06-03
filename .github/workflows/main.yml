@@ -49,6 +49,9 @@ jobs:
         run: node src/backend/index.cjs &
       - name: Build
         run: npm run build
+      - name: Wait
+        run: |
+          sleep 10
       - name: Presite
         run: npm run presite
       - name: Post process pages
