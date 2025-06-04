@@ -72,6 +72,8 @@ jobs:
         run: npm run build
       - name: Presite
         run: npm run presite
+      - name: Presite
+        run: npm run presite
       - name: Post process pages
         run: npm run post-process
       - name: Setup Pages
