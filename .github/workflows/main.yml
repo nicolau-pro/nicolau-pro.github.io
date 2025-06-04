@@ -70,9 +70,9 @@ jobs:
           exit 1
       - name: Build
         run: npm run build
-      - name: Presite
+      - name: Presite, first run to engage all the API endpoints
         run: npm run presite
-      - name: Presite
+      - name: Presite, second run to render all the pages
         run: npm run presite
       - name: Post process pages
         run: npm run post-process
