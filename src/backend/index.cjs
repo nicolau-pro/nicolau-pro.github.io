@@ -51,6 +51,9 @@ app.use("/tech", techRoutes);
 const testimonialRoutes = require("./routes/testimonials.cjs");
 app.use("/testimonials", testimonialRoutes);
 
+const arardRoutes = require("./routes/awards.cjs");
+app.use("/awards", arardRoutes);
+
 // Start server
 const PORT = process.env.PORT || 3000;
 sequelize

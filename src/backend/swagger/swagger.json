@@ -235,6 +235,80 @@
             "example": "2023-01-02T12:00:00Z"
           }
         }
+      },
+      "Award": {
+        "type": "object",
+        "required": [
+          "companyId",
+          "projectId",
+          "prize",
+          "icon",
+          "event",
+          "year",
+          "description",
+          "logo"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Auto-generated award ID"
+          },
+          "companyId": {
+            "type": "integer",
+            "description": "ID of the associated company"
+          },
+          "projectId": {
+            "type": "integer",
+            "description": "ID of the associated project"
+          },
+          "prize": {
+            "type": "string",
+            "description": "Name of the prize won"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Icon identifier (e.g. star)"
+          },
+          "event": {
+            "type": "string",
+            "description": "Name of the event where the award was given"
+          },
+          "year": {
+            "type": "integer",
+            "description": "Year the award was received"
+          },
+          "description": {
+            "type": "string",
+            "description": "Short description of the award"
+          },
+          "logo": {
+            "type": "string",
+            "description": "Filename or URL of the event's logo"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp"
+          }
+        },
+        "example": {
+          "id": 1,
+          "companyId": 1,
+          "projectId": 1,
+          "prize": "Grand Prix WINNER",
+          "icon": "star",
+          "event": "The Drum Marketing Awards",
+          "year": 2013,
+          "description": "Best Augmented Reality Experience",
+          "logo": "dma-awards.webp",
+          "createdAt": "2025-06-02T12:00:00Z",
+          "updatedAt": "2025-06-02T12:00:00Z"
+        }
       }
     }
   },
@@ -786,6 +860,141 @@
           },
           "404": {
             "description": "Testimonial not found"
+          }
+        }
+      }
+    },
+    "/awards": {
+      "get": {
+        "summary": "Retrieve all awards",
+        "tags": ["Awards"],
+        "responses": {
+          "200": {
+            "description": "List of awards",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Award" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new award",
+        "tags": ["Awards"],
+        "requestBody": {
+          "description": "Award data",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Award" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Award created successfully",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Award" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/awards/{id}": {
+      "get": {
+        "summary": "Get an award by ID",
+        "tags": ["Awards"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Award ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Award found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Award" }
+              }
+            }
+          },
+          "404": {
+            "description": "Award not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an award by ID",
+        "tags": ["Awards"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Award ID"
+          }
+        ],
+        "requestBody": {
+          "description": "Award data to update",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Award" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Award updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Award" }
+              }
+            }
+          },
+          "404": {
+            "description": "Award not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an award by ID",
+        "tags": ["Awards"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Award ID"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Award deleted successfully"
+          },
+          "404": {
+            "description": "Award not found"
           }
         }
       }

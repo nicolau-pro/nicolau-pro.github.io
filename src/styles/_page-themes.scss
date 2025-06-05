@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:map";
+@use "sass:color";
 @use "mixins" as mixins;
 @use "variables" as vars;
 
@@ -42,6 +43,22 @@ $brand-text-color: (
   "newday-aquacard": #ccfafb,
   "gain-credit-lending-stream": #f7f9fb,
   "motorway": #242424,
+);
+
+$brand-button-color: (
+  "blippar": #f49522,
+  "mrmc": #2d64aa,
+  "newday-aquacard": #04f4c9,
+  "gain-credit-lending-stream": #7a0ce1,
+  "motorway": #ffe14c,
+);
+
+$brand-button-text: (
+  "blippar": #000000,
+  "mrmc": #ffffff,
+  "newday-aquacard": #000000,
+  "gain-credit-lending-stream": #ffffff,
+  "motorway": #000000,
 );
 
 $brands: (
@@ -137,8 +154,21 @@ $brands: (
   }
 }
 
+@mixin award-button($brand) {
+  $color-background: map.get($brand-button-color, $brand);
+  $color-text: map.get($brand-button-text, $brand);
+
+  .button-award {
+    &.#{$brand} {
+      background-color: $color-background;
+      color: $color-text;
+    }
+  }
+}
+
 @each $brand in $brands {
   @include page-theme($brand);
   @include crosshatch-theme($brand);
   @include section-career($brand);
+  @include award-button($brand);
 }

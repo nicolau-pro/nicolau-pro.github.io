@@ -14,8 +14,8 @@ function Page() {
 
   useEffect(() => {
     async function fetchCompanies() {
-      const data = await API_GetCompanies();
-      setCompanies(data);
+      const companies = await API_GetCompanies();
+      setCompanies(companies);
 
       const jobs = await API_GetJobs();
       setJobs(jobs);

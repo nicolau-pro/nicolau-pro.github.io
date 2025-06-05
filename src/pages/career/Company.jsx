@@ -5,12 +5,14 @@ import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Crosshatch from "../../components/decorators/Crosshatch";
+import Award from "../../components/molecules/Award";
 
 import { API_GetCompanyById } from "../../data/companies";
 import { API_GetJobsByCompanyId } from "../../data/jobs";
 import { API_GetTech } from "../../data/tech";
-import { GetAwardsByCompanyId } from "../../data/awards";
 import { API_GetTestimonialsByCompanyId } from "../../data/testimonials";
+import { API_GetAwardsByCompanyId } from "../../data/awards";
+
 import { FormatMonthYear, FilterListByIds } from "../../data/utils";
 
 function Page(props) {
@@ -19,8 +21,8 @@ function Page(props) {
   const [Company, setCompany] = useState(null);
   const [Tech, setTech] = useState([]);
   const [Jobs, setJobs] = useState([]);
-  const [Awards, setAwards] = useState([]);
   const [Testimonials, setTestimonials] = useState([]);
+  const [Awards, setAwards] = useState([]);
 
   useEffect(() => {
     async function fetchCompany() {
@@ -36,14 +38,21 @@ function Page(props) {
       const testimonials = await API_GetTestimonialsByCompanyId(companyId);
       setTestimonials(testimonials);
 
-      setAwards(GetAwardsByCompanyId(companyId) || []);
-      // setTestimonials(GetTestimonialsByCompanyId(companyId) || []);
+      const awards = await API_GetAwardsByCompanyId(companyId);
+      setAwards(awards);
     }
 
     fetchCompany();
   }, [companyId]);
 
-  if (!Company) return <p className="my-6">Loading...</p>;
+  if (
+    !Company ||
+    Tech.length === 0 ||
+    Jobs.length === 0 ||
+    Testimonials.length === 0 ||
+    Awards.length === 0
+  )
+    return <p className="my-6">Loading...</p>;
 
   const social = {
     author: "Radu Nicolau",
@@ -176,27 +185,7 @@ function Page(props) {
                 </Col>
               </Row>
               {Awards.map((award, index) => (
-                <Row key={index}>
-                  <Col>
-                    <img
-                      loading="lazy"
-                      className="award-logo"
-                      src={`/awards/${award.logo}`}
-                      alt={`${award.prize} ${award.event} ${award.year}`}
-                    />
-                  </Col>
-                  <Col className="span-6">
-                    <h3 className="gradient-text">
-                      <span className="prize">{award.prize} </span>
-                      <span className="material-icons">{award.icon}</span>
-                    </h3>
-                    <h4 className="gradient-text">
-                      <span className="event"> {award.event}</span>
-                      <span className="event"> {award.year}</span>
-                    </h4>
-                    <h5 className="gradient-text">{award.description}</h5>
-                  </Col>
-                </Row>
+                <Award key={index} award={award} />
               ))}
             </Section>
           </>
@@ -250,7 +239,7 @@ function Page(props) {
                           to={testimonial.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="testimonial-linkedin-button"
+                          className="button-small button-testimonial"
                         >
                           <span>{testimonial.name} on LinkedIn </span>
                           <span className="material-icons">open_in_new</span>

@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Career from "./pages/career/Home";
 import Company from "./pages/career/Company";
+import Awards from "./pages/awards/Home";
 
 const rootPath = "/";
 
@@ -37,6 +38,9 @@ function AppLoader() {
                 element={<Company companyId={company.id} />}
               />
             ))}
+          </Route>
+          <Route path="awards">
+            <Route index element={<Awards />} />
           </Route>
         </Route>
       </Routes>
