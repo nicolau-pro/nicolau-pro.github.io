@@ -250,6 +250,7 @@ function Page(props) {
                           to={testimonial.link}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="testimonial-linkedin-button"
                         >
                           <span>{testimonial.name} on LinkedIn </span>
                           <span className="material-icons">open_in_new</span>

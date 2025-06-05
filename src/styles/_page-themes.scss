@@ -15,29 +15,8 @@ a[role="button"] {
   align-items: center;
 
   &.career-read-more {
-    $size: 60px;
-    height: $size;
-    padding: 0 $size * 1.5;
-    clip-path: polygon(0 0, calc(100% - $size) 0, 100% 100%, $size 100%);
+    @include mixins.slanted-button(60px);
     text-transform: uppercase;
-    transition: all 0.1s ease-out;
-
-    .material-icons {
-      transition: all 0.1s ease-out;
-      margin-left: 0.2em;
-      scale: 1;
-    }
-
-    &:hover,
-    &:focus-visible {
-      letter-spacing: 0.05em;
-      filter: brightness(1.1);
-
-      .material-icons {
-        margin-left: 2em;
-        scale: 2;
-      }
-    }
   }
 }
 
