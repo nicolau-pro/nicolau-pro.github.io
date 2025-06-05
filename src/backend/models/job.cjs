@@ -25,20 +25,34 @@ const Job = sequelize.define(
     },
     dateTo: {
       type: Sequelize.DATEONLY,
-      allowNull: true, // allows open-ended (current) jobs
+      allowNull: true,
       comment: "End date of the job (defaults to first of the month)",
     },
 
     description: { type: Sequelize.TEXT, allowNull: false },
 
     bulletpoints: {
-      type: Sequelize.ARRAY(Sequelize.TEXT),
+      type: Sequelize.TEXT, // Store as JSON string
       allowNull: false,
+      get() {
+        const rawValue = this.getDataValue("bulletpoints");
+        return rawValue ? JSON.parse(rawValue) : [];
+      },
+      set(value) {
+        this.setDataValue("bulletpoints", JSON.stringify(value));
+      },
     },
 
     tech: {
-      type: Sequelize.ARRAY(Sequelize.STRING),
+      type: Sequelize.TEXT, // Store as JSON string
       allowNull: false,
+      get() {
+        const rawValue = this.getDataValue("tech");
+        return rawValue ? JSON.parse(rawValue) : [];
+      },
+      set(value) {
+        this.setDataValue("tech", JSON.stringify(value));
+      },
     },
 
     createdAt: Sequelize.DATE,

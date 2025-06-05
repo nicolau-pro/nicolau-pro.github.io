@@ -5,8 +5,8 @@ import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import { API_GetCompanies } from "../../data/companies";
 import { GetJobsByCompanyId } from "../../data/jobs";
-import { MonthYear, EmploymentPeriod } from "../../data/utils";
-import Crosshatch from "../../components/decorators/Crosshatch";
+import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
+// import Crosshatch from "../../components/decorators/Crosshatch";
 
 function Page() {
   const [Companies, setCompanies] = useState(null);
@@ -42,9 +42,13 @@ function Page() {
                 <Col>
                   <h2>{company.name}</h2>
                   <p>
-                    <span>{MonthYear(EmploymentPeriod(company.id).from)}</span>
+                    <span>
+                      {FormatMonthYear(EmploymentPeriod(company.id).from)}
+                    </span>
                     <span> - </span>
-                    <span>{MonthYear(EmploymentPeriod(company.id).to)}</span>
+                    <span>
+                      {FormatMonthYear(EmploymentPeriod(company.id).to)}
+                    </span>
                   </p>
                 </Col>
               </Row>

@@ -48,6 +48,9 @@ app.use("/companies", companyRoutes);
 const jobRoutes = require("./routes/jobs.cjs");
 app.use("/jobs", jobRoutes);
 
+const techRoutes = require("./routes/tech.cjs");
+app.use("/tech", techRoutes);
+
 // Start server
 const PORT = process.env.PORT || 3000;
 sequelize

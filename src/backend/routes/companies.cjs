@@ -1,103 +1,66 @@
 const express = require("express");
 const router = express.Router();
-const Job = require("../models/job.cjs");
 const Company = require("../models/company.cjs");
 
-// GET all jobs
+// GET all companies
 router.get("/", async (req, res) => {
   try {
-    const jobs = await Job.findAll();
-    res.json(jobs);
+    const companies = await Company.findAll();
+    res.json(companies);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// GET job by ID
+// GET company by ID
 router.get("/:id", async (req, res) => {
   try {
-    const job = await Job.findByPk(req.params.id);
-    if (job) res.json(job);
-    else res.status(404).json({ error: "Job not found" });
+    const company = await Company.findByPk(req.params.id);
+    if (company) res.json(company);
+    else res.status(404).json({ error: "Company not found" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// POST create new job
+// POST create new company
 router.post("/", async (req, res) => {
   try {
-    const {
-      companyId,
-      title,
-      dateFrom,
-      dateTo,
+    const { name, theme, description, details, meta } = req.body;
+    const newCompany = await Company.create({
+      name,
+      theme,
       description,
-      bulletpoints,
-      tech,
-    } = req.body;
-
-    // Optionally check if company exists
-    const company = await Company.findByPk(companyId);
-    if (!company) {
-      return res.status(400).json({ error: "Company not found" });
-    }
-
-    const newJob = await Job.create({
-      companyId,
-      title,
-      dateFrom,
-      dateTo,
-      description,
-      bulletpoints,
-      tech,
+      details,
+      meta,
     });
-
-    res.status(201).json(newJob);
+    res.status(201).json(newCompany);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 });
 
-// PUT update job by ID
+// PUT update company by ID
 router.put("/:id", async (req, res) => {
   try {
-    const job = await Job.findByPk(req.params.id);
-    if (!job) return res.status(404).json({ error: "Job not found" });
+    const company = await Company.findByPk(req.params.id);
+    if (!company) return res.status(404).json({ error: "Company not found" });
 
-    const {
-      companyId,
-      title,
-      dateFrom,
-      dateTo,
-      description,
-      bulletpoints,
-      tech,
-    } = req.body;
-
-    await job.update({
-      companyId,
-      title,
-      dateFrom,
-      dateTo,
-      description,
-      bulletpoints,
-      tech,
-    });
-
-    res.json(job);
+    const { name, theme, description, details, meta } = req.body;
+    await company.update({ name, theme, description, details, meta });
+    res.json(company);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 });
 
-// DELETE job by ID
+// DELETE company by ID
 router.delete("/:id", async (req, res) => {
   try {
-    const job = await Job.findByPk(req.params.id);
-    if (!job) return res.status(404).json({ error: "Job not found" });
+    const company = await Company.findByPk(req.params.id);
+    if (!company) return res.status(404).json({ error: "Company not found" });
 
-    await job.destroy();
+    await company.destroy();
     res.status(204).send();
   } catch (err) {
     res.status(500).json({ error: err.message });
