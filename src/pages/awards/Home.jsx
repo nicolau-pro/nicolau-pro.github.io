@@ -72,7 +72,7 @@ function Page() {
             <Col>
               <h2 className="hero mt-1">My Awards</h2>
               <p className="large mb-1">
-                With respective companies and projects
+                With the corrsponding companies {/*and projects */}
               </p>
             </Col>
           </Row>

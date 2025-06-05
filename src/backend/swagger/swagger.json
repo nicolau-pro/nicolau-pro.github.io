@@ -3,7 +3,7 @@
   "info": {
     "title": "User API",
     "version": "1.0.0",
-    "description": "API to manage users"
+    "description": "API to manage website content for R5.RO"
   },
   "servers": [
     {
