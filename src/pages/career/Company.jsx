@@ -240,6 +240,7 @@ function Page(props) {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="button-small button-testimonial"
+                          aria-label={`${testimonial.name} on LinkedIn. External link`}
                         >
                           <span>{testimonial.name} on LinkedIn </span>
                           <span className="material-icons">open_in_new</span>

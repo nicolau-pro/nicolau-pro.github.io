@@ -44,6 +44,7 @@ const Award = (props) => {
             <Link
               className={`button-small button-award ${Company.theme}`}
               to={`/career/${Company.theme}`}
+              aria-label={`Read more about my career at ${Company.name}`}
             >
               {Company.name}
             </Link>
