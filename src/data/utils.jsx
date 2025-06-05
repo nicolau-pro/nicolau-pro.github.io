@@ -1,5 +1,3 @@
-import { GetJobsByCompanyId } from "./jobs";
-
 function FormatMonthYear(dateString) {
   const date = new Date(dateString);
   const options = { year: "numeric", month: "long" };
@@ -16,19 +14,14 @@ function getLatestDate(dates) {
   return new Date(Math.max(...dates.map((d) => d.getTime())));
 }
 
-function EmploymentPeriod(companyId) {
-  console.log(companyId);
+function EmploymentPeriod(jobs, companyId) {
+  const companyJobs = jobs.filter((item) => item.companyId === companyId);
+  console.log(companyJobs, companyId);
 
-  const jobs = GetJobsByCompanyId(companyId);
-  console.log(jobs);
+  const fromDates = companyJobs.map((job) => new Date(job.dateFrom));
+  const toDates = companyJobs.map((job) => new Date(job.dateTo));
 
-  const fromDates = jobs.map((job) => new Date(job.dateFrom));
-  console.log(fromDates);
-
-  const toDates = jobs.map((job) => new Date(job.dateTo));
-  console.log(toDates);
-
-  if (!jobs || jobs.length === 0) {
+  if (!companyJobs || companyJobs.length === 0) {
     return null;
   }
 

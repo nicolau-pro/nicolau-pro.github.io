@@ -4,17 +4,21 @@ import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import { API_GetCompanies } from "../../data/companies";
-import { GetJobsByCompanyId } from "../../data/jobs";
+import { API_GetJobs } from "../../data/jobs";
 import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
 // import Crosshatch from "../../components/decorators/Crosshatch";
 
 function Page() {
   const [Companies, setCompanies] = useState(null);
+  const [Jobs, setJobs] = useState([]);
 
   useEffect(() => {
     async function fetchCompanies() {
       const data = await API_GetCompanies();
       setCompanies(data);
+
+      const jobs = await API_GetJobs();
+      setJobs(jobs);
     }
 
     fetchCompanies();
@@ -41,15 +45,19 @@ function Page() {
               <Row>
                 <Col>
                   <h2>{company.name}</h2>
-                  <p>
-                    <span>
-                      {FormatMonthYear(EmploymentPeriod(company.id).from)}
-                    </span>
-                    <span> - </span>
-                    <span>
-                      {FormatMonthYear(EmploymentPeriod(company.id).to)}
-                    </span>
-                  </p>
+                  {Jobs.length > 0 && (
+                    <p>
+                      <span>
+                        {FormatMonthYear(
+                          EmploymentPeriod(Jobs, company.id).from
+                        )}
+                      </span>
+                      <span> - </span>
+                      <span>
+                        {FormatMonthYear(EmploymentPeriod(Jobs, company.id).to)}
+                      </span>
+                    </p>
+                  )}
                 </Col>
               </Row>
             </Section>
@@ -59,9 +67,11 @@ function Page() {
             >
               <Row>
                 <Col>
-                  {GetJobsByCompanyId(company.id).map((job, index) => (
-                    <h3 key={index}>{job.title}</h3>
-                  ))}
+                  {Jobs.filter((job) => job.companyId === company.id).map(
+                    (job, index) => (
+                      <h3 key={index}>{job.title}</h3>
+                    )
+                  )}
                 </Col>
               </Row>
               <Row>
