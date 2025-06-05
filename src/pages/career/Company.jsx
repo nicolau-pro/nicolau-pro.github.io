@@ -7,16 +7,17 @@ import Section from "../../components/layout/Section";
 import Crosshatch from "../../components/decorators/Crosshatch";
 
 import { API_GetCompanyById } from "../../data/companies";
-import { GetJobsByCompanyId } from "../../data/jobs";
-import { GetTech } from "../../data/tech";
+import { API_GetJobsByCompanyId } from "../../data/jobs";
+import { API_GetTech } from "../../data/tech";
 import { GetAwardsByCompanyId } from "../../data/awards";
 import { GetTestimonialsByCompanyId } from "../../data/testimonials";
-import { MonthYear } from "../../data/utils";
+import { FormatMonthYear, FilterListByIds } from "../../data/utils";
 
 function Page(props) {
   const { companyId } = props;
 
   const [Company, setCompany] = useState(null);
+  const [Tech, setTech] = useState([]);
   const [Jobs, setJobs] = useState([]);
   const [Awards, setAwards] = useState([]);
   const [Testimonials, setTestimonials] = useState([]);
@@ -25,7 +26,13 @@ function Page(props) {
     async function fetchCompany() {
       const data = await API_GetCompanyById(companyId);
       setCompany(data);
-      setJobs(GetJobsByCompanyId(companyId) || []);
+
+      const tech = await API_GetTech();
+      setTech(tech);
+
+      const companyJobs = await API_GetJobsByCompanyId(companyId);
+      setJobs(companyJobs);
+
       setAwards(GetAwardsByCompanyId(companyId) || []);
       setTestimonials(GetTestimonialsByCompanyId(companyId) || []);
     }
@@ -112,45 +119,48 @@ function Page(props) {
             </Col>
           </Row>
 
-          {Jobs.map((job, index) => (
-            <Row className="mt-2" key={index}>
-              <details>
-                <summary>
-                  <h3>{job.title}</h3>
-                  <span>{MonthYear(job.dates.from)}</span>
-                  <span> - </span>
-                  <span>{MonthYear(job.dates.to)}</span>
-                </summary>
-                <Row>
-                  <Col className="span-4">
-                    <p className="large">{job.description}</p>
-                    <ul>
-                      {job.bulletpoints.map((point, index) => (
-                        <li key={index}>{point}</li>
-                      ))}
-                    </ul>
-                  </Col>
-                  <Col>
-                    <article className="tech-stack">
-                      <h4>TECH STACK:</h4>
-                      <ul className="small no-bullets">
-                        {job.tech.map((tech, index) => (
-                          <li key={index}>
-                            {GetTech(tech) && (
-                              <span className="material-icons">
-                                {GetTech(tech).icon}
-                              </span>
-                            )}
-                            <span> {tech}</span>
-                          </li>
+          {Jobs.length > 0 &&
+            Jobs.map((job, index) => (
+              <Row className="mt-2" key={index}>
+                <details>
+                  <summary>
+                    <h3>{job.title}</h3>
+                    <span>{FormatMonthYear(job.dateFrom)}</span>
+                    <span> - </span>
+                    <span>{FormatMonthYear(job.dateTo)}</span>
+                  </summary>
+                  <Row>
+                    <Col className="span-4">
+                      <p className="large">{job.description}</p>
+                      <ul>
+                        {job.bulletpoints.map((point, index) => (
+                          <li key={index}>{point}</li>
                         ))}
                       </ul>
-                    </article>
-                  </Col>
-                </Row>
-              </details>
-            </Row>
-          ))}
+                    </Col>
+                    <Col>
+                      <article className="tech-stack">
+                        <h4>TECH STACK:</h4>
+                        <ul className="small no-bullets">
+                          {FilterListByIds(Tech, job.tech).map(
+                            (tech, index) => (
+                              <li key={index}>
+                                {tech && (
+                                  <span className="material-icons">
+                                    {tech.icon}
+                                  </span>
+                                )}
+                                <span> {tech.name}</span>
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      </article>
+                    </Col>
+                  </Row>
+                </details>
+              </Row>
+            ))}
         </Section>
 
         {Awards.length > 0 && (

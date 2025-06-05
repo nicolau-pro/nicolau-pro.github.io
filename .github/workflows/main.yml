@@ -51,7 +51,7 @@ jobs:
         run: |
           MAX_RETRIES=5
           SLEEP_SECONDS=2
-          URL="http://localhost:3000/users"
+          URL="http://localhost:3000/companies"
 
           for ((i=1; i<=MAX_RETRIES; i++)); do
             STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")

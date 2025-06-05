@@ -105,6 +105,119 @@
           "createdAt": "2025-06-02T12:00:00Z",
           "updatedAt": "2025-06-02T12:00:00Z"
         }
+      },
+      "Job": {
+        "type": "object",
+        "required": [
+          "companyId",
+          "title",
+          "dateFrom",
+          "description",
+          "bulletpoints",
+          "tech"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Auto-generated job ID"
+          },
+          "companyId": {
+            "type": "integer",
+            "description": "ID of the associated company"
+          },
+          "title": {
+            "type": "string",
+            "description": "Job title or role"
+          },
+          "dateFrom": {
+            "type": "string",
+            "format": "date",
+            "description": "Start date of the job (defaults to first of month)"
+          },
+          "dateTo": {
+            "type": "string",
+            "format": "date",
+            "description": "End date of the job (nullable for current jobs)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed job description"
+          },
+          "bulletpoints": {
+            "type": "array",
+            "description": "List of achievements or responsibilities",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tech": {
+            "type": "array",
+            "description": "Technologies used in this role",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "example": {
+          "id": 1,
+          "companyId": 1,
+          "title": "Lead Engineer/Senior Developer/UX-UI Specialist",
+          "dateFrom": "2014-05-01",
+          "dateTo": "2018-04-01",
+          "description": "Directed, mentored, and supported a team of developers...",
+          "bulletpoints": [
+            "Streamlined and operationalized application functionalities...",
+            "Led development programme across multiple countries...",
+            "Originated and launched an automation system...",
+            "Commended by top management for exemplary performance..."
+          ],
+          "tech": [1, 2, 3, 5, 18, 20],
+          "createdAt": "2025-06-02T12:00:00Z",
+          "updatedAt": "2025-06-02T12:00:00Z"
+        }
+      },
+      "Tech": {
+        "type": "object",
+        "required": ["name", "icon"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Auto-generated tech ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the technology/tool"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Icon identifier (e.g. material icon name)"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp"
+          }
+        },
+        "example": {
+          "id": 1,
+          "name": "3DS Max",
+          "icon": "view_in_ar",
+          "createdAt": "2025-06-02T12:00:00Z",
+          "updatedAt": "2025-06-02T12:00:00Z"
+        }
       }
     }
   },
@@ -400,6 +513,272 @@
           "404": {
             "description": "Company not found"
           }
+        }
+      }
+    },
+    "/jobs": {
+      "get": {
+        "summary": "Retrieve all jobs",
+        "tags": ["Jobs"],
+        "responses": {
+          "200": {
+            "description": "List of jobs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Job"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new job",
+        "tags": ["Jobs"],
+        "requestBody": {
+          "description": "Job data to create",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Job"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Job created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/jobs/{id}": {
+      "get": {
+        "summary": "Get a job by ID",
+        "tags": ["Jobs"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Job ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Job found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Job not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a job by ID",
+        "tags": ["Jobs"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Job ID"
+          }
+        ],
+        "requestBody": {
+          "description": "Job data to update",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Job"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Job updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Job not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a job by ID",
+        "tags": ["Jobs"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Job ID"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Job deleted successfully"
+          },
+          "404": {
+            "description": "Job not found"
+          }
+        }
+      }
+    },
+    "/tech": {
+      "get": {
+        "summary": "Retrieve all tech items",
+        "tags": ["Tech"],
+        "responses": {
+          "200": {
+            "description": "List of tech items",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Tech" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new tech item",
+        "tags": ["Tech"],
+        "requestBody": {
+          "description": "Tech item info",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Tech" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Tech item created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Tech" }
+              }
+            }
+          },
+          "400": { "description": "Invalid input" }
+        }
+      }
+    },
+    "/tech/{id}": {
+      "get": {
+        "summary": "Get a tech item by ID",
+        "tags": ["Tech"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer" },
+            "required": true,
+            "description": "Tech item ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tech item found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Tech" }
+              }
+            }
+          },
+          "404": { "description": "Tech item not found" }
+        }
+      },
+      "put": {
+        "summary": "Update a tech item by ID",
+        "tags": ["Tech"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer" },
+            "required": true,
+            "description": "Tech item ID"
+          }
+        ],
+        "requestBody": {
+          "description": "Tech item info to update",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Tech" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tech item updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Tech" }
+              }
+            }
+          },
+          "404": { "description": "Tech item not found" }
+        }
+      },
+      "delete": {
+        "summary": "Delete a tech item by ID",
+        "tags": ["Tech"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer" },
+            "required": true,
+            "description": "Tech item ID"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Tech item deleted successfully" },
+          "404": { "description": "Tech item not found" }
         }
       }
     }
