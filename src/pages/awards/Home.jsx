@@ -69,9 +69,9 @@ function Page() {
         </Section>
         <Section>
           <Row>
-            <Col>
-              <h2 className="hero mt-1">My Awards</h2>
-              <p className="large mb-1">
+            <Col className="pt-3 pb-2">
+              <h2 className="hero">My Awards</h2>
+              <p className="large">
                 With the corrsponding companies {/*and projects */}
               </p>
             </Col>
