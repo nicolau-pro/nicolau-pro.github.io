@@ -1,0 +1,11 @@
+@use "mixins" as mixins;
+
+section.awards {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/social/awards.jpg");
+
+  .crosshatch {
+    @include mixins.crosshatch(black);
+  }
+}
