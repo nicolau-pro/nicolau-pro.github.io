@@ -33,6 +33,15 @@ function Page() {
             </Col>
           </Row>
         </Section>
+        <Section>
+          <Row>
+            <Col>
+              <h2 className="hero">
+                Awards with respective companies and projects
+              </h2>
+            </Col>
+          </Row>
+        </Section>
         {Awards.length > 0 && (
           <Section className="pb-12">
             {Awards.map((award) => (
