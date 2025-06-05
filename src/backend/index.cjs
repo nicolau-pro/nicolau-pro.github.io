@@ -39,9 +39,6 @@ const sequelize = new Sequelize(
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
-const userRoutes = require("./routes/users.cjs");
-app.use("/users", userRoutes);
-
 const companyRoutes = require("./routes/companies.cjs");
 app.use("/companies", companyRoutes);
 
@@ -51,12 +48,20 @@ app.use("/jobs", jobRoutes);
 const techRoutes = require("./routes/tech.cjs");
 app.use("/tech", techRoutes);
 
+const testimonialRoutes = require("./routes/testimonials.cjs");
+app.use("/testimonials", testimonialRoutes);
+
 // Start server
 const PORT = process.env.PORT || 3000;
 sequelize
   .authenticate()
   .then(() => {
     console.log("Database connected.");
+
+    // Drop testimonials table
+    // await sequelize.query("DROP TABLE IF EXISTS testimonials");
+    // console.log("Table 'testimonials' dropped.");
+
     app.listen(PORT, () => {
       console.log(`Server listening on http://localhost:${PORT}`);
       console.log(`Swagger docs at http://localhost:${PORT}/api-docs`);

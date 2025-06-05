@@ -10,7 +10,7 @@ import { API_GetCompanyById } from "../../data/companies";
 import { API_GetJobsByCompanyId } from "../../data/jobs";
 import { API_GetTech } from "../../data/tech";
 import { GetAwardsByCompanyId } from "../../data/awards";
-import { GetTestimonialsByCompanyId } from "../../data/testimonials";
+import { API_GetTestimonialsByCompanyId } from "../../data/testimonials";
 import { FormatMonthYear, FilterListByIds } from "../../data/utils";
 
 function Page(props) {
@@ -33,8 +33,11 @@ function Page(props) {
       const companyJobs = await API_GetJobsByCompanyId(companyId);
       setJobs(companyJobs);
 
+      const testimonials = await API_GetTestimonialsByCompanyId(companyId);
+      setTestimonials(testimonials);
+
       setAwards(GetAwardsByCompanyId(companyId) || []);
-      setTestimonials(GetTestimonialsByCompanyId(companyId) || []);
+      // setTestimonials(GetTestimonialsByCompanyId(companyId) || []);
     }
 
     fetchCompany();
@@ -202,7 +205,7 @@ function Page(props) {
         {Testimonials.length > 0 && (
           <>
             <Crosshatch className={`theme-${Company.theme}`} />
-            <Section className="pt-3 pb-5">
+            <Section className="pt-3 pb-12">
               <Row>
                 <Col>
                   <h2>Testimonials</h2>
@@ -241,7 +244,7 @@ function Page(props) {
                       </Col>
                       <Col className="span-3">
                         <p className="mb-2">
-                          <em>{testimonial.testimonial}</em>
+                          <em>{testimonial.fullText}</em>
                         </p>
                         <Link
                           to={testimonial.link}

@@ -12,45 +12,6 @@
   ],
   "components": {
     "schemas": {
-      "User": {
-        "type": "object",
-        "required": ["firstName", "lastName", "email", "age"],
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Auto-generated ID"
-          },
-          "firstName": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "age": {
-            "type": "integer"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "example": {
-          "id": 1,
-          "firstName": "Alice",
-          "lastName": "Smith",
-          "email": "alice@example.com",
-          "age": 28,
-          "createdAt": "2025-06-02T12:00:00Z",
-          "updatedAt": "2025-06-02T12:00:00Z"
-        }
-      },
       "Company": {
         "type": "object",
         "required": ["name", "theme", "description"],
@@ -218,157 +179,66 @@
           "createdAt": "2025-06-02T12:00:00Z",
           "updatedAt": "2025-06-02T12:00:00Z"
         }
+      },
+      "Testimonial": {
+        "type": "object",
+        "required": ["name", "companyId", "quote", "text"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the person giving the testimonial",
+            "example": "Erwan Maigret"
+          },
+          "companyId": {
+            "type": "integer",
+            "description": "Reference to the company ID",
+            "example": 1
+          },
+          "position": {
+            "type": "string",
+            "description": "Job position of the person",
+            "example": "Lead AR API Engineer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri",
+            "description": "Link to LinkedIn or personal profile",
+            "example": "https://www.linkedin.com/in/erwanmaigret/"
+          },
+          "quote": {
+            "type": "string",
+            "description": "Short quote or summary of the testimonial",
+            "example": "Nothing stops him"
+          },
+          "fullText": {
+            "type": "string",
+            "description": "Full testimonial text",
+            "example": "Radu is the swiss-army knife of 3D and AR..."
+          },
+          "media": {
+            "type": "string",
+            "description": "Optional media reference",
+            "example": "Erwan"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2023-01-01T12:00:00Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2023-01-02T12:00:00Z"
+          }
+        }
       }
     }
   },
   "paths": {
-    "/users": {
-      "get": {
-        "summary": "Retrieve all users",
-        "tags": ["Users"],
-        "responses": {
-          "200": {
-            "description": "List of users",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/User"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a new user",
-        "tags": ["Users"],
-        "requestBody": {
-          "description": "User info",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "User created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid input"
-          }
-        }
-      }
-    },
-    "/users/{id}": {
-      "get": {
-        "summary": "Get a user by ID",
-        "tags": ["Users"],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true,
-            "description": "User ID"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "User found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a user by ID",
-        "tags": ["Users"],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true,
-            "description": "User ID"
-          }
-        ],
-        "requestBody": {
-          "description": "User info to update",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "User updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a user by ID",
-        "tags": ["Users"],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true,
-            "description": "User ID"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "User deleted successfully"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      }
-    },
     "/companies": {
       "get": {
         "summary": "Retrieve all companies",
@@ -779,6 +649,144 @@
         "responses": {
           "204": { "description": "Tech item deleted successfully" },
           "404": { "description": "Tech item not found" }
+        }
+      }
+    },
+    "/testimonials": {
+      "get": {
+        "summary": "Get all testimonials",
+        "tags": ["Testimonials"],
+        "responses": {
+          "200": {
+            "description": "A list of testimonials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Testimonial"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new testimonial",
+        "tags": ["Testimonials"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Testimonial"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Testimonial created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Testimonial"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/testimonials/{id}": {
+      "get": {
+        "summary": "Get a testimonial by ID",
+        "tags": ["Testimonials"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Testimonial found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Testimonial"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Testimonial not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a testimonial by ID",
+        "tags": ["Testimonials"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Testimonial"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Testimonial updated successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Testimonial not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a testimonial by ID",
+        "tags": ["Testimonials"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Testimonial deleted successfully"
+          },
+          "404": {
+            "description": "Testimonial not found"
+          }
         }
       }
     }

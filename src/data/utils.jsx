@@ -16,7 +16,6 @@ function getLatestDate(dates) {
 
 function EmploymentPeriod(jobs, companyId) {
   const companyJobs = jobs.filter((item) => item.companyId === companyId);
-  console.log(companyJobs, companyId);
 
   const fromDates = companyJobs.map((job) => new Date(job.dateFrom));
   const toDates = companyJobs.map((job) => new Date(job.dateTo));
