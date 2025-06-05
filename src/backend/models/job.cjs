@@ -1,0 +1,53 @@
+const Sequelize = require("sequelize");
+const sequelize = require("../db.cjs");
+
+const Job = sequelize.define(
+  "Job",
+  {
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+
+    companyId: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: {
+        model: "companies",
+        key: "id",
+      },
+      onDelete: "CASCADE",
+    },
+
+    title: { type: Sequelize.STRING, allowNull: false },
+
+    dateFrom: {
+      type: Sequelize.DATEONLY,
+      allowNull: false,
+      comment: "Start date of the job (defaults to first of the month)",
+    },
+    dateTo: {
+      type: Sequelize.DATEONLY,
+      allowNull: true, // allows open-ended (current) jobs
+      comment: "End date of the job (defaults to first of the month)",
+    },
+
+    description: { type: Sequelize.TEXT, allowNull: false },
+
+    bulletpoints: {
+      type: Sequelize.ARRAY(Sequelize.TEXT),
+      allowNull: false,
+    },
+
+    tech: {
+      type: Sequelize.ARRAY(Sequelize.STRING),
+      allowNull: false,
+    },
+
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE,
+  },
+  {
+    tableName: "jobs",
+    timestamps: true,
+  }
+);
+
+module.exports = Job;
