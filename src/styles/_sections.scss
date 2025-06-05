@@ -9,3 +9,13 @@ section.awards {
     @include mixins.crosshatch(black);
   }
 }
+
+section.career {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/social/career.jpg");
+}
+
+section h1.hero {
+  text-shadow: rgba(0, 0, 0, 0.7) 0 0 0.2em;
+}

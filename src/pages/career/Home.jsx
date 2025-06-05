@@ -26,15 +26,47 @@ function Page() {
 
   if (!Companies) return <p className="my-6">Loading...</p>;
 
+  const social = {
+    author: "Radu Nicolau",
+    description: `RADU NICOLAU > Career`,
+    article: `Career`,
+    image: `/social/career.jpg`,
+    imageAlt: `RADU NICOLAU - Career`,
+  };
+
   return (
     <>
       <title>Career - Radu Nicolau</title>
       <meta name="description" content="My career" />
 
+      <meta property="article:author" content={social.author} />
+      <meta property="article:publisher" content={social.author} />
+      <meta property="article:section" content={social.article} />
+
+      <meta property="fb:app_id" content="966242223397117" />
+      <meta property="og:title" content={social.description} />
+      <meta property="og:description" content={social.description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:locale" content="en_GB" />
+
+      <meta property="og:url" content="/" />
+      <meta property="og:site_name" content={social.author} />
+      <meta property="og:image" content={social.image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={social.imageAlt} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={social.description} />
+      <meta name="twitter:description" content={social.description} />
+      <meta name="twitter:image" content={social.image} />
+      <meta name="twitter:image:alt" content={social.imageAlt} />
+      <meta name="twitter:domain" content="r5.ro" />
+
       <main>
-        <Section>
+        <Section className="career">
           <Row>
-            <Col>
+            <Col className="pb-4">
               <h1 className="hero">Career</h1>
             </Col>
           </Row>
