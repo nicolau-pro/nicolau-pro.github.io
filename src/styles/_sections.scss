@@ -1,21 +1,29 @@
 @use "mixins" as mixins;
 
-section.awards {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/social/awards.jpg");
+section {
+  &.awards {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/social/awards.jpg");
 
-  .crosshatch {
-    @include mixins.crosshatch(black);
+    .crosshatch {
+      @include mixins.crosshatch(black);
+    }
   }
-}
 
-section.career {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/social/career.jpg");
-}
+  &.career {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/social/career.jpg");
+  }
 
-section h1.hero {
-  text-shadow: rgba(0, 0, 0, 0.7) 0 0 0.2em;
+  &.projects {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/social/projects.jpg");
+  }
+
+  & h1.hero.shade {
+    text-shadow: rgba(0, 0, 0, 0.7) 0 0 0.2em;
+  }
 }

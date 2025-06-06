@@ -1,185 +1,15 @@
-const Awards = [
-  // Blippar
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "Grand Prix WINNER",
-    icon: "star",
-    event: "The Drum Marketing Awards",
-    year: 2013,
-    description: "Best Augmented Reality Experience",
-    logo: "dma-awards.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "Effective Mobile Marketing Awards",
-    year: 2012,
-    description: "Best Mobile Augmented Reality Campaign / Solution",
-    logo: "effective-mobile-marketing-awards.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "Beverage Innovation Awards @ Drinktec",
-    year: 2013,
-    description: "Best Technology Innovation",
-    logo: "beverige-innovation-awards.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "Corpcomms Digi Awards",
-    year: 2013,
-    description: "Best Use Of Mobile",
-    logo: "compcomms-digi-awards.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "The Drum Network Awards",
-    year: 2014,
-    description: "Mobile Marketing Campaign / Strategy of the Year",
-    logo: "the-drum-network-awards.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "Digital Impact Award",
-    year: 2015,
-    description: "Best Use of Digital from the Food & Beverage Sector",
-    logo: "digital-impact-awards.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "APAC Effie",
-    year: 2018,
-    description: "Best Media Campaign",
-    logo: "apac-effie.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "Iab MIXX Awards",
-    year: 2014,
-    description: "Best Cross-Media Integration",
-    logo: "iab-mixx-gold.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "SILVER",
-    icon: "workspace_premium",
-    event: "iab MIXX Awards Turkey",
-    year: 2014,
-    description: "Best Augmented Reality",
-    logo: "iab-mixx-silver.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "BRONZE",
-    icon: "workspace_premium",
-    event: "iab MIXX Awards Turkey",
-    year: 2014,
-    description: "Best Mobile Campaign",
-    logo: "iab-mixx-bronze.webp",
-  },
-  {
-    companyId: 1,
-    projectId: 1,
-    prize: "Finalist",
-    icon: "verified",
-    event: "Mobile World Congress",
-    year: 2015,
-    description: "Global Mobile Awards - Best Mobile Advertising or Marketing",
-    logo: "global-mobile-awards.webp",
-  },
-  // MRMC
-  {
-    companyId: 2,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "NAB Show",
-    year: 2020,
-    description:
-      "Product of the Year - Camera Support, Control and Accessories",
-    logo: "nab-show.webp",
-  },
-  // NewDay Aquacard
-  {
-    companyId: 3,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "The UK Digital Experience Awards",
-    year: 2020,
-    description: "Digital Change & Transformation",
-    logo: "the-uk-digital-experience-awards.webp",
-  },
-  {
-    companyId: 3,
-    projectId: 1,
-    prize: "Finalist",
-    icon: "verified",
-    event: "Card and Payments Awards",
-    year: 2020,
-    description: "Best Marketing Campaign of the Year",
-    logo: "the-card-payments-awards.webp",
-  },
-  {
-    companyId: 3,
-    projectId: 1,
-    prize: "Finalist",
-    icon: "verified",
-    event: "Card and Payments Awards",
-    year: 2020,
-    description: "Best Design of the Year",
-    logo: "the-card-payments-awards.webp",
-  },
-  // Gain Credit Lending Stream
-  {
-    companyId: 4,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "The Credit Excellence Awards",
-    year: 2021,
-    description: "Responsible Lender",
-    logo: "credit-excellence-awards.webp",
-  },
-  // Motorway
-  {
-    companyId: 5,
-    projectId: 1,
-    prize: "GOLD Winner",
-    icon: "emoji_events",
-    event: "Motor Trader Industry Awards",
-    year: 2021,
-    description: "Online Used Car Trading Platform",
-    logo: "motor-trader-industry-awards.webp",
-  },
-];
-
-function GetAwardsByCompanyId(id) {
-  const output = Awards.filter((item) => item.companyId === id);
-  return output ? output : null;
+async function API_GetAwards() {
+  try {
+    const response = await fetch(`http://localhost:3000/awards`);
+    if (!response.ok) {
+      return null;
+    }
+    const awards = await response.json();
+    return awards;
+  } catch (error) {
+    console.error("Error fetching awards:", error);
+    return null;
+  }
 }
 
 async function API_GetAwardById(id) {
@@ -192,20 +22,6 @@ async function API_GetAwardById(id) {
     return award;
   } catch (error) {
     console.error("Error fetching award:", error);
-    return null;
-  }
-}
-
-async function API_GetAwards() {
-  try {
-    const response = await fetch(`http://localhost:3000/awards`);
-    if (!response.ok) {
-      return null;
-    }
-    const awards = await response.json();
-    return awards;
-  } catch (error) {
-    console.error("Error fetching awards:", error);
     return null;
   }
 }
@@ -244,8 +60,31 @@ async function API_GetAwardsByProjectId(projectId) {
   }
 }
 
+function FilterAwardsByCompanyId(awards, companyId) {
+  const companyAwards = awards.filter((award) => award.companyId === companyId);
+  return companyAwards;
+}
+
+function CountAwardsByCompanyId(awards, companyId) {
+  const companyAwards = awards.filter((award) => award.companyId === companyId);
+  return companyAwards.length;
+}
+
+function FilterAwardsByProjectId(awards, projectId) {
+  const projectAwards = awards.filter((award) => award.projectId === projectId);
+  return projectAwards;
+}
+
+function CountAwardsByProjectId(awards, projectId) {
+  const projectAwards = awards.filter((award) => award.projectId === projectId);
+  return projectAwards.length;
+}
+
 export {
-  GetAwardsByCompanyId,
+  FilterAwardsByCompanyId,
+  CountAwardsByCompanyId,
+  FilterAwardsByProjectId,
+  CountAwardsByProjectId,
   API_GetAwards,
   API_GetAwardById,
   API_GetAwardsByCompanyId,

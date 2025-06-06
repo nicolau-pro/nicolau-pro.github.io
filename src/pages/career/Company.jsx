@@ -52,7 +52,10 @@ function Page(props) {
     Testimonials.length === 0 ||
     Awards.length === 0
   )
-    return <p className="my-6">Loading...</p>;
+    return;
+  <p className="my-6" id="Loading">
+    Loading...
+  </p>;
 
   const social = {
     author: "Radu Nicolau",

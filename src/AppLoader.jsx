@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
-import Career from "./pages/career/Home";
 import Company from "./pages/career/Company";
-import Awards from "./pages/awards/Home";
+import Career from "./pages/career/Career";
+import Projects from "./pages/projects/Projects";
+import Awards from "./pages/awards/Awards";
 
 const rootPath = "/";
 
@@ -38,6 +39,9 @@ function AppLoader() {
                 element={<Company companyId={company.id} />}
               />
             ))}
+          </Route>
+          <Route path="projects">
+            <Route index element={<Projects />} />
           </Route>
           <Route path="awards">
             <Route index element={<Awards />} />

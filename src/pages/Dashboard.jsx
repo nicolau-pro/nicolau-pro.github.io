@@ -15,6 +15,9 @@ function Dashboard() {
               <a href={rootPath + "career"}>Career</a>
             </li>
             <li>
+              <a href={rootPath + "projects"}>Projects</a>
+            </li>
+            <li>
               <a href={rootPath + "awards"}>Awards</a>
             </li>
           </ul>
