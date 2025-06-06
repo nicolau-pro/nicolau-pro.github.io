@@ -21,6 +21,10 @@ section {
     background-position: center;
     background-size: cover;
     background-image: url("/social/projects.jpg");
+
+    .crosshatch {
+      @include mixins.crosshatch(black);
+    }
   }
 
   & h1.hero.shade {

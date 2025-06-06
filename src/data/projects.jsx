@@ -22,7 +22,7 @@ const Projects = [
       "In an aviation industry first WDMP created a direct marketing campaign to promote Monarch's new Ski routes that used Blippar to create a level of intrigue and excitement above the norm. The campaign provided an audience of tech-savvy skiers with an engaging and unique experience that also delivered useful information, giving a strong reason to interact for longer and ultimately click through to book.",
     ],
     videoLink: "https://www.youtube.com/watch?v=O-SnImwhXE8",
-    videoTheme: "stylist",
+    videoTheme: "monarch",
   },
 ];
 
