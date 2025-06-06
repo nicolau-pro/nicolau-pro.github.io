@@ -105,6 +105,8 @@ $brands: (
       background-image: linear-gradient(160deg, $color-light, $color-dark);
       color: transparent;
       background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       background-attachment: fixed;
       background-size: 100vw 100vh;
     }

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .tech-stack {
   .material-icons {
     margin-right: 0.33em;
@@ -8,4 +10,21 @@
   width: 100%;
   max-width: min(160px, 50vw);
   margin: -0.8em 0;
+}
+
+.gold-text {
+  background: linear-gradient(
+    to bottom,
+    #cfc09f 27%,
+    #ffecb3 40%,
+    color.adjust(#3a2c0f, $lightness: 20%) 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 400;
 }

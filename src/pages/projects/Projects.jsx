@@ -56,15 +56,18 @@ function Page() {
         </Section>
         <Section>
           <Row>
-            <Col className="pb-2 pt-2">
+            <Col className="pt-3 pb-2">
               <h2>Award-winning Campains and Projects</h2>
+              {/* <p className="large">
+                Alongside the corresponding companies and projects 
+              </p> */}
             </Col>
           </Row>
         </Section>
         <Section>
           {Projects.length > 0 &&
             Projects.map((project) => (
-              <Row className="mt-2" key={project.id}>
+              <Row className="mb-2" key={project.id}>
                 <details open>
                   <summary>
                     <h3>
@@ -97,7 +100,7 @@ function Page() {
                       ))}
                       {FilterAwardsByProjectId(Awards, project.id).map(
                         (award) => (
-                          <>
+                          <article className="gold-text">
                             <h4 key={award.id} className="large mt-1">
                               <span>{award.prize} </span>
                               <span className="material-icons">
@@ -108,7 +111,7 @@ function Page() {
                             <p key={award.id} className="small">
                               {award.description}
                             </p>
-                          </>
+                          </article>
                         )
                       )}
                     </Col>
