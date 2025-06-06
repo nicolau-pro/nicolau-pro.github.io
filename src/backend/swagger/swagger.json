@@ -309,6 +309,99 @@
           "createdAt": "2025-06-02T12:00:00Z",
           "updatedAt": "2025-06-02T12:00:00Z"
         }
+      },
+      "Project": {
+        "type": "object",
+        "required": [
+          "client",
+          "name",
+          "year",
+          "companyId",
+          "paragraphs",
+          "metaDescription"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Auto-generated project ID"
+          },
+          "client": {
+            "type": "string",
+            "description": "Client name associated with the project"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the project"
+          },
+          "year": {
+            "type": "integer",
+            "description": "Year the project was delivered"
+          },
+          "companyId": {
+            "type": "integer",
+            "description": "ID of the associated company"
+          },
+          "paragraphs": {
+            "type": "array",
+            "description": "Project description paragraphs",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metaImage": {
+            "type": "string",
+            "description": "Meta image path or URL (optional)"
+          },
+          "metaDescription": {
+            "type": "string",
+            "description": "Short meta description for the project"
+          },
+          "videoLink": {
+            "type": "string",
+            "description": "Optional link to a video presentation"
+          },
+          "videoTheme": {
+            "type": "string",
+            "description": "Optional visual theme for the video"
+          },
+          "image": {
+            "type": "string",
+            "description": "Main project image path or URL (optional)"
+          },
+          "externalLink": {
+            "type": "string",
+            "description": "External link related to the project (optional)"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp"
+          }
+        },
+        "example": {
+          "id": 1,
+          "client": "MRMC",
+          "name": "Orbital",
+          "year": 2014,
+          "companyId": 1,
+          "paragraphs": [
+            "The Orbital is a powerful robotic camera rig developed to capture high volume product shots and video.",
+            "Assaff Rawner praised the pre-emptive collision detection system, solving a 25-year challenge."
+          ],
+          "metaImage": "/social/project-milo.jpg",
+          "metaDescription": "The Orbital is a powerful robotic camera rig developed to capture high volume product shots and video",
+          "videoLink": "https://youtu.be/NG9zCjQIk-M",
+          "videoTheme": "milo",
+          "image": "/projects/Orbital.png",
+          "externalLink": "https://www.aquacard.co.uk/",
+          "createdAt": "2025-06-05T12:00:00Z",
+          "updatedAt": "2025-06-05T12:00:00Z"
+        }
       }
     }
   },
@@ -996,6 +1089,125 @@
           "404": {
             "description": "Award not found"
           }
+        }
+      }
+    },
+    "/projects": {
+      "get": {
+        "summary": "Retrieve all projects",
+        "tags": ["Projects"],
+        "responses": {
+          "200": {
+            "description": "List of projects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Project" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new project",
+        "tags": ["Projects"],
+        "requestBody": {
+          "description": "Project info",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Project" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Project created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Project" }
+              }
+            }
+          },
+          "400": { "description": "Invalid input" }
+        }
+      }
+    },
+    "/projects/{id}": {
+      "get": {
+        "summary": "Get a project by ID",
+        "tags": ["Projects"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer" },
+            "required": true,
+            "description": "Project ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Project" }
+              }
+            }
+          },
+          "404": { "description": "Project not found" }
+        }
+      },
+      "put": {
+        "summary": "Update a project by ID",
+        "tags": ["Projects"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer" },
+            "required": true,
+            "description": "Project ID"
+          }
+        ],
+        "requestBody": {
+          "description": "Project info to update",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Project" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Project updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Project" }
+              }
+            }
+          },
+          "404": { "description": "Project not found" }
+        }
+      },
+      "delete": {
+        "summary": "Delete a project by ID",
+        "tags": ["Projects"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer" },
+            "required": true,
+            "description": "Project ID"
+          }
+        ],
+        "responses": {
+          "204": { "description": "Project deleted successfully" },
+          "404": { "description": "Project not found" }
         }
       }
     }

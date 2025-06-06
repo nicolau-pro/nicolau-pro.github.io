@@ -5,7 +5,7 @@ import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Meta from "../../components/meta";
 import Crosshatch from "../../components/decorators/Crosshatch";
-import { Projects } from "../../data/projects";
+import { API_GetProjects } from "../../data/projects";
 import {
   API_GetAwards,
   CountAwardsByProjectId,
@@ -14,11 +14,15 @@ import {
 import { API_GetCompanies, FindCompanyById } from "../../data/companies";
 
 function Page() {
+  const [Projects, setProjects] = useState(null);
   const [Companies, setCompanies] = useState(null);
   const [Awards, setAwards] = useState(null);
 
   useEffect(() => {
     async function fetchAwards() {
+      const projects = await API_GetProjects();
+      setProjects(projects);
+
       const companies = await API_GetCompanies();
       setCompanies(companies);
 
@@ -29,7 +33,7 @@ function Page() {
     fetchAwards();
   }, []);
 
-  if (!Companies || !Awards)
+  if (!Projects || !Companies || !Awards)
     return (
       <p className="my-6" id="Loading">
         Loading...
@@ -100,17 +104,15 @@ function Page() {
                       ))}
                       {FilterAwardsByProjectId(Awards, project.id).map(
                         (award) => (
-                          <article className="gold-text">
-                            <h4 key={award.id} className="large mt-1">
+                          <article className="gold-text" key={award.id}>
+                            <h4 className="large mt-1">
                               <span>{award.prize} </span>
                               <span className="material-icons">
                                 {award.icon}
                               </span>
                             </h4>
-                            <p key={award.id}>{award.event}</p>
-                            <p key={award.id} className="small">
-                              {award.description}
-                            </p>
+                            <p>{award.event}</p>
+                            <p className="small">{award.description}</p>
                           </article>
                         )
                       )}

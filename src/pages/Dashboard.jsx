@@ -26,6 +26,10 @@ function Dashboard() {
       <Outlet />
       <footer>
         <p>© 2025 Radu Nicolau</p>
+        <p className="small">
+          All brands, logos, images and videos are copyright to their respective
+          owners.
+        </p>
       </footer>
     </>
   );
