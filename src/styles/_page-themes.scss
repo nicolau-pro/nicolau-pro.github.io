@@ -44,6 +44,14 @@ $brand-button-text: (
   "motorway": #000000,
 );
 
+$brand-button-outline: (
+  "blippar": #ffffff,
+  "mrmc": #1e4372,
+  "newday-aquacard": #0408a3,
+  "gain-credit-lending-stream": #7a0ce1,
+  "motorway": #ffd500,
+);
+
 $brands: (
   "blippar",
   "mrmc",
@@ -97,6 +105,11 @@ $brands: (
     .background-solid {
       background-color: $color-text;
     }
+
+    .button-award {
+      color: white;
+      background: red;
+    }
   }
 }
 
@@ -142,11 +155,16 @@ $brands: (
 @mixin award-button($brand) {
   $color-background: map.get($brand-button-color, $brand);
   $color-text: map.get($brand-button-text, $brand);
+  $color-outline: map.get($brand-button-outline, $brand);
 
   .button-award {
     &.#{$brand} {
       background-color: $color-background;
       color: $color-text;
+
+      &.button-outline {
+        color: $color-outline;
+      }
     }
   }
 }

@@ -157,7 +157,7 @@ function Page(props) {
                 </Col>
               </Row>
               {Awards.map((award, index) => (
-                <Award key={index} award={award} />
+                <Award key={index} award={award} projectButton />
               ))}
             </Section>
           </>
@@ -212,7 +212,7 @@ function Page(props) {
                           to={testimonial.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="button-small button-testimonial"
+                          className="button-small button-outline"
                           aria-label={`${testimonial.name} on LinkedIn. External link`}
                         >
                           <span>{testimonial.name} on LinkedIn </span>

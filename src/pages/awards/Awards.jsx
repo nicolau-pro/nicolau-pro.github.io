@@ -58,6 +58,8 @@ function Page() {
           <Section className="pb-12">
             {Awards.map((award) => (
               <Award
+                projectButton
+                companyButton
                 className="mb-2"
                 key={award.id}
                 award={award}
