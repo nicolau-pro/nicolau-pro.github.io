@@ -4,59 +4,6 @@
 @use "mixins" as mixins;
 @use "variables" as vars;
 
-a[role="button"] {
-  cursor: pointer;
-  text-decoration: none;
-  outline: none;
-  border: 0;
-  color: inherit;
-  width: fit-content;
-  font-family: inherit;
-  display: flex;
-  align-items: center;
-
-  &.button-read-more {
-    $size: 60px;
-    @include mixins.slanted-button($size);
-    text-transform: uppercase;
-
-    &.outline {
-      position: relative;
-      $edge: 2.3px;
-
-      box-shadow: inset 0 $edge 0 currentColor,
-        inset 0 -1 * $edge 0 currentColor;
-
-      outline: $edge solid currentColor;
-
-      &:before,
-      &:after {
-        position: absolute;
-        content: "";
-        display: block;
-        height: $size * 2;
-        width: $size * 2;
-        background-image: linear-gradient(
-          to top right,
-          currentColor $size * 0.5 * 1.4142 + $edge * 0.95,
-          transparent $size * 0.5 * 1.4142 + $edge
-        );
-      }
-
-      &:before {
-        bottom: 0;
-        left: 0;
-      }
-
-      &:after {
-        top: 0;
-        right: 0;
-        transform: rotate(180deg);
-      }
-    }
-  }
-}
-
 $brand-primary-color: (
   "blippar": #f49522,
   "mrmc": #2d64aa,

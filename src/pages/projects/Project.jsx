@@ -52,7 +52,10 @@ function Page(props) {
           <Row className="py-4">
             <Col>
               <h1 className="hero">{Project.client}</h1>
-              <h2>{Project.name}</h2>
+              <h2>
+                <span>{Project.name}</span>{" "}
+                <span className="text-thin">{Project.year}</span>
+              </h2>
             </Col>
           </Row>
         </Section>
@@ -62,65 +65,94 @@ function Page(props) {
         <Section className="py-6 background-solid">
           <Row>
             <Col>
-              <h3 className="mb-1 gradient-text">{Project.year}</h3>
               {Project.paragraphs.map((paragraph, index) => (
-                <p key={index} className="large mb-1 gradient-text">
+                <p
+                  key={index}
+                  className={`${index === 0 ? "large" : ""} mb-1 gradient-text`}
+                >
                   {paragraph}
                 </p>
               ))}
+
+              <React.Fragment>
+                <h4>See it live:</h4>
+
+                {FilterAwardsByProjectId(Awards, Project.id).map((award) => (
+                  <article className="gradient-text" key={award.id}>
+                    <h4 className="large mt-1">
+                      <span>{award.prize} </span>
+                      <span className="material-icons">{award.icon}</span>
+                    </h4>
+                    <p>{award.event}</p>
+                    <p className="small">{award.description}</p>
+                  </article>
+                ))}
+              </React.Fragment>
             </Col>
             <Col>
-              <Link
-                to={Project.videoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="video-crossfade"
-              >
-                <div className="slides">
-                  <div
-                    className="slide"
-                    style={{
-                      backgroundImage: `url(/projects/${Project.videoTheme}/0.jpg)`,
-                    }}
-                  />
-                  <div
-                    className="slide"
-                    style={{
-                      backgroundImage: `url(/projects/${Project.videoTheme}/1.jpg)`,
-                    }}
-                  />
-                  <div
-                    className="slide"
-                    style={{
-                      backgroundImage: `url(/projects/${Project.videoTheme}/2.jpg)`,
-                    }}
-                  />
-                  <div
-                    className="slide"
-                    style={{
-                      backgroundImage: `url(/projects/${Project.videoTheme}/3.jpg)`,
-                    }}
-                  />
-                  <div
-                    className="slide"
-                    style={{
-                      backgroundImage: `url(/projects/${Project.videoTheme}/4.jpg)`,
-                    }}
-                  />
-                  <span className="material-icons">play_arrow</span>
-                </div>
-              </Link>
+              {Project.videoTheme && (
+                <Link
+                  to={Project.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="video-crossfade"
+                >
+                  <div className="slides">
+                    <div
+                      className="slide"
+                      style={{
+                        backgroundImage: `url(/projects/${Project.videoTheme}/0.jpg)`,
+                      }}
+                    />
+                    <div
+                      className="slide"
+                      style={{
+                        backgroundImage: `url(/projects/${Project.videoTheme}/1.jpg)`,
+                      }}
+                    />
+                    <div
+                      className="slide"
+                      style={{
+                        backgroundImage: `url(/projects/${Project.videoTheme}/2.jpg)`,
+                      }}
+                    />
+                    <div
+                      className="slide"
+                      style={{
+                        backgroundImage: `url(/projects/${Project.videoTheme}/3.jpg)`,
+                      }}
+                    />
+                    <div
+                      className="slide"
+                      style={{
+                        backgroundImage: `url(/projects/${Project.videoTheme}/4.jpg)`,
+                      }}
+                    />
+                    <span className="material-icons">play_arrow</span>
+                  </div>
+                </Link>
+              )}
 
-              {FilterAwardsByProjectId(Awards, Project.id).map((award) => (
-                <article className="gold-text" key={award.id}>
-                  <h4 className="large mt-1">
-                    <span>{award.prize} </span>
-                    <span className="material-icons">{award.icon}</span>
-                  </h4>
-                  <p>{award.event}</p>
-                  <p className="small">{award.description}</p>
-                </article>
-              ))}
+              {Project.image && (
+                <img
+                  loading="lazy"
+                  className="fill"
+                  src={Project.image}
+                  alt={`${Project.client} ${Project.name}`}
+                />
+              )}
+
+              {Project.externalLink && (
+                <Link
+                  role="button"
+                  className={`mt-2 button-read-more button-outline theme-${Company.theme}`}
+                  aria-label={`See the project live at ${Project.externalLink}`}
+                  to={Project.externalLink}
+                >
+                  <span>Live Project</span>
+                  <span className="material-icons">open_in_new</span>
+                </Link>
+              )}
             </Col>
           </Row>
         </Section>
@@ -130,12 +162,10 @@ function Page(props) {
         <Section className="pt-4 pb-10">
           <Row>
             <Col>
-              <h3 className="hero">
-                Read more about my career at {Company.name}
-              </h3>
+              <h3>Read more about my career at {Company.name}</h3>
               <Link
                 role="button"
-                className={`mt-2 button-read-more outline theme-${Company.theme}`}
+                className={`mt-2 button-read-more button-outline theme-${Company.theme}`}
                 aria-label={`Read more about my career at ${Company.name}`}
                 to={`/career/${Company.theme}`}
               >

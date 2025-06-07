@@ -41,10 +41,10 @@ function Page() {
       />
 
       <main>
-        <Section className="career">
+        <Section className="career pb-4">
           <Row>
-            <Col className="pb-4">
-              <h1 className="hero shade">Career</h1>
+            <Col className="py-3">
+              <h1 className="hero shade ">Career</h1>
             </Col>
           </Row>
         </Section>

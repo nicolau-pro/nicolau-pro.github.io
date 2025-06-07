@@ -6,23 +6,25 @@ main {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  // padding-bottom: 8em;
 
   > section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // outline: 1px dotted magenta;
     width: 100%;
     height: fit-content;
 
     div.row {
-      // outline: 1px dotted cyan;
       display: flex;
       gap: 3em;
       width: 100%;
       max-width: 1000px;
       padding: 2em;
+    }
+
+    div.line {
+      display: flex;
+      width: 100%;
     }
 
     div.col {

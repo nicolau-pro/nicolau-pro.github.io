@@ -12,7 +12,7 @@ function Page() {
       <main>
         <Section>
           <Row>
-            <Col>
+            <Col className="py-3">
               <h1 className="hero">Home</h1>
             </Col>
           </Row>

@@ -65,7 +65,7 @@ function Page(props) {
       <main className={`theme-${Company.theme}`}>
         <Section>
           <Row>
-            <Col>
+            <Col className="py-3">
               <h1 className="hero">{Company.name.toUpperCase()}</h1>
             </Col>
           </Row>
@@ -208,6 +208,7 @@ function Page(props) {
                           <em>{testimonial.fullText}</em>
                         </p>
                         <Link
+                          role="button"
                           to={testimonial.link}
                           target="_blank"
                           rel="noopener noreferrer"

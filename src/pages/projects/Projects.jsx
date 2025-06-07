@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 import Row from "../../components/layout/Row";
+import Line from "../../components/layout/Line";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Meta from "../../components/meta";
@@ -47,7 +48,7 @@ function Page() {
       <main>
         <Section className="projects pb-4">
           <Row>
-            <Col>
+            <Col className="py-3">
               <h1 className="hero shade">Projects</h1>
             </Col>
           </Row>
@@ -63,19 +64,12 @@ function Page() {
                 <Row>
                   <Col className="span-3">
                     <h2>{project.client}</h2>
-                    <h3>{project.name}</h3>
+                    <h3>
+                      <span>{project.name}</span>{" "}
+                      <span className="text-thin">{project.year}</span>
+                    </h3>
                   </Col>
-                  <Col className="span-2 pt-2">
-                    <Link
-                      role="button"
-                      className={`button-read-more outline`}
-                      to={`/projects/${ProjectPath(project)}`}
-                      aria-label={`To project: ${project.client} ${project.name}`}
-                    >
-                      <span>To Project</span>
-                      <span className="material-icons">arrow_forward_ios</span>
-                    </Link>
-                  </Col>
+                  <Col className="span-2 pt-2"></Col>
                 </Row>
               </Section>
               <Section
@@ -88,109 +82,45 @@ function Page() {
                 <Row className="pt-4 pb-12 blurred-gradient">
                   <Col className="span-3">
                     <h4 className="large">{project.metaDescription}...</h4>
-                    <p className="mt-1">
-                      <span>{project.year}</span>
-                      <span> • </span>
-                      <span>
-                        {FindCompanyById(Companies, project.companyId).name}
-                      </span>
-                    </p>
-                    <p className="small">
-                      <span>{CountAwardsByProjectId(Awards, project.id)}</span>
-                      <span>
-                        {" "}
-                        Award
-                        {CountAwardsByProjectId(Awards, project.id) > 1
-                          ? "s"
-                          : ""}{" "}
-                      </span>
 
-                      {Array.from({
-                        length: CountAwardsByProjectId(Awards, project.id),
-                      }).map((_, i) => (
-                        <span className="material-icons" key={i}>
-                          emoji_events
+                    <Line className="mt-4">
+                      <Link
+                        role="button"
+                        className={`button-read-more  theme-${
+                          FindCompanyById(Companies, project.companyId).theme
+                        }`}
+                        to={`/projects/${ProjectPath(project)}`}
+                        aria-label={`To project: ${project.client} ${project.name}`}
+                      >
+                        <span>To Project</span>
+                        <span className="material-icons">
+                          arrow_forward_ios
                         </span>
-                      ))}
-                    </p>
-                    <Link
-                      role="button"
-                      className={`mt-3 button-read-more theme-${
-                        FindCompanyById(Companies, project.companyId).theme
-                      }`}
-                      aria-label={`Read more about my career at ${
-                        FindCompanyById(Companies, project.companyId).name
-                      }`}
-                      to={`/career/${
-                        FindCompanyById(Companies, project.companyId).theme
-                      }`}
-                    >
-                      <span>
-                        {FindCompanyById(Companies, project.companyId).name}
-                      </span>
-                      <span className="material-icons">arrow_forward_ios</span>
-                    </Link>
+                      </Link>
+
+                      <Link
+                        role="button"
+                        className={` button-read-more button-outline`}
+                        aria-label={`Read more about my career at ${
+                          FindCompanyById(Companies, project.companyId).name
+                        }`}
+                        to={`/career/${
+                          FindCompanyById(Companies, project.companyId).theme
+                        }`}
+                      >
+                        <span>
+                          {FindCompanyById(Companies, project.companyId).name}
+                        </span>
+                        <span className="material-icons">
+                          arrow_forward_ios
+                        </span>
+                      </Link>
+                    </Line>
                   </Col>
                 </Row>
               </Section>
             </React.Fragment>
           ))}
-
-        {/* <Section>
-          {Projects.length > 0 &&
-            Projects.map((project) => (
-              <Row className="mb-2" key={project.id}>
-                <details>
-                  <summary>
-                    <h3>
-                      {project.client} {project.name}
-                    </h3>
-                    <span>
-                      <span>
-                        {FindCompanyById(Companies, project.companyId).name}
-                      </span>
-                      <span> {project.year}</span>
-                      {CountAwardsByProjectId(Awards, project.id) > 0 && (
-                        <>
-                          <span className="material-icons">emoji_events</span>
-                          <span>
-                            {CountAwardsByProjectId(Awards, project.id)} Award
-                            {CountAwardsByProjectId(Awards, project.id) > 1
-                              ? "s"
-                              : ""}
-                          </span>
-                        </>
-                      )}
-                    </span>
-                  </summary>
-                  <Row>
-                    <Col>
-                      {project.paragraphs.map((paragraph, index) => (
-                        <p key={index} className="large mb-1">
-                          {paragraph}
-                        </p>
-                      ))}
-                      {FilterAwardsByProjectId(Awards, project.id).map(
-                        (award) => (
-                          <article className="gold-text" key={award.id}>
-                            <h4 className="large mt-1">
-                              <span>{award.prize} </span>
-                              <span className="material-icons">
-                                {award.icon}
-                              </span>
-                            </h4>
-                            <p>{award.event}</p>
-                            <p className="small">{award.description}</p>
-                          </article>
-                        )
-                      )}
-                    </Col>
-                   
-                  </Row>
-                </details>
-              </Row>
-            ))}
-        </Section> */}
       </main>
     </>
   );

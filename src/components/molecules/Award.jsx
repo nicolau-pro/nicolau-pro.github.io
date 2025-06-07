@@ -3,20 +3,33 @@ import Row from "../layout/Row";
 import Col from "../layout/Col";
 import { Link } from "react-router";
 
+import { API_GetProjectById, ProjectPath } from "../../data/projects";
 import { API_GetCompanyById } from "../../data/companies";
+import Line from "../layout/Line";
 
 const Award = (props) => {
   const { award, links, ...rest } = props;
   const [Company, setCompany] = useState(null);
+  const [Project, setProject] = useState(null);
 
   useEffect(() => {
-    async function fetchCompany(companyId) {
-      const company = await API_GetCompanyById(companyId);
+    async function fetchData() {
+      const company = await API_GetCompanyById(award.companyId);
       setCompany(company);
+
+      const project = await API_GetProjectById(award.projectId);
+      setProject(project);
     }
 
-    if (links?.company) fetchCompany(award.companyId);
+    fetchData();
   }, []);
+
+  if (!Company || !Project)
+    return (
+      <p className="my-6" id="Loading">
+        Loading...
+      </p>
+    );
 
   return (
     <Row {...rest}>
@@ -39,17 +52,26 @@ const Award = (props) => {
         </h4>
         <h5 className="gradient-text">{award.description}</h5>
 
-        <div className="links mt-1">
-          {Company && (
-            <Link
-              className={`button-small button-award ${Company.theme}`}
-              to={`/career/${Company.theme}`}
-              aria-label={`Read more about my career at ${Company.name}`}
-            >
-              {Company.name}
-            </Link>
-          )}
-        </div>
+        <Line className="links mt-2">
+          <Link
+            role="button"
+            className={`button-small button-outline button-award ${Company.theme}`}
+            to={`/projects/${ProjectPath(Project)}`}
+            aria-label={`Read more about my career at ${Company.name}`}
+          >
+            TO PROJECT
+            <span className="material-icons">arrow_forward_ios</span>
+          </Link>
+          <Link
+            role="button"
+            className={`button-small  button-award ${Company.theme}`}
+            to={`/career/${Company.theme}`}
+            aria-label={`Read more about my career at ${Company.name}`}
+          >
+            {Company.name}
+            <span className="material-icons">arrow_forward_ios</span>
+          </Link>
+        </Line>
       </Col>
     </Row>
   );
