@@ -95,7 +95,7 @@ function Page() {
               >
                 <Row className="pt-4 pb-12 blurred-gradient">
                   <Col className="span-3">
-                    <p className="large">{project.metaDescription}...</p>
+                    <h4 className="large">{project.metaDescription}...</h4>
                     <p className="mt-1">
                       <span>{project.year}</span>
                       <span> • </span>
