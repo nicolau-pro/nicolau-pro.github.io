@@ -9,21 +9,23 @@ import Crosshatch from "../../components/decorators/Crosshatch";
 import { API_GetAwards } from "../../data/awards";
 
 function Page() {
-  const [Awards, setAwards] = useState([]);
+  const [Awards, setAwards] = useState(null);
 
   useEffect(() => {
-    async function fetchCompanies() {
+    async function fetchData() {
       const awards = await API_GetAwards();
       setAwards(awards);
     }
 
-    fetchCompanies();
+    fetchData();
   }, []);
 
-  if (Awards.length === 0) return;
-  <p className="my-6" id="Loading">
-    Loading...
-  </p>;
+  if (!Awards)
+    return (
+      <p className="my-6" id="Loading">
+        Loading...
+      </p>
+    );
 
   return (
     <>

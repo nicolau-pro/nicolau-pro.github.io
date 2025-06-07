@@ -7,14 +7,13 @@ import Meta from "../../components/meta";
 import { API_GetCompanies } from "../../data/companies";
 import { API_GetJobs } from "../../data/jobs";
 import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
-// import Crosshatch from "../../components/decorators/Crosshatch";
 
 function Page() {
   const [Companies, setCompanies] = useState(null);
-  const [Jobs, setJobs] = useState([]);
+  const [Jobs, setJobs] = useState(null);
 
   useEffect(() => {
-    async function fetchCompanies() {
+    async function fetchData() {
       const companies = await API_GetCompanies();
       setCompanies(companies);
 
@@ -22,13 +21,15 @@ function Page() {
       setJobs(jobs);
     }
 
-    fetchCompanies();
+    fetchData();
   }, []);
 
-  if (!Companies) return;
-  <p className="my-6" id="Loading">
-    Loading...
-  </p>;
+  if (!Companies || !Jobs)
+    return (
+      <p className="my-6" id="Loading">
+        Loading...
+      </p>
+    );
 
   return (
     <>
@@ -86,7 +87,7 @@ function Page() {
                 <Col>
                   <Link
                     role="button"
-                    className={`career-read-more theme-${company.theme}`}
+                    className={`button-read-more theme-${company.theme}`}
                     aria-label={`Read more about my career at ${company.name}`}
                     to={`/career/${company.theme}`}
                   >

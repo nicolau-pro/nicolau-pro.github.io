@@ -34,9 +34,22 @@ function CountProjectsByCompanyId(projects, companyId) {
   return projects.filter((project) => project.companyId === companyId).length;
 }
 
+function ProjectPath(project) {
+  const slug = `${project.client} ${project.name}`
+    .normalize("NFD") // decompose accented letters
+    .replace(/[\u0300-\u036f]/g, "") // remove diacritic marks
+    .toLowerCase()
+    .replace(/['"]/g, "") // remove quotes
+    .replace(/[^a-z0-9]+/g, "-") // replace non-alphanumerics with dashes
+    .replace(/^-+|-+$/g, ""); // trim leading/trailing dashes
+
+  return slug;
+}
+
 export {
   FilterProjectsByCompanyId,
   CountProjectsByCompanyId,
+  ProjectPath,
   API_GetProjectById,
   API_GetProjects,
 };

@@ -15,7 +15,7 @@ a[role="button"] {
   display: flex;
   align-items: center;
 
-  &.career-read-more {
+  &.button-read-more {
     $size: 60px;
     @include mixins.slanted-button($size);
     text-transform: uppercase;

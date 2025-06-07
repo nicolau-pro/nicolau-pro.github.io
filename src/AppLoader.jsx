@@ -4,24 +4,31 @@ import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Company from "./pages/career/Company";
 import Career from "./pages/career/Career";
+import Project from "./pages/projects/Project";
 import Projects from "./pages/projects/Projects";
 import Awards from "./pages/awards/Awards";
+import { API_GetCompanies } from "./data/companies";
+import { API_GetProjects, ProjectPath } from "./data/projects";
 
 const rootPath = "/";
 
 function AppLoader() {
-  const [companies, setCompanies] = useState([]);
+  const [Companies, setCompanies] = useState(null);
+  const [ProjectList, setProjectList] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/companies")
-      .then((res) => res.json())
-      .then((data) => setCompanies(data))
-      .catch((error) => {
-        console.error("Failed to load companies:", error);
-      });
+    async function fetchData() {
+      const companies = await API_GetCompanies();
+      setCompanies(companies);
+
+      const projects = await API_GetProjects();
+      setProjectList(projects);
+    }
+
+    fetchData();
   }, []);
 
-  if (!companies) {
+  if (!Companies || !ProjectList) {
     return <div>Loading...</div>;
   }
 
@@ -32,7 +39,7 @@ function AppLoader() {
           <Route index element={<Home />} />
           <Route path="career">
             <Route index element={<Career />} />
-            {companies.map((company) => (
+            {Companies.map((company) => (
               <Route
                 key={company.id}
                 path={company.theme}
@@ -42,6 +49,13 @@ function AppLoader() {
           </Route>
           <Route path="projects">
             <Route index element={<Projects />} />
+            {ProjectList.map((project) => (
+              <Route
+                key={project.id}
+                path={ProjectPath(project)}
+                element={<Project projectId={project.id} />}
+              />
+            ))}
           </Route>
           <Route path="awards">
             <Route index element={<Awards />} />

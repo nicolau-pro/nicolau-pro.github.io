@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
+import Meta from "../../components/meta";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import Award from "../../components/molecules/Award";
 
@@ -19,13 +20,13 @@ function Page(props) {
   const { companyId } = props;
 
   const [Company, setCompany] = useState(null);
-  const [Tech, setTech] = useState([]);
-  const [Jobs, setJobs] = useState([]);
-  const [Testimonials, setTestimonials] = useState([]);
-  const [Awards, setAwards] = useState([]);
+  const [Tech, setTech] = useState(null);
+  const [Jobs, setJobs] = useState(null);
+  const [Testimonials, setTestimonials] = useState(null);
+  const [Awards, setAwards] = useState(null);
 
   useEffect(() => {
-    async function fetchCompany() {
+    async function fetchData() {
       const data = await API_GetCompanyById(companyId);
       setCompany(data);
 
@@ -42,58 +43,26 @@ function Page(props) {
       setAwards(awards);
     }
 
-    fetchCompany();
+    fetchData();
   }, [companyId]);
 
-  if (
-    !Company ||
-    Tech.length === 0 ||
-    Jobs.length === 0 ||
-    Testimonials.length === 0 ||
-    Awards.length === 0
-  )
-    return;
-  <p className="my-6" id="Loading">
-    Loading...
-  </p>;
+  if (!Company || !Tech || !Jobs || !Testimonials || !Awards)
+    return (
+      <p className="my-6" id="Loading">
+        Loading...
+      </p>
+    );
 
-  const social = {
-    author: "Radu Nicolau",
-    description: `RADU NICOLAU > Careers > ${Company.name} - ${Company.meta.description}`,
-    article: `Careers > ${Company.name}`,
-    image: `/social/${Company.theme}.jpg`,
-    imageAlt: `${Company.name} - ${Company.meta.description}`,
-  };
   return (
     <>
-      <title>{`RADU NICOLAU > Careers > ${Company.name}`}</title>
+      <Meta
+        section={`Career > ${Company.name}`}
+        description={`Career > ${Company.name} - ${Company.meta.description}`}
+        image={`/social/${Company.theme}.jpg`}
+        url={`/career/${Company.theme}`}
+      />
+
       <main className={`theme-${Company.theme}`}>
-        <meta name="description" content={social.description} />
-
-        <meta property="article:author" content={social.author} />
-        <meta property="article:publisher" content={social.author} />
-        <meta property="article:section" content={social.article} />
-
-        <meta property="fb:app_id" content="966242223397117" />
-        <meta property="og:title" content={social.description} />
-        <meta property="og:description" content={Company.meta.description} />
-        <meta property="og:type" content="article" />
-        <meta property="og:locale" content="en_GB" />
-
-        <meta property="og:url" content="/" />
-        <meta property="og:site_name" content={social.author} />
-        <meta property="og:image" content={social.image} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content={social.imageAlt} />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={social.description} />
-        <meta name="twitter:description" content={Company.meta.description} />
-        <meta name="twitter:image" content={social.image} />
-        <meta name="twitter:image:alt" content={social.imageAlt} />
-        <meta name="twitter:domain" content="r5.ro" />
-
         <Section>
           <Row>
             <Col>

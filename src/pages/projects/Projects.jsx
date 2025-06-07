@@ -4,13 +4,8 @@ import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
 import Meta from "../../components/meta";
-import Crosshatch from "../../components/decorators/Crosshatch";
-import { API_GetProjects } from "../../data/projects";
-import {
-  API_GetAwards,
-  CountAwardsByProjectId,
-  FilterAwardsByProjectId,
-} from "../../data/awards";
+import { API_GetProjects, ProjectPath } from "../../data/projects";
+import { API_GetAwards, CountAwardsByProjectId } from "../../data/awards";
 import { API_GetCompanies, FindCompanyById } from "../../data/companies";
 
 function Page() {
@@ -19,7 +14,7 @@ function Page() {
   const [Awards, setAwards] = useState(null);
 
   useEffect(() => {
-    async function fetchAwards() {
+    async function fetchData() {
       const projects = await API_GetProjects();
       setProjects(projects);
 
@@ -30,7 +25,7 @@ function Page() {
       setAwards(awards);
     }
 
-    fetchAwards();
+    fetchData();
   }, []);
 
   if (!Projects || !Companies || !Awards)
@@ -73,11 +68,8 @@ function Page() {
                   <Col className="span-2 pt-2">
                     <Link
                       role="button"
-                      className={`career-read-more outline`}
-                      // aria-label={`Read more about my career at ${company.name}`}
-                      to={`/career/${
-                        FindCompanyById(Companies, project.companyId).theme
-                      }`}
+                      className={`button-read-more outline`}
+                      to={`/projects/${ProjectPath(project)}`}
                       aria-label={`To project: ${project.client} ${project.name}`}
                     >
                       <span>To Project</span>
@@ -123,7 +115,7 @@ function Page() {
                     </p>
                     <Link
                       role="button"
-                      className={`mt-3 career-read-more theme-${
+                      className={`mt-3 button-read-more theme-${
                         FindCompanyById(Companies, project.companyId).theme
                       }`}
                       aria-label={`Read more about my career at ${
@@ -193,71 +185,7 @@ function Page() {
                         )
                       )}
                     </Col>
-                    <Col>
-                      <Link
-                        to={project.videoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="video-crossfade"
-                      >
-                        <div className="slides">
-                          <div
-                            className="slide"
-                            style={{
-                              backgroundImage: `url(/projects/${project.videoTheme}/0.jpg)`,
-                            }}
-                          />
-                          <div
-                            className="slide"
-                            style={{
-                              backgroundImage: `url(/projects/${project.videoTheme}/1.jpg)`,
-                            }}
-                          />
-                          <div
-                            className="slide"
-                            style={{
-                              backgroundImage: `url(/projects/${project.videoTheme}/2.jpg)`,
-                            }}
-                          />
-                          <div
-                            className="slide"
-                            style={{
-                              backgroundImage: `url(/projects/${project.videoTheme}/3.jpg)`,
-                            }}
-                          />
-                          <div
-                            className="slide"
-                            style={{
-                              backgroundImage: `url(/projects/${project.videoTheme}/4.jpg)`,
-                            }}
-                          />
-                          <span className="material-icons">play_arrow</span>
-                        </div>
-                      </Link>
-
-                      <Link
-                        role="button"
-                        className={`mt-2 career-read-more theme-${
-                          FindCompanyById(Companies, project.companyId).theme
-                        }`}
-                        aria-label={`Read more about my career at ${
-                          FindCompanyById(Companies, project.companyId).name
-                        }`}
-                        to={`/career/${
-                          FindCompanyById(Companies, project.companyId).theme
-                        }`}
-                      >
-                        <span>
-                          {FindCompanyById(Companies, project.companyId).name}
-                        </span>
-                        <span className="material-icons">
-                          arrow_forward_ios
-                        </span>
-                      </Link>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col></Col>
+                   
                   </Row>
                 </details>
               </Row>
@@ -269,17 +197,3 @@ function Page() {
 }
 
 export default Page;
-
-// {
-//   client: "Stylist Magazine",
-//   name: "Olympic Edition",
-//   year: 2012,
-//   companyId: 1,
-//   paragraphs: [
-//     "Stylist used the augmented reality app Blippar to present Olympic fever at its finest, with their exclusive blippable issue. Thrilling content throughout, including videos, polls, live Olympic leader boards and Blipp to Buys make this issue something really special.",
-//     "My first award winning campaign!",
-//   ],
-//   awardIds: [2],
-//   videoLink: "https://youtu.be/HXIrDGeCWNo",
-//   videoTheme: "stylist",
-// },
