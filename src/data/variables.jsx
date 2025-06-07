@@ -1,4 +1,4 @@
-const MetaTags = {
+const MetaData = {
   website: "Radu Nicolau",
   domain: "r5.ro",
   fb_app_id: "966242223397117",
@@ -15,4 +15,4 @@ const FooterProjectIds = [4, 6, 9, 10, 12, 14];
 
 const rootPath = "/";
 
-export { MetaTags, Contact, FooterProjectIds, rootPath };
+export { MetaData, Contact, FooterProjectIds, rootPath };

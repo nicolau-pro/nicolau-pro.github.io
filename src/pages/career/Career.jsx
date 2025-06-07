@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/Meta";
+import MetaTags from "../../components/MetaTags";
 import { API_GetCompanies } from "../../data/companies";
 import { API_GetJobs } from "../../data/jobs";
 import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
@@ -33,7 +33,7 @@ function Page() {
 
   return (
     <>
-      <Meta
+      <MetaTags
         section="Career"
         description="Career"
         image="/social/career.jpg"

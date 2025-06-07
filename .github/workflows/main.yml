@@ -69,7 +69,7 @@ jobs:
           echo "API did not return 200 within timeout. Failing job."
           exit 1
       - name: Build
-        run: npm run build
+        run: npm run build &
       - name: Presite
         run: npm run presite
       - name: Post process pages

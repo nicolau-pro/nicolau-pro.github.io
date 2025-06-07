@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/Meta";
+import MetaTags from "../../components/MetaTags";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import Award from "../../components/molecules/Award";
 
@@ -55,7 +55,7 @@ function Page(props) {
 
   return (
     <>
-      <Meta
+      <MetaTags
         section={`Career > ${Company.name}`}
         description={`Career > ${Company.name} - ${Company.meta.description}`}
         image={`/social/${Company.theme}.jpg`}

@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/Meta";
+import MetaTags from "../../components/MetaTags";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import { API_GetProjectById, ProjectPath } from "../../data/projects";
 import { API_GetAwards, FilterAwardsByProjectId } from "../../data/awards";
@@ -40,7 +40,7 @@ function Page(props) {
 
   return (
     <>
-      <Meta
+      <MetaTags
         section={`Projects > ${Project.client} ${Project.name}`}
         description={`Projects > ${Project.client} ${Project.name} - ${Project.metaDescription}`}
         image={Project.metaImage}

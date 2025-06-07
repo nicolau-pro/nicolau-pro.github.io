@@ -4,9 +4,9 @@ import Row from "../../components/layout/Row";
 import Line from "../../components/layout/Line";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/Meta";
+import MetaTags from "../../components/MetaTags";
 import { API_GetProjects, ProjectPath } from "../../data/projects";
-import { API_GetAwards, CountAwardsByProjectId } from "../../data/awards";
+import { API_GetAwards } from "../../data/awards";
 import { API_GetCompanies, FindCompanyById } from "../../data/companies";
 
 function Page() {
@@ -38,7 +38,7 @@ function Page() {
 
   return (
     <>
-      <Meta
+      <MetaTags
         section="Projects"
         description="Award-winning Campains and Projects"
         image="/social/projects.jpg"

@@ -17,8 +17,10 @@ const Award = (props) => {
       const company = await API_GetCompanyById(award.companyId);
       setCompany(company);
 
-      const project = await API_GetProjectById(award.projectId);
-      setProject(project);
+      if (award.projectId) {
+        const project = await API_GetProjectById(award.projectId);
+        setProject(project);
+      }
     }
 
     fetchData();

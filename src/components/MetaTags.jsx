@@ -1,9 +1,9 @@
 import React from "react";
-import { MetaTags } from "../data/variables";
+import { MetaData } from "../data/variables";
 
-function Meta(props) {
+function MetaTags(props) {
   const { section, description, image, url } = props;
-  const { website, domain, fb_app_id } = MetaTags;
+  const { website, domain, fb_app_id } = MetaData;
 
   const social = {
     author: website,
@@ -46,4 +46,4 @@ function Meta(props) {
   );
 }
 
-export default Meta;
+export default MetaTags;
