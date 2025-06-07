@@ -1,10 +1,9 @@
 import React from "react";
+import { MetaTags } from "../data/variables";
 
 function Meta(props) {
   const { section, description, image, url } = props;
-
-  const website = "Radu Nicolau";
-  const domain = "r5.ro";
+  const { website, domain, fb_app_id } = MetaTags;
 
   const social = {
     author: website,
@@ -24,7 +23,7 @@ function Meta(props) {
       <meta property="article:publisher" content={social.author} />
       <meta property="article:section" content={social.article} />
 
-      <meta property="fb:app_id" content="966242223397117" />
+      <meta property="fb:app_id" content={fb_app_id} />
       <meta property="og:title" content={social.description} />
       <meta property="og:description" content={social.description} />
       <meta property="og:type" content="article" />

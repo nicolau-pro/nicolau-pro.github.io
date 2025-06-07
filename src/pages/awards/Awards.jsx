@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/meta";
+import Meta from "../../components/Meta";
 import Award from "../../components/molecules/Award";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import { API_GetAwards } from "../../data/awards";

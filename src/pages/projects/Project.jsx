@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/meta";
+import Meta from "../../components/Meta";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import { API_GetProjectById, ProjectPath } from "../../data/projects";
 import { API_GetAwards, FilterAwardsByProjectId } from "../../data/awards";
@@ -145,8 +145,10 @@ function Page(props) {
               {Project.externalLink && (
                 <Link
                   role="button"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`mt-2 button-read-more button-outline theme-${Company.theme}`}
-                  aria-label={`See the project live at ${Project.externalLink}`}
+                  aria-label={`See the project live at ${Project.externalLink}. External link`}
                   to={Project.externalLink}
                 >
                   <span>Live Project</span>

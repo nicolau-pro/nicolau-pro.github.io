@@ -3,10 +3,13 @@
 
 footer {
   position: relative;
-  min-height: 300px;
   $background-color: #111111;
   background-color: $background-color;
-  color: color.adjust(white, $lightness: -50%);
+
+  $color-text: color.adjust(white, $lightness: -50%);
+  $color-highlight: color.adjust(white, $lightness: -10%);
+
+  color: $color-text;
 
   $size: 5em;
   $shade: color.adjust($background-color, $lightness: 2%);
@@ -18,8 +21,6 @@ footer {
     linear-gradient(to top, $shade 10%, transparent 100%);
 
   display: flex;
-  align-items: center;
-  justify-content: center;
 
   &::before {
     content: "";
@@ -31,5 +32,21 @@ footer {
     @include mixins.crosshatch($shade);
 
     mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  }
+
+  a {
+    color: $color-text;
+    text-decoration: none;
+    transition: color 0.1s ease-out;
+    $gap: 0.25em;
+    padding: $gap 2 * $gap;
+    margin: $gap 2 * $gap $gap -2 * $gap;
+    border-radius: 99px;
+    width: fit-content;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-highlight;
+    }
   }
 }

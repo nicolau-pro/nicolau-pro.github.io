@@ -1,36 +1,13 @@
 import { Outlet } from "react-router";
+import Header from "../components/molecules/Header";
+import Footer from "../components/molecules/Footer";
 
 function Dashboard() {
-  const rootPath = "/";
-
   return (
     <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <a href={rootPath}>Home</a>
-            </li>
-            <li>
-              <a href={rootPath + "career"}>Career</a>
-            </li>
-            <li>
-              <a href={rootPath + "projects"}>Projects</a>
-            </li>
-            <li>
-              <a href={rootPath + "awards"}>Awards</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <Outlet />
-      <footer>
-        <p>© 2025 Radu Nicolau</p>
-        <p className="small">
-          All brands, logos, images and videos are copyright to their respective
-          owners.
-        </p>
-      </footer>
+      <Footer />
     </>
   );
 }

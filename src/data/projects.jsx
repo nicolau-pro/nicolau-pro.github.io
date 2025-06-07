@@ -46,7 +46,20 @@ function ProjectPath(project) {
   return slug;
 }
 
+function FilterProjectsFirstWithCompanyId(items) {
+  const seen = new Set();
+
+  return items.filter((item) => {
+    if (seen.has(item.companyId)) {
+      return false;
+    }
+    seen.add(item.companyId);
+    return true;
+  });
+}
+
 export {
+  FilterProjectsFirstWithCompanyId,
   FilterProjectsByCompanyId,
   CountProjectsByCompanyId,
   ProjectPath,

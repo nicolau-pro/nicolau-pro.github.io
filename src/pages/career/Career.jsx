@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/meta";
+import Meta from "../../components/Meta";
 import { API_GetCompanies } from "../../data/companies";
 import { API_GetJobs } from "../../data/jobs";
 import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
@@ -55,7 +55,7 @@ function Page() {
                 <Col>
                   <h2>{company.name}</h2>
                   {Jobs.length > 0 && (
-                    <p>
+                    <p className="text-thin h3">
                       <span>
                         {FormatMonthYear(
                           EmploymentPeriod(Jobs, company.id).from
@@ -72,26 +72,25 @@ function Page() {
             </Section>
             <Section
               key={company.id}
-              className={`section-career ${company.theme}-jobs pt-3 pb-12`}
+              className={`section-career ${company.theme}-jobs`}
             >
-              <Row>
+              <Row className="pt-4 pb-12 blurred-gradient">
                 <Col>
                   {Jobs.filter((job) => job.companyId === company.id).map(
                     (job, index) => (
-                      <h3 key={index}>{job.title}</h3>
+                      <h3 key={index} className="mt-1">
+                        {job.title}
+                      </h3>
                     )
                   )}
-                </Col>
-              </Row>
-              <Row>
-                <Col>
+
                   <Link
                     role="button"
-                    className={`button-read-more theme-${company.theme}`}
+                    className={`mt-4 button-read-more theme-${company.theme}`}
                     aria-label={`Read more about my career at ${company.name}`}
                     to={`/career/${company.theme}`}
                   >
-                    <span>Read more</span>
+                    <span>Details</span>
                     <span className="material-icons">arrow_forward_ios</span>
                   </Link>
                 </Col>

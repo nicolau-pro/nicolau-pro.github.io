@@ -4,7 +4,7 @@ import Row from "../../components/layout/Row";
 import Line from "../../components/layout/Line";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/meta";
+import Meta from "../../components/Meta";
 import { API_GetProjects, ProjectPath } from "../../data/projects";
 import { API_GetAwards, CountAwardsByProjectId } from "../../data/awards";
 import { API_GetCompanies, FindCompanyById } from "../../data/companies";

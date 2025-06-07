@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import Meta from "../../components/meta";
+import Meta from "../../components/Meta";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import Award from "../../components/molecules/Award";
 
