@@ -3,24 +3,24 @@
 @mixin padding-classes {
   @for $i from 1 through 12 {
     .pt-#{$i} {
-      padding-top: #{$i}em;
+      padding-top: #{$i}em !important;
     }
     .pb-#{$i} {
-      padding-bottom: #{$i}em;
+      padding-bottom: #{$i}em !important;
     }
     .py-#{$i} {
-      padding-top: #{$i}em;
-      padding-bottom: #{$i}em;
+      padding-top: #{$i}em !important;
+      padding-bottom: #{$i}em !important;
     }
     .pl-#{$i} {
-      padding-left: #{$i}em;
+      padding-left: #{$i}em !important;
     }
     .pr-#{$i} {
-      padding-right: #{$i}em;
+      padding-right: #{$i}em !important;
     }
     .px-#{$i} {
-      padding-left: #{$i}em;
-      padding-right: #{$i}em;
+      padding-left: #{$i}em !important;
+      padding-right: #{$i}em !important;
     }
   }
 }
@@ -28,24 +28,24 @@
 @mixin margin-classes {
   @for $i from 1 through 12 {
     .mt-#{$i} {
-      margin-top: #{$i}em;
+      margin-top: #{$i}em !important;
     }
     .mb-#{$i} {
-      margin-bottom: #{$i}em;
+      margin-bottom: #{$i}em !important;
     }
     .my-#{$i} {
-      margin-top: #{$i}em;
-      margin-bottom: #{$i}em;
+      margin-top: #{$i}em !important;
+      margin-bottom: #{$i}em !important;
     }
     .ml-#{$i} {
-      margin-left: #{$i}em;
+      margin-left: #{$i}em !important;
     }
     .mr-#{$i} {
-      margin-right: #{$i}em;
+      margin-right: #{$i}em !important;
     }
     .mx-#{$i} {
-      margin-left: #{$i}em;
-      margin-right: #{$i}em;
+      margin-left: #{$i}em !important;
+      margin-right: #{$i}em !important;
     }
   }
 }

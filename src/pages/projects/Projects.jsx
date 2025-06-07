@@ -50,29 +50,105 @@ function Page() {
       />
 
       <main>
-        <Section className="projects">
+        <Section className="projects pb-4">
           <Row>
             <Col>
               <h1 className="hero shade">Projects</h1>
             </Col>
           </Row>
-          <Crosshatch className="projects" />
         </Section>
-        <Section>
-          <Row>
-            <Col className="pt-3 pb-2">
-              <h2>Award-winning Campains and Projects</h2>
-              {/* <p className="large">
-                Alongside the corresponding companies and projects 
-              </p> */}
-            </Col>
-          </Row>
-        </Section>
-        <Section>
+        {Projects.length > 0 &&
+          Projects.map((project) => (
+            <React.Fragment key={project.id}>
+              <Section
+                className={`section-career ${
+                  FindCompanyById(Companies, project.companyId).theme
+                } py-2`}
+              >
+                <Row>
+                  <Col className="span-3">
+                    <h2>{project.client}</h2>
+                    <h3>{project.name}</h3>
+                  </Col>
+                  <Col className="span-2 pt-2">
+                    <Link
+                      role="button"
+                      className={`career-read-more outline`}
+                      // aria-label={`Read more about my career at ${company.name}`}
+                      to={`/career/${
+                        FindCompanyById(Companies, project.companyId).theme
+                      }`}
+                      aria-label={`To project: ${project.client} ${project.name}`}
+                    >
+                      <span>To Project</span>
+                      <span className="material-icons">arrow_forward_ios</span>
+                    </Link>
+                  </Col>
+                </Row>
+              </Section>
+              <Section
+                key={project.id}
+                className="background-cover"
+                style={{
+                  backgroundImage: `url(${project.metaImage}`,
+                }}
+              >
+                <Row className="pt-4 pb-12 blurred-gradient">
+                  <Col className="span-3">
+                    <p className="large">{project.metaDescription}...</p>
+                    <p className="mt-1">
+                      <span>{project.year}</span>
+                      <span> • </span>
+                      <span>
+                        {FindCompanyById(Companies, project.companyId).name}
+                      </span>
+                    </p>
+                    <p className="small">
+                      <span>{CountAwardsByProjectId(Awards, project.id)}</span>
+                      <span>
+                        {" "}
+                        Award
+                        {CountAwardsByProjectId(Awards, project.id) > 1
+                          ? "s"
+                          : ""}{" "}
+                      </span>
+
+                      {Array.from({
+                        length: CountAwardsByProjectId(Awards, project.id),
+                      }).map((_, i) => (
+                        <span className="material-icons" key={i}>
+                          emoji_events
+                        </span>
+                      ))}
+                    </p>
+                    <Link
+                      role="button"
+                      className={`mt-3 career-read-more theme-${
+                        FindCompanyById(Companies, project.companyId).theme
+                      }`}
+                      aria-label={`Read more about my career at ${
+                        FindCompanyById(Companies, project.companyId).name
+                      }`}
+                      to={`/career/${
+                        FindCompanyById(Companies, project.companyId).theme
+                      }`}
+                    >
+                      <span>
+                        {FindCompanyById(Companies, project.companyId).name}
+                      </span>
+                      <span className="material-icons">arrow_forward_ios</span>
+                    </Link>
+                  </Col>
+                </Row>
+              </Section>
+            </React.Fragment>
+          ))}
+
+        {/* <Section>
           {Projects.length > 0 &&
             Projects.map((project) => (
               <Row className="mb-2" key={project.id}>
-                <details open>
+                <details>
                   <summary>
                     <h3>
                       {project.client} {project.name}
@@ -186,7 +262,7 @@ function Page() {
                 </details>
               </Row>
             ))}
-        </Section>
+        </Section> */}
       </main>
     </>
   );
