@@ -10,6 +10,7 @@ $brand-primary-color: (
   "newday-aquacard": #04f4c9,
   "gain-credit-lending-stream": #0feba1,
   "motorway": #ffe14c,
+  "realm": rgb(74, 57, 56),
 );
 
 $brand-secondary-color: (
@@ -18,6 +19,7 @@ $brand-secondary-color: (
   "newday-aquacard": #0408a3,
   "gain-credit-lending-stream": #7a0ce1,
   "motorway": #ffd500,
+  "realm": rgb(1, 0, 53),
 );
 
 $brand-text-color: (
@@ -26,6 +28,7 @@ $brand-text-color: (
   "newday-aquacard": #ccfafb,
   "gain-credit-lending-stream": #f7f9fb,
   "motorway": #242424,
+  "realm": #ffffff,
 );
 
 $brand-button-color: (
@@ -34,6 +37,7 @@ $brand-button-color: (
   "newday-aquacard": #04f4c9,
   "gain-credit-lending-stream": #7a0ce1,
   "motorway": #ffe14c,
+  "realm": rgb(56, 152, 236),
 );
 
 $brand-button-text: (
@@ -42,6 +46,7 @@ $brand-button-text: (
   "newday-aquacard": #000000,
   "gain-credit-lending-stream": #ffffff,
   "motorway": #000000,
+  "realm": #ffffff,
 );
 
 $brand-button-outline: (
@@ -50,6 +55,7 @@ $brand-button-outline: (
   "newday-aquacard": #0408a3,
   "gain-credit-lending-stream": #7a0ce1,
   "motorway": #ffd500,
+  "realm": #ffffff,
 );
 
 $brands: (
@@ -57,7 +63,8 @@ $brands: (
   "mrmc",
   "newday-aquacard",
   "gain-credit-lending-stream",
-  "motorway"
+  "motorway",
+  "realm"
 );
 
 @mixin crosshatch-theme($brand) {
