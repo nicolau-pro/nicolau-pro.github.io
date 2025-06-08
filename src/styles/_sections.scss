@@ -27,6 +27,16 @@ section {
     }
   }
 
+  &.contact {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/social/contact.jpg");
+
+    .crosshatch {
+      @include mixins.crosshatch(black);
+    }
+  }
+
   & h1.hero.shade {
     text-shadow: rgba(0, 0, 0, 0.7) 0 0 0.2em;
   }

@@ -19,6 +19,9 @@ const Footer = () => {
           <li>
             <Link to={`${rootPath}awards`}>Awards</Link>
           </li>
+          <li>
+            <Link to={`${rootPath}contact`}>Contact</Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -7,6 +7,7 @@ import Career from "./pages/career/Career";
 import Project from "./pages/projects/Project";
 import Projects from "./pages/projects/Projects";
 import Awards from "./pages/awards/Awards";
+import Contact from "./pages/contact/Contact";
 import { API_GetCompanies } from "./data/companies";
 import { API_GetProjects, ProjectPath } from "./data/projects";
 
@@ -59,6 +60,9 @@ function AppLoader() {
           </Route>
           <Route path="awards">
             <Route index element={<Awards />} />
+          </Route>
+          <Route path="contact">
+            <Route index element={<Contact />} />
           </Route>
         </Route>
       </Routes>

@@ -6,7 +6,8 @@ import { Link } from "react-router";
 
 import { API_GetCompanies } from "../../data/companies";
 import { API_GetProjects, ProjectPath } from "../../data/projects";
-import { Contact, FooterProjectIds } from "../../data/variables";
+import { FooterProjectIds } from "../../data/variables";
+import ContactLinks from "./ContactLinks";
 
 const Footer = () => {
   const [Companies, setCompanies] = useState(null);
@@ -36,9 +37,9 @@ const Footer = () => {
 
   return (
     <footer>
-      <Section className="py-2">
+      <Section className="py-3">
         <Row>
-          <Col>
+          <Col className="span-3">
             <Link to="/career">
               <h2 className="h3 text-thin">
                 <span>CAREER </span>
@@ -50,8 +51,17 @@ const Footer = () => {
                 {company.name}
               </Link>
             ))}
+
+            <Link
+              className="text-thin"
+              target="_blank"
+              rel="noopener noreferrer"
+              to="https://colibridigital.io/"
+            >
+              Colibri Digital <em>(coming soon)</em>
+            </Link>
           </Col>
-          <Col>
+          <Col className="span-4">
             <Link to="/projects">
               <h2 className="h3 text-thin">
                 <span>PROJECTS </span>
@@ -67,7 +77,7 @@ const Footer = () => {
               more projects...
             </Link>
           </Col>
-          <Col>
+          <Col className="span-2">
             <Link to="/awards">
               <h2 className="h3 text-thin">
                 <span>AWARDS </span>
@@ -75,41 +85,18 @@ const Footer = () => {
               </h2>
             </Link>
 
-            <Link to="/awards">My Awards...</Link>
-
-            <h2 className="h3 text-thin mt-2">Contact</h2>
-
-            <Link
-              to={`https://www.linkedin.com/in/${Contact.LinkedIn}/`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3 className="h4 text-thin">
-                <span className="material-icons">open_in_new</span>
-                <span> Linked-in</span>
-              </h3>
+            <Link to="/awards" className="mb-1">
+              My Awards...
             </Link>
 
-            <Link to={Contact.CV}>
-              <h3 className="h4 text-thin">
-                <span className="material-icons">picture_as_pdf</span>
-                <span> C.V.</span>
-              </h3>
+            <Link to="/contact">
+              <h2 className="h3 text-thin">
+                <span>CONTACT </span>
+                <span className="material-icons">account_circle</span>
+              </h2>
             </Link>
 
-            <Link to={`tel:${Contact.Phone}`}>
-              <h3 className="h4 text-thin">
-                <span className="material-icons">perm_phone_msg</span>
-                <span> Call/SMS</span>
-              </h3>
-            </Link>
-
-            <Link to={`mailto:${Contact.Email}`}>
-              <h3 className="h4 text-thin">
-                <span className="material-icons">email</span>
-                <span> Email</span>
-              </h3>
-            </Link>
+            <ContactLinks />
           </Col>
         </Row>
         <Row>

@@ -34,3 +34,46 @@ img {
   width: 100%;
   height: auto;
 }
+
+.contact-links {
+  $color-base: white;
+  $color-text: color.adjust($color-base, $lightness: -50%);
+  $color-highlight: color.adjust($color-base, $lightness: -10%);
+
+  a {
+    text-decoration: none;
+    margin-bottom: 2em;
+    font-size: 2em;
+    opacity: 0.85;
+    width: fit-content;
+    padding-right: 0.5em;
+
+    span {
+      color: $color-highlight;
+      font-size: 2em;
+      font-weight: 300;
+      transition: all 0.1s ease-out;
+
+      &.material-icons {
+        font-weight: normal;
+        margin-bottom: -0.15em;
+        margin-right: 0.2em;
+
+        color: $color-text;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      span {
+        color: $color-base;
+        text-shadow: 0 0 1em $color-base;
+
+        &.material-icons {
+          color: $color-base;
+          scale: 1.3;
+        }
+      }
+    }
+  }
+}
