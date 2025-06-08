@@ -4,7 +4,8 @@ main {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  overflow-y: auto;
+  overflow: hidden;
+  overflow-x: hidden;
   overflow-x: hidden;
 }
 

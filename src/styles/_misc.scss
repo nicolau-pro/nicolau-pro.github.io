@@ -39,18 +39,19 @@ img {
   $color-base: white;
   $color-text: color.adjust($color-base, $lightness: -50%);
   $color-highlight: color.adjust($color-base, $lightness: -10%);
+  $font-size: 1.7em;
 
   a {
     text-decoration: none;
-    margin-bottom: 2em;
-    font-size: 2em;
+    margin-bottom: $font-size;
+    font-size: $font-size;
     opacity: 0.85;
     width: fit-content;
     padding-right: 0.5em;
 
     span {
       color: $color-highlight;
-      font-size: 2em;
+      font-size: $font-size;
       font-weight: 300;
       transition: all 0.1s ease-out;
 
