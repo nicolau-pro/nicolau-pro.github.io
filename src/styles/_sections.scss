@@ -1,4 +1,5 @@
 @use "mixins" as mixins;
+@use "variables" as vars;
 
 section {
   &.awards {
@@ -39,5 +40,54 @@ section {
 
   & h1.hero.shade {
     text-shadow: rgba(0, 0, 0, 0.7) 0 0 0.2em;
+  }
+
+  $section-gradient: linear-gradient(
+    to bottom,
+    black vars.$crosshatch-size,
+    transparent 50%,
+    black 100%
+  );
+
+  &.home {
+    background-color: white;
+    color: black;
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/portraits/radu-nicolau.webp");
+    .crosshatch {
+      @include mixins.crosshatch(black);
+    }
+  }
+
+  &.home-career {
+    background-position: center;
+    background-size: cover;
+    background-image: $section-gradient, url("/social/career.jpg");
+
+    .crosshatch {
+      @include mixins.crosshatch(white);
+    }
+  }
+
+  &.home-projects {
+    background-position: center;
+    background-size: cover;
+    background-image: $section-gradient, url("/social/projects.jpg");
+
+    .crosshatch {
+      @include mixins.crosshatch(white);
+    }
+  }
+
+  &.home-awards {
+    background-position: center;
+    background-size: cover;
+    background-image: $section-gradient, url("/social/awards.jpg");
+
+    .crosshatch {
+      @include mixins.crosshatch(white);
+    }
   }
 }
