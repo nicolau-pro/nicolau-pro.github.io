@@ -7,8 +7,11 @@ import MetaTags from "../../components/MetaTags";
 import { API_GetCompanies } from "../../data/companies";
 import { API_GetJobs } from "../../data/jobs";
 import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
+import { useAppState } from "../../AppStateContext";
 
 function Page() {
+  const { setOutletReady } = useAppState();
+
   const [Companies, setCompanies] = useState(null);
   const [Jobs, setJobs] = useState(null);
 
@@ -23,6 +26,10 @@ function Page() {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setOutletReady(Companies && Jobs);
+  }, [Companies, Jobs]);
 
   if (!Companies || !Jobs)
     return (

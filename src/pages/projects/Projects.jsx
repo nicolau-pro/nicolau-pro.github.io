@@ -8,8 +8,11 @@ import MetaTags from "../../components/MetaTags";
 import { API_GetProjects, ProjectPath } from "../../data/projects";
 import { API_GetAwards } from "../../data/awards";
 import { API_GetCompanies, FindCompanyById } from "../../data/companies";
+import { useAppState } from "../../AppStateContext";
 
 function Page() {
+  const { setOutletReady } = useAppState();
+
   const [Projects, setProjects] = useState(null);
   const [Companies, setCompanies] = useState(null);
   const [Awards, setAwards] = useState(null);
@@ -28,6 +31,10 @@ function Page() {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setOutletReady(Projects && Companies && Awards);
+  }, [Projects, Companies, Awards]);
 
   if (!Projects || !Companies || !Awards)
     return (

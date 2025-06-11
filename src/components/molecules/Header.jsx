@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { rootPath } from "../../data/variables";
 import { Link } from "react-router";
 
-const Footer = () => {
+import { useAppState } from "../../AppStateContext";
+
+const Header = () => {
+  const { setHeaderReady } = useAppState();
+
+  useEffect(() => {
+    setHeaderReady(true);
+  }, []);
+
   return (
     <header>
       <nav>
@@ -28,4 +36,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Header;

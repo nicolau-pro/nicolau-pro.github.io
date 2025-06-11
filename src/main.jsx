@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import AppLoader from "./AppLoader";
+import { AppStateProvider } from "./AppStateContext";
 import "./styles/styles.scss";
 
-const root = document.getElementById("root");
-
-ReactDOM.createRoot(root).render(<AppLoader />);
+ReactDOM.createRoot(root).render(
+  <React.StrictMode>
+    <AppStateProvider>
+      <AppLoader />
+    </AppStateProvider>
+  </React.StrictMode>
+);

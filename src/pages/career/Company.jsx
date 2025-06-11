@@ -15,8 +15,10 @@ import { API_GetTestimonialsByCompanyId } from "../../data/testimonials";
 import { API_GetAwardsByCompanyId } from "../../data/awards";
 
 import { FormatMonthYear, FilterListByIds } from "../../data/utils";
+import { useAppState } from "../../AppStateContext";
 
 function Page(props) {
+  const { setOutletReady } = useAppState();
   const { companyId } = props;
 
   const [Company, setCompany] = useState(null);
@@ -45,6 +47,10 @@ function Page(props) {
 
     fetchData();
   }, [companyId]);
+
+  useEffect(() => {
+    setOutletReady(Company && Tech && Jobs && Testimonials && Awards);
+  }, [Company, Tech, Jobs, Testimonials, Awards]);
 
   if (!Company || !Tech || !Jobs || !Testimonials || !Awards)
     return (

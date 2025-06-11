@@ -39,6 +39,6 @@
     "vite": "^6.3.5"
   },
   "presite": {
-    "wait": 8000
+    "wait": "#WELCOME"
   }
 }

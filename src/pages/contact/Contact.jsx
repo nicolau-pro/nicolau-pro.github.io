@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import Row from "../../components/layout/Row";
 import Col from "../../components/layout/Col";
 import Section from "../../components/layout/Section";
-import { Contact } from "../../data/variables";
 
 import MetaTags from "../../components/MetaTags";
 import Crosshatch from "../../components/decorators/Crosshatch";
-import { Link } from "react-router";
 import ContactLinks from "../../components/molecules/ContactLinks";
 
+import { useAppState } from "../../AppStateContext";
+
 function Page() {
+  const { setOutletReady } = useAppState();
+
+  useEffect(() => {
+    setOutletReady(true);
+  }, []);
+
   return (
     <>
       <MetaTags

@@ -8,8 +8,11 @@ import Crosshatch from "../../components/decorators/Crosshatch";
 import { API_GetProjectById, ProjectPath } from "../../data/projects";
 import { API_GetAwards, FilterAwardsByProjectId } from "../../data/awards";
 import { API_GetCompanyById } from "../../data/companies";
+import { useAppState } from "../../AppStateContext";
 
 function Page(props) {
+  const { setOutletReady } = useAppState();
+
   const [Project, setProject] = useState(null);
   const [Company, setCompany] = useState(null);
   const [Awards, setAwards] = useState(null);
@@ -30,6 +33,10 @@ function Page(props) {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setOutletReady(Project && Company && Awards);
+  }, [Project, Company, Awards]);
 
   if (!Project || !Company || !Awards)
     return (

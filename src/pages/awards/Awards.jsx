@@ -6,8 +6,10 @@ import MetaTags from "../../components/MetaTags";
 import Award from "../../components/molecules/Award";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import { API_GetAwards } from "../../data/awards";
+import { useAppState } from "../../AppStateContext";
 
 function Page() {
+  const { setOutletReady } = useAppState();
   const [Awards, setAwards] = useState(null);
 
   useEffect(() => {
@@ -18,6 +20,10 @@ function Page() {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setOutletReady(Awards);
+  }, [Awards]);
 
   if (!Awards)
     return (

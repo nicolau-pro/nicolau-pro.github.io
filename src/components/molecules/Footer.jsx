@@ -9,7 +9,11 @@ import { API_GetProjects, ProjectPath } from "../../data/projects";
 import { FooterProjectIds } from "../../data/variables";
 import ContactLinks from "./ContactLinks";
 
+import { useAppState } from "../../AppStateContext";
+
 const Footer = () => {
+  const { setFooterReady } = useAppState();
+
   const [Companies, setCompanies] = useState(null);
   const [Projects, setProjects] = useState(null);
 
@@ -24,9 +28,12 @@ const Footer = () => {
       );
       setProjects(footerProjects);
     }
-
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setFooterReady(Companies, Projects);
+  }, [Companies, Projects]);
 
   if (!Companies || !Projects)
     return (

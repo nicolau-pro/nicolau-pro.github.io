@@ -11,9 +11,13 @@ import Contact from "./pages/contact/Contact";
 import { API_GetCompanies } from "./data/companies";
 import { API_GetProjects, ProjectPath } from "./data/projects";
 
+import { useAppState } from "./AppStateContext";
+
 const rootPath = "/";
 
 function AppLoader() {
+  const { setOutletReady } = useAppState();
+
   const [Companies, setCompanies] = useState(null);
   const [ProjectList, setProjectList] = useState(null);
 
