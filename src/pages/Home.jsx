@@ -62,7 +62,7 @@ function Page() {
                 className="mt-2 button-read-more button-outline"
               >
                 <h2 className="h3 text-thin">
-                  <span>CAREER</span>
+                  <span>CAREER </span>
                   <span className="material-icons">arrow_forward_ios</span>
                 </h2>
               </Link>
@@ -89,7 +89,7 @@ function Page() {
                 className="mt-2 button-read-more button-outline"
               >
                 <h2 className="h3 text-thin">
-                  <span>PROJECTS</span>
+                  <span>PROJECTS </span>
                   <span className="material-icons">arrow_forward_ios</span>
                 </h2>
               </Link>
@@ -114,7 +114,7 @@ function Page() {
                 className="mt-2 button-read-more button-outline"
               >
                 <h2 className="h3 text-thin">
-                  <span>AWARDS</span>
+                  <span>AWARDS </span>
                   <span className="material-icons">arrow_forward_ios</span>
                 </h2>
               </Link>
