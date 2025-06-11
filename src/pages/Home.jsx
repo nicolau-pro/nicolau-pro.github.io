@@ -3,6 +3,7 @@ import Row from "../components/layout/Row";
 import Col from "../components/layout/Col";
 import Section from "../components/layout/Section";
 import Crosshatch from "../components/decorators/Crosshatch";
+import MetaTags from "../components/MetaTags";
 
 import { useAppState } from "../AppStateContext";
 import { Link } from "react-router";
@@ -16,8 +17,15 @@ function Page() {
 
   return (
     <>
-      <title>Home - Radu Nicolau</title>
-      <meta name="description" content="My career" />
+      <MetaTags
+        section="RADU NICOLAU - Welcome!"
+        description="A brief history of my work in the UK, some of the most
+                successful projects and campaigns with the awards they brought
+                alongside the testimonials from the CEOs, team leads and
+                brand/product owners"
+        image="/social/radu-nicolau.jpg"
+        url="/"
+      />
 
       <main>
         <Section className="home">
