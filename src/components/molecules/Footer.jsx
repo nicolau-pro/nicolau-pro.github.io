@@ -32,7 +32,7 @@ const Footer = () => {
   }, []);
 
   useEffect(() => {
-    setFooterReady(Companies, Projects);
+    setFooterReady(Companies && Projects);
   }, [Companies, Projects]);
 
   if (!Companies || !Projects)
