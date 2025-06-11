@@ -10,6 +10,7 @@ import Award from "../../components/molecules/Award";
 
 import { API_GetCompanyById } from "../../data/companies";
 import { API_GetJobsByCompanyId } from "../../data/jobs";
+import { API_GetProjects, FindProjectById } from "../../data/projects";
 import { API_GetTech } from "../../data/tech";
 import { API_GetTestimonialsByCompanyId } from "../../data/testimonials";
 import { API_GetAwardsByCompanyId } from "../../data/awards";
@@ -24,6 +25,7 @@ function Page(props) {
   const [Company, setCompany] = useState(null);
   const [Tech, setTech] = useState(null);
   const [Jobs, setJobs] = useState(null);
+  const [Projects, setProjects] = useState(null);
   const [Testimonials, setTestimonials] = useState(null);
   const [Awards, setAwards] = useState(null);
 
@@ -38,6 +40,9 @@ function Page(props) {
       const companyJobs = await API_GetJobsByCompanyId(companyId);
       setJobs(companyJobs);
 
+      const projects = await API_GetProjects();
+      setProjects(projects);
+
       const testimonials = await API_GetTestimonialsByCompanyId(companyId);
       setTestimonials(testimonials);
 
@@ -49,10 +54,12 @@ function Page(props) {
   }, [companyId]);
 
   useEffect(() => {
-    setOutletReady(Company && Tech && Jobs && Testimonials && Awards);
-  }, [Company, Tech, Jobs, Testimonials, Awards]);
+    setOutletReady(
+      Company && Projects && Tech && Jobs && Testimonials && Awards
+    );
+  }, [Company, Tech, Jobs, Projects, Testimonials, Awards]);
 
-  if (!Company || !Tech || !Jobs || !Testimonials || !Awards)
+  if (!Company || !Projects || !Tech || !Jobs || !Testimonials || !Awards)
     return (
       <p className="my-6" id="Loading">
         Loading...
@@ -163,7 +170,13 @@ function Page(props) {
                 </Col>
               </Row>
               {Awards.map((award, index) => (
-                <Award key={index} award={award} projectButton />
+                <Award
+                  key={index}
+                  projectButton
+                  Award={award}
+                  Company={Company}
+                  Project={FindProjectById(Projects, award.projectId)}
+                />
               ))}
             </Section>
           </>

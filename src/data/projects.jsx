@@ -58,9 +58,15 @@ function FilterProjectsFirstWithCompanyId(items) {
   });
 }
 
+function FindProjectById(projects, projectId) {
+  const project = projects.find((project) => project.id === projectId);
+  return project;
+}
+
 export {
   FilterProjectsFirstWithCompanyId,
   FilterProjectsByCompanyId,
+  FindProjectById,
   CountProjectsByCompanyId,
   ProjectPath,
   API_GetProjectById,

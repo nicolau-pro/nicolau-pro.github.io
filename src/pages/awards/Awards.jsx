@@ -6,26 +6,36 @@ import MetaTags from "../../components/MetaTags";
 import Award from "../../components/molecules/Award";
 import Crosshatch from "../../components/decorators/Crosshatch";
 import { API_GetAwards } from "../../data/awards";
+import { API_GetCompanies, FindCompanyById } from "../../data/companies";
+import { API_GetProjects, FindProjectById } from "../../data/projects";
 import { useAppState } from "../../AppStateContext";
 
 function Page() {
   const { setOutletReady } = useAppState();
   const [Awards, setAwards] = useState(null);
+  const [Companies, setCompanies] = useState(null);
+  const [Projects, setProjects] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       const awards = await API_GetAwards();
       setAwards(awards);
+
+      const companies = await API_GetCompanies();
+      setCompanies(companies);
+
+      const projects = await API_GetProjects();
+      setProjects(projects);
     }
 
     fetchData();
   }, []);
 
   useEffect(() => {
-    setOutletReady(Awards);
-  }, [Awards]);
+    setOutletReady(Awards && Companies && Projects);
+  }, [Awards, Companies, Projects]);
 
-  if (!Awards)
+  if (!Awards || !Companies || !Projects)
     return (
       <p className="my-6" id="Loading">
         Loading...
@@ -68,8 +78,10 @@ function Page() {
                 companyButton
                 className="mb-2"
                 key={award.id}
-                award={award}
                 links={{ company: true }}
+                Award={award}
+                Company={FindCompanyById(Companies, award.companyId)}
+                Project={FindProjectById(Projects, award.projectId)}
               />
             ))}
           </Section>

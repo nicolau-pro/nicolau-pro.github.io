@@ -1,37 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Row from "../layout/Row";
 import Col from "../layout/Col";
 import { Link } from "react-router";
-
-import { API_GetProjectById, ProjectPath } from "../../data/projects";
-import { API_GetCompanyById } from "../../data/companies";
+import { ProjectPath } from "../../data/projects";
 import Line from "../layout/Line";
 
 const Award = (props) => {
-  const { award, links, companyButton, projectButton, ...rest } = props;
-  const [Company, setCompany] = useState(null);
-  const [Project, setProject] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      const company = await API_GetCompanyById(award.companyId);
-      setCompany(company);
-
-      if (award.projectId) {
-        const project = await API_GetProjectById(award.projectId);
-        setProject(project);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  if (!Company)
-    return (
-      <p className="my-6" id="Loading">
-        Loading...
-      </p>
-    );
+  const {
+    Award,
+    Company,
+    Project,
+    links,
+    companyButton,
+    projectButton,
+    ...rest
+  } = props;
 
   return (
     <Row {...rest}>
@@ -39,20 +22,20 @@ const Award = (props) => {
         <img
           loading="lazy"
           className="award-logo"
-          src={`/awards/${award.logo}`}
-          alt={`${award.prize} ${award.event} ${award.year}`}
+          src={`/awards/${Award.logo}`}
+          alt={`${Award.prize} ${Award.event} ${Award.year}`}
         />
       </Col>
       <Col className="span-6">
         <h3 className="gradient-text">
-          <span className="prize">{award.prize} </span>
-          <span className="material-icons">{award.icon}</span>
+          <span className="prize">{Award.prize} </span>
+          <span className="material-icons">{Award.icon}</span>
         </h3>
         <h4 className="gradient-text">
-          <span className="event"> {award.event}</span>
-          <span className="event"> {award.year}</span>
+          <span className="event"> {Award.event}</span>
+          <span className="event"> {Award.year}</span>
         </h4>
-        <h5 className="gradient-text">{award.description}</h5>
+        <h5 className="gradient-text">{Award.description}</h5>
 
         {(companyButton || projectButton) && (
           <Line className="links mt-2">
