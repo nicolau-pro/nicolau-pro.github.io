@@ -9,6 +9,7 @@ import { API_GetProjectById, ProjectPath } from "../../data/projects";
 import { API_GetAwards, FilterAwardsByProjectId } from "../../data/awards";
 import { API_GetCompanyById } from "../../data/companies";
 import { useAppState } from "../../AppStateContext";
+import { breadcrumbs } from "../../data/variables";
 
 function Page(props) {
   const { setOutletReady } = useAppState();
@@ -48,8 +49,8 @@ function Page(props) {
   return (
     <>
       <MetaTags
-        section={`Projects > ${Project.client} ${Project.name}`}
-        description={`Projects > ${Project.client} ${Project.name} - ${Project.metaDescription}`}
+        section={`Projects ${breadcrumbs} ${Project.client} ${Project.name}`}
+        description={`Projects ${breadcrumbs} ${Project.client} ${Project.name} - ${Project.metaDescription}`}
         image={Project.metaImage}
         url={`/projects/${ProjectPath(Project)}`}
       />

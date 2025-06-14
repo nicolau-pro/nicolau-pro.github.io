@@ -1,5 +1,5 @@
 import React from "react";
-import { MetaData } from "../data/variables";
+import { MetaData, breadcrumbs } from "../data/variables";
 
 function MetaTags(props) {
   const { section, description, image, url } = props;
@@ -7,7 +7,7 @@ function MetaTags(props) {
 
   const social = {
     author: website,
-    description: `${website.toUpperCase()} > ${description}`,
+    description: `${website.toUpperCase()} ${breadcrumbs} ${description}`,
     article: section,
     image: image,
     imageAlt: `${website.toUpperCase()} - ${section}`,

@@ -15,4 +15,6 @@ const FooterProjectIds = [4, 6, 9, 10, 12, 14];
 
 const rootPath = "/";
 
-export { MetaData, Contact, FooterProjectIds, rootPath };
+const breadcrumbs = "▸";
+
+export { MetaData, Contact, FooterProjectIds, rootPath, breadcrumbs };

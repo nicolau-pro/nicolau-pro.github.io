@@ -17,6 +17,7 @@ import { API_GetAwardsByCompanyId } from "../../data/awards";
 
 import { FormatMonthYear, FilterListByIds } from "../../data/utils";
 import { useAppState } from "../../AppStateContext";
+import { breadcrumbs } from "../../data/variables";
 
 function Page(props) {
   const { setOutletReady } = useAppState();
@@ -69,8 +70,8 @@ function Page(props) {
   return (
     <>
       <MetaTags
-        section={`Career > ${Company.name}`}
-        description={`Career > ${Company.name} - ${Company.meta.description}`}
+        section={`Career ${breadcrumbs} ${Company.name}`}
+        description={`Career ${breadcrumbs} ${Company.name} - ${Company.meta.description}`}
         image={`/social/${Company.theme}.jpg`}
         url={`/career/${Company.theme}`}
       />
