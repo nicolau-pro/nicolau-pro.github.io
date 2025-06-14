@@ -21,6 +21,7 @@ footer {
     linear-gradient(to top, $shade 10%, transparent 100%);
 
   display: flex;
+  font-size: 0.9em;
 
   &::before {
     content: "";

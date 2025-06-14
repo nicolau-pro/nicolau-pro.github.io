@@ -76,7 +76,6 @@ function Page() {
               <Award
                 projectButton
                 companyButton
-                className="mb-2"
                 key={award.id}
                 links={{ company: true }}
                 Award={award}

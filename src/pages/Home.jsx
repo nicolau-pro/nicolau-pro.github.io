@@ -15,6 +15,12 @@ function Page() {
     setOutletReady(true);
   }, []);
 
+  const Welcome = {
+    h1: "Welcome",
+    h2: "I'm Radu Nicolau",
+    h3: "Here's a brief history of my work in UK, some of the most successful projects and campaigns with the awards they brought alongside the testimonials from the CEOs, team leads and brand/product owners.",
+  };
+
   return (
     <>
       <MetaTags
@@ -28,21 +34,28 @@ function Page() {
       />
 
       <main>
-        <Section className="home">
-          <Row>
-            <Col className="py-5 span-4">
-              <h1 className="hero">Welcome</h1>
-              <h2>I'm Radu Nicolau</h2>
-              <h3 className="mt-2 text-thin">
-                Here's a brief history of my work in the UK, some of the most
-                successful projects and campaigns with the awards they brought
-                alongside the testimonials from the CEOs, team leads and
-                brand/product owners.
-              </h3>
+        <Section className="home mobile-hidden">
+          <Row className="my-portrait">
+            <Col className="pt-2 pb-8 span-3">
+              <h1 className="hero">{Welcome.h1}</h1>
+              <h2>{Welcome.h2}</h2>
+              <h3 className="mt-2 text-thin">{Welcome.h3}</h3>
             </Col>
 
             <Col className="span-3" />
           </Row>
+          <Crosshatch />
+        </Section>
+
+        <Section className="home desktop-hidden">
+          <Row>
+            <Col className="mt-1">
+              <h1 className="hero">{Welcome.h1}</h1>
+              <h2>{Welcome.h2}</h2>
+              <h3 className="mt-2 text-thin">{Welcome.h3}</h3>
+            </Col>
+          </Row>
+          <Row className="my-portrait"></Row>
           <Crosshatch />
         </Section>
 

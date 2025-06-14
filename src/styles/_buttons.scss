@@ -76,4 +76,20 @@ a[role="button"] {
       }
     }
   }
+
+  @media (max-width: 767px) {
+    font-size: 0.8em;
+    > span:first-of-type {
+      margin-left: -2em;
+    }
+    > span:last-of-type {
+      margin-right: -2em;
+    }
+
+    &.button-small {
+      > span:last-of-type {
+        margin-right: -0.5em;
+      }
+    }
+  }
 }

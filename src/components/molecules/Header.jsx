@@ -7,11 +7,11 @@ const Header = () => {
   const { setHeaderReady, CurrentPath } = useAppState();
 
   const Links = [
-    { path: "", name: "Home" },
-    { path: "career", name: "Career" },
-    { path: "projects", name: "Projects" },
-    { path: "awards", name: "Awards" },
-    { path: "contact", name: "Contact" },
+    { path: "", name: "Home", icon: "home" },
+    { path: "career", name: "Career", icon: "timeline" },
+    { path: "projects", name: "Projects", icon: "view_in_ar" },
+    { path: "awards", name: "Awards", icon: "emoji_events" },
+    { path: "contact", name: "Contact", icon: "account_circle" },
   ];
 
   useEffect(() => {
@@ -41,7 +41,8 @@ const Header = () => {
                     : null
                 }
               >
-                {link.name.toUpperCase()}
+                <span class="material-icons desktop-hidden">{link.icon}</span>
+                <span>{link.name.toUpperCase()}</span>
               </Link>
             </li>
           ))}

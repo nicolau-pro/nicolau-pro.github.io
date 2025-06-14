@@ -1,7 +1,7 @@
 @use "sass:math";
 
 @mixin padding-classes {
-  @for $i from 1 through 12 {
+  @for $i from 0 through 12 {
     .pt-#{$i} {
       padding-top: #{$i}em !important;
     }
@@ -26,7 +26,7 @@
 }
 
 @mixin margin-classes {
-  @for $i from 1 through 12 {
+  @for $i from 0 through 12 {
     .mt-#{$i} {
       margin-top: #{$i}em !important;
     }

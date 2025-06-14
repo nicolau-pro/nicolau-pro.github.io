@@ -68,7 +68,7 @@ function Page() {
                   FindCompanyById(Companies, project.companyId).theme
                 } py-2`}
               >
-                <Row>
+                <Row className=" pt-2">
                   <Col className="span-3">
                     <h2>{project.client}</h2>
                     <h3>
@@ -76,7 +76,7 @@ function Page() {
                       <span className="text-thin">{project.year}</span>
                     </h3>
                   </Col>
-                  <Col className="span-2 pt-2"></Col>
+                  <Col className="span-2 mobile-hidden"></Col>
                 </Row>
               </Section>
               <Section

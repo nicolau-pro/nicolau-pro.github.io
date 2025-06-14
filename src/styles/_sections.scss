@@ -52,10 +52,21 @@ section {
   &.home {
     background-color: white;
     color: black;
-    background-position: center bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url("/portraits/radu-nicolau.webp");
+
+    .my-portrait {
+      background-position: right bottom;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("/portraits/radu-nicolau-m.webp");
+      margin-bottom: -1 * vars.$crosshatch-size;
+    }
+
+    @media (max-width: 767px) {
+      .my-portrait {
+        margin-top: -0.5 * vars.$crosshatch-size;
+        height: 120vw;
+      }
+    }
     .crosshatch {
       @include mixins.crosshatch(black);
     }

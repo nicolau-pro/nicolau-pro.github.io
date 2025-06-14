@@ -37,6 +37,10 @@ h6 {
   $heading-font-size: 64px;
   font-weight: math.div($heading-font-weight, $coef);
   font-size: $heading-font-size * $coef;
+
+  @media (max-width: 767px) {
+    font-size: $heading-font-size * $coef * 0.75;
+  }
 }
 
 h1,
@@ -45,6 +49,11 @@ h1,
 
   &.hero {
     font-size: 100px;
+
+    @media (max-width: 767px) {
+      font-size: 48px;
+      font-weight: 800;
+    }
   }
 }
 

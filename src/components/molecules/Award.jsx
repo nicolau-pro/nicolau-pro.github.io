@@ -17,8 +17,8 @@ const Award = (props) => {
   } = props;
 
   return (
-    <Row {...rest}>
-      <Col>
+    <Row className="my-1 mobile-no-gap" {...rest}>
+      <Col className="mobile-centered">
         <img
           loading="lazy"
           className="award-logo"
@@ -26,7 +26,7 @@ const Award = (props) => {
           alt={`${Award.prize} ${Award.event} ${Award.year}`}
         />
       </Col>
-      <Col className="span-6">
+      <Col className="span-6 mobile-centered">
         <h3 className="gradient-text">
           <span className="prize">{Award.prize} </span>
           <span className="material-icons">{Award.icon}</span>
@@ -38,7 +38,7 @@ const Award = (props) => {
         <h5 className="gradient-text">{Award.description}</h5>
 
         {(companyButton || projectButton) && (
-          <Line className="links mt-2">
+          <Line className="links mt-1 mobile-centered">
             {projectButton && Project && (
               <Link
                 role="button"
