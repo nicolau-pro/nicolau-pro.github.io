@@ -33,7 +33,11 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <img className="logo" src="/web-app-manifest-512x512.png" />
+            <img
+              alt="Nicolau.pro logo"
+              className="logo"
+              src="/web-app-manifest-512x512.png"
+            />
           </li>
 
           {Links.map((link) => (
