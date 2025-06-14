@@ -1,35 +1,57 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { rootPath } from "../../data/variables";
 import { Link } from "react-router";
-
 import { useAppState } from "../../AppStateContext";
 
 const Header = () => {
   const { setHeaderReady } = useAppState();
 
+  const Links = [
+    { path: "", name: "Home" },
+    { path: "career", name: "Career" },
+    { path: "projects", name: "Projects" },
+    { path: "awards", name: "Awards" },
+    { path: "contact", name: "Contact" },
+  ];
+
+  const [CurrentPath, setCurrentPath] = useState(null);
+
+  useEffect(() => {
+    setCurrentPath(location.pathname.split("/")[1]);
+  }, [location]);
+
   useEffect(() => {
     setHeaderReady(true);
   }, []);
+
+  function handleOnClick(path) {
+    setCurrentPath(path);
+  }
 
   return (
     <header>
       <nav>
         <ul>
           <li>
-            <Link to={rootPath}>Home</Link>
+            <img className="logo" src="/web-app-manifest-512x512.png" />
           </li>
-          <li>
-            <Link to={`${rootPath}career`}>Career</Link>
-          </li>
-          <li>
-            <Link to={`${rootPath}projects`}>Projects</Link>
-          </li>
-          <li>
-            <Link to={`${rootPath}awards`}>Awards</Link>
-          </li>
-          <li>
-            <Link to={`${rootPath}contact`}>Contact</Link>
-          </li>
+
+          {Links.map((link) => (
+            <li key={link.name}>
+              <Link
+                to={`${rootPath}${link.path}`}
+                className={CurrentPath === link.path ? "current" : null}
+                aria-label={
+                  CurrentPath === link.path
+                    ? `${link.name}, current section`
+                    : null
+                }
+                onClick={() => handleOnClick(link.path)}
+              >
+                {link.name.toUpperCase()}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

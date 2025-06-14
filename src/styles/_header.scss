@@ -1,23 +1,78 @@
+@use "variables" as vars;
+
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: black;
+  height: vars.$menu-desktop-size;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   * {
-    color: white !important;
+    color: black;
   }
 
   nav {
+    flex: 1;
+    height: 100%;
+    max-width: 1000px;
+    padding: 0 2em;
+
     ul {
+      background-color: white;
+      background-image: linear-gradient(
+        to bottom left,
+        black 50%,
+        transparent 50%
+      );
+      background-size: vars.$menu-desktop-size;
+      background-position: 100.1% 0;
+      background-repeat: no-repeat;
+      height: 100%;
       display: flex;
       list-style: none;
       padding: 0;
       margin: 0;
+      // padding-right: vars.$menu-desktop-size;
+      // max-width: fit-content;
+
+      li {
+        margin: 0;
+      }
+
+      a,
+      .logo {
+        width: vars.$menu-desktop-size;
+        max-width: vars.$menu-desktop-size;
+      }
+
       a {
-        padding: 1em;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         display: flex;
         text-decoration: none;
+        font-size: 0.8em;
+        font-weight: 300;
+        transition: background-color 0.1s ease-out, color 0.1s ease-out,
+          letter-spacing 0.5s ease-out, font-weight 0.5s ease-out;
 
         &:hover,
-        &:focus-visible {
-          background-color: rgba(255, 255, 255, 0.1);
-          text-decoration: underline;
+        &:focus-visible,
+        &.current {
+          background-color: black;
+          color: white;
+          font-weight: 400;
+          letter-spacing: 0.02em;
+        }
+
+        &.current {
+          pointer-events: none;
         }
       }
     }

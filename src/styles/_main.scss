@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 main {
   display: flex;
   align-items: center;
@@ -7,6 +9,7 @@ main {
   overflow: hidden;
   overflow-x: hidden;
   overflow-x: hidden;
+  padding-top: vars.$menu-desktop-size;
 }
 
 main,
