@@ -58,15 +58,6 @@ const Footer = () => {
                 {company.name}
               </Link>
             ))}
-
-            <Link
-              className="text-thin"
-              target="_blank"
-              rel="noopener noreferrer"
-              to="https://colibridigital.io/"
-            >
-              Colibri Digital <em>(coming soon)</em>
-            </Link>
           </Col>
           <Col className="span-4">
             <Link to="/projects">

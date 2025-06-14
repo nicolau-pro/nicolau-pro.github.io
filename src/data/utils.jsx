@@ -1,5 +1,11 @@
 function FormatMonthYear(dateString) {
   const date = new Date(dateString);
+  const now = new Date();
+
+  if (date > now) {
+    return "Present";
+  }
+
   const options = { year: "numeric", month: "long" };
   return date.toLocaleDateString(undefined, options);
 }

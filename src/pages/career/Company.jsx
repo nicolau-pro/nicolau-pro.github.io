@@ -108,7 +108,7 @@ function Page(props) {
 
         <Crosshatch className={`theme-${Company.theme}`} />
 
-        <Section className="pb-5">
+        <Section className="pb-8">
           <Row>
             <Col className="pt-3 mobile-centered">
               <h2>
