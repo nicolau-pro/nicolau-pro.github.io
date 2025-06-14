@@ -37,7 +37,7 @@ def remove_react_libraries(html):
     # Save the file
     with open(html, "w") as outf:
         txt = replace_all(
-            replace_all(str(soup), "/>", ">"), '<div id="WELCOME"></div>', ">"
+            replace_all(str(soup), "/>", ">"), '<div id="WELCOME"></div>', ""
         )
 
         outf.write(txt)
