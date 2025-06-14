@@ -9,7 +9,20 @@
 .award-logo {
   width: 100%;
   max-width: min(160px, 50vw);
-  margin-top: -0.8em;
+  margin-top: 0.5em;
+  $color: white;
+
+  background-image: linear-gradient(
+    to top right,
+    transparent 0%,
+    transparent 10%,
+    $color 10%,
+    $color 50%,
+    color.adjust($color, $alpha: -0.1) 50%,
+    color.adjust($color, $alpha: -0.1) 90%,
+    transparent 90%,
+    transparent 100%
+  );
 }
 
 .background-cover {
