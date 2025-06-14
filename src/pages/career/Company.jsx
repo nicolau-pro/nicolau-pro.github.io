@@ -166,7 +166,7 @@ function Page(props) {
             <Section className="background-solid pt-3 pb-5">
               <Row>
                 <Col>
-                  <h2 className="gradient-text py-1">Awards</h2>
+                  <h2 className="gradient-text pt-1">Awards</h2>
                 </Col>
               </Row>
               {Awards.map((award, index) => (

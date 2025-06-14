@@ -59,6 +59,7 @@ section {
       background-repeat: no-repeat;
       background-image: url("/portraits/radu-nicolau.webp");
       margin-bottom: -1 * vars.$crosshatch-size;
+      mix-blend-mode: multiply;
     }
 
     @media (max-width: 767px) {

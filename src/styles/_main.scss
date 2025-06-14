@@ -68,6 +68,10 @@ footer {
 
   .mobile-centered {
     align-items: center;
+
+    * {
+      text-align: center;
+    }
   }
 
   .mobile-no-gap {
