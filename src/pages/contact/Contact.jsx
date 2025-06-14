@@ -36,6 +36,9 @@ function Page() {
           <Crosshatch className="awards" />
         </Section>
         <Section className="contact-links">
+          <Row className="mobile-hidden">
+            <Col className="py-1"></Col>
+          </Row>
           <Row>
             <Col className="py-2">
               <ContactLinks />

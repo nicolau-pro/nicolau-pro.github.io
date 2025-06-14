@@ -6,7 +6,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: black;
+  // background-color: black;
   height: $size;
   width: 100vw;
   display: flex;
@@ -18,18 +18,45 @@ header {
   }
 
   nav {
+    position: relative;
     flex: 1;
     height: 100%;
     max-width: min(1000px, 100vw);
     padding: 0 2em;
 
-    ul {
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
       background-color: white;
-      background-image: linear-gradient(
-        to bottom left,
-        black 50%,
-        transparent 50%
-      );
+      width: 1000vw;
+      height: vars.$menu-desktop-size;
+    }
+
+    &:before {
+      left: calc(-1000vw + 2em);
+    }
+
+    &:after {
+      left: calc(vars.$menu-desktop-size + 2em);
+    }
+
+    @media (max-width: 767px) {
+      &:before {
+        content: none;
+      }
+
+      &:after {
+        left: vars.$menu-mobile-size;
+        height: vars.$menu-mobile-size;
+      }
+    }
+
+    ul {
+      // background-color: white;
       background-size: $size;
       background-position: 100.1% 0;
       background-repeat: no-repeat;
@@ -41,6 +68,12 @@ header {
 
       li {
         margin: 0;
+      }
+
+      .logo {
+        $blur: 10px;
+        backdrop-filter: blur($blur);
+        -webkit-backdrop-filter: blur($blur);
       }
 
       a,

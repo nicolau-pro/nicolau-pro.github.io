@@ -23,11 +23,7 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <img
-              alt="Nicolau.pro logo"
-              className="logo"
-              src="/web-app-manifest-192x192.png"
-            />
+            <img alt="Nicolau.pro logo" className="logo" src="/favicon.svg" />
           </li>
 
           {Links.map((link) => (
@@ -41,7 +37,9 @@ const Header = () => {
                     : null
                 }
               >
-                <span class="material-icons desktop-hidden">{link.icon}</span>
+                <span className="material-icons desktop-hidden">
+                  {link.icon}
+                </span>
                 <span>{link.name.toUpperCase()}</span>
               </Link>
             </li>
