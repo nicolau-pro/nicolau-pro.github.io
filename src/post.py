@@ -37,12 +37,11 @@ def remove_react_libraries(html):
     # Save the file
     with open(html, "w") as outf:
         txt = replace_all(
-            str(soup),
-            {
-                "/>": ">",  # Remove trailing slash in empty html elements
-                '<div id="WELCOME"></div>': "",  # Remove page completion flag
-            },
-        )
+            str(soup), "/>", ">"
+        )  # Remove trailing slash in empty html elements
+        txt = replace_all(
+            str(soup), '<div id="WELCOME"></div>', ">"
+        )  # Remove page completion flag
 
         outf.write(txt)
 
