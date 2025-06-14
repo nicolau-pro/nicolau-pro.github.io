@@ -93,5 +93,5 @@ jobs:
           password: ${{ secrets.R5_FTP_PASS }}
           protocol: ftp
           local-dir: "./.presite/"
-          server-dir: "./public_html/vite/"
+          server-dir: "./public_html/"
           # dry-run: true
