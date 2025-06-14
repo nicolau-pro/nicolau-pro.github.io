@@ -87,6 +87,8 @@ const Footer = () => {
               My Awards...
             </Link>
 
+            <div className="mt-2 desktop-hidden" />
+
             <Link to="/contact">
               <h2 className="h3 text-thin">
                 <span>CONTACT </span>
