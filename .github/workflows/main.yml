@@ -84,7 +84,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: FTP upload
-        # https://github.com/SamKirkland/FTP-Deploy-Action
+        # Docs: https://github.com/SamKirkland/FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.r5.ro
