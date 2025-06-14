@@ -109,7 +109,7 @@ function Page(props) {
 
         <Section className="pb-5">
           <Row>
-            <Col className="pt-3">
+            <Col className="pt-3 mobile-centered">
               <h2>
                 My role{Jobs.length > 1 ? "s" : ""} at {Company.name}
               </h2>
@@ -165,7 +165,7 @@ function Page(props) {
             <Crosshatch className={`theme-${Company.theme}`} />
             <Section className="background-solid pt-3 pb-5">
               <Row>
-                <Col>
+                <Col className="mobile-centered">
                   <h2 className="gradient-text pt-1">Awards</h2>
                 </Col>
               </Row>
@@ -187,7 +187,7 @@ function Page(props) {
             <Crosshatch className={`theme-${Company.theme}`} />
             <Section className="pt-3 pb-12">
               <Row>
-                <Col>
+                <Col className="mobile-centered">
                   <h2>Testimonials</h2>
                 </Col>
               </Row>
