@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 const AppStateContext = createContext();
 
 export const AppStateProvider = ({ children }) => {
+  const [CurrentPath, setCurrentPath] = useState(null);
   const [HeaderReady, setHeaderReady] = useState(false);
   const [OutletReady, setOutletReady] = useState(false);
   const [FooterReady, setFooterReady] = useState(false);
@@ -14,6 +15,8 @@ export const AppStateProvider = ({ children }) => {
     setOutletReady,
     FooterReady,
     setFooterReady,
+    CurrentPath,
+    setCurrentPath,
   };
 
   return (

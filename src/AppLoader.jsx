@@ -12,14 +12,19 @@ import { API_GetCompanies } from "./data/companies";
 import { API_GetProjects, ProjectPath } from "./data/projects";
 
 import { useAppState } from "./AppStateContext";
+import { RouteChangeListener } from "./RouteChangeListener";
 
 const rootPath = "/";
 
 function AppLoader() {
-  const { setOutletReady } = useAppState();
+  const { setCurrentPath } = useAppState();
 
   const [Companies, setCompanies] = useState(null);
   const [ProjectList, setProjectList] = useState(null);
+
+  const handlePathChange = (path) => {
+    setCurrentPath(path.split("/")[1]);
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -39,6 +44,7 @@ function AppLoader() {
 
   return (
     <BrowserRouter>
+      <RouteChangeListener onPathChange={handlePathChange} />
       <Routes>
         <Route path={rootPath} element={<Dashboard />}>
           <Route index element={<Home />} />

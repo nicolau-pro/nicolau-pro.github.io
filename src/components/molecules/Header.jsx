@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { rootPath } from "../../data/variables";
 import { Link } from "react-router";
 import { useAppState } from "../../AppStateContext";
 
 const Header = () => {
-  const { setHeaderReady } = useAppState();
+  const { setHeaderReady, CurrentPath } = useAppState();
 
   const Links = [
     { path: "", name: "Home" },
@@ -14,19 +14,9 @@ const Header = () => {
     { path: "contact", name: "Contact" },
   ];
 
-  const [CurrentPath, setCurrentPath] = useState(null);
-
-  useEffect(() => {
-    setCurrentPath(location.pathname.split("/")[1]);
-  }, [location]);
-
   useEffect(() => {
     setHeaderReady(true);
   }, []);
-
-  function handleOnClick(path) {
-    setCurrentPath(path);
-  }
 
   return (
     <header>
@@ -50,7 +40,6 @@ const Header = () => {
                     ? `${link.name}, current section`
                     : null
                 }
-                onClick={() => handleOnClick(link.path)}
               >
                 {link.name.toUpperCase()}
               </Link>
