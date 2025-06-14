@@ -58,6 +58,13 @@ details {
         font-size: 23em;
         line-height: 1em;
       }
+
+      @media (max-width: 767px) {
+        padding-left: 6em;
+        &:after {
+          font-size: 13em;
+        }
+      }
     }
   }
 

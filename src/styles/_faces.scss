@@ -14,6 +14,14 @@
   transition: all 0.2s ease-out;
   top: -1.5em;
 
+  @media (max-width: 767px) {
+    max-width: 50vw;
+    padding-bottom: min(100%, 50vw);
+    align-self: center;
+    top: -1em;
+    margin-bottom: -1em;
+  }
+
   > div {
     position: absolute;
     top: 0;

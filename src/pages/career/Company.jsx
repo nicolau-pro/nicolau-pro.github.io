@@ -234,7 +234,10 @@ function Page(props) {
                           className="button-small button-outline"
                           aria-label={`${testimonial.name} on LinkedIn. External link`}
                         >
-                          <span>{testimonial.name} on LinkedIn </span>
+                          <span className="mobile-hidden">
+                            {testimonial.name} on
+                          </span>
+                          <span> LinkedIn </span>
                           <span className="material-icons">open_in_new</span>
                         </Link>
                       </Col>
