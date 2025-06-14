@@ -37,7 +37,7 @@ function Page() {
         </Section>
         <Section className="contact-links">
           <Row>
-            <Col className="py-6">
+            <Col className="py-2">
               <ContactLinks />
             </Col>
           </Row>
