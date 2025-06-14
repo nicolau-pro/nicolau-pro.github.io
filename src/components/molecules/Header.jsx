@@ -23,7 +23,11 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <img alt="Nicolau.pro logo" className="logo" src="/favicon.svg" />
+            <img
+              alt="Nicolau.pro logo"
+              className="logo"
+              src="/nicolau-pro-logo.webp"
+            />
           </li>
 
           {Links.map((link) => (
