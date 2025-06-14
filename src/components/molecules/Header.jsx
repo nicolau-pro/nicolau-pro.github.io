@@ -36,7 +36,7 @@ const Header = () => {
             <img
               alt="Nicolau.pro logo"
               className="logo"
-              src="/web-app-manifest-512x512.png"
+              src="/web-app-manifest-192x192.png"
             />
           </li>
 
