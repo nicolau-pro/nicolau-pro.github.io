@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { rootPath } from "../../data/variables";
 import { Link } from "react-router";
 import { useAppState } from "../../AppStateContext";
+import Icon from "../atoms/Icon";
 
 const Header = () => {
   const { setHeaderReady, CurrentPath } = useAppState();
@@ -41,9 +42,7 @@ const Header = () => {
                     : null
                 }
               >
-                <span className="material-icons desktop-hidden">
-                  {link.icon}
-                </span>
+                <Icon className="desktop-hidden">{link.icon}</Icon>
                 <span>{link.name.toUpperCase()}</span>
               </Link>
             </li>

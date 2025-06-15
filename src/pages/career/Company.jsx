@@ -18,6 +18,7 @@ import { API_GetAwardsByCompanyId } from "../../data/awards";
 import { FormatMonthYear, FilterListByIds } from "../../data/utils";
 import { useAppState } from "../../AppStateContext";
 import { breadcrumbs } from "../../data/variables";
+import Icon from "../../components/atoms/Icon";
 
 function Page(props) {
   const { setOutletReady } = useAppState();
@@ -143,11 +144,7 @@ function Page(props) {
                           {FilterListByIds(Tech, job.tech).map(
                             (tech, index) => (
                               <li key={index}>
-                                {tech && (
-                                  <span className="material-icons">
-                                    {tech.icon}
-                                  </span>
-                                )}
+                                {tech && <Icon>{tech.icon}</Icon>}
                                 <span> {tech.name}</span>
                               </li>
                             )
@@ -239,7 +236,7 @@ function Page(props) {
                             {testimonial.name} on
                           </span>
                           <span> LinkedIn </span>
-                          <span className="material-icons">open_in_new</span>
+                          <Icon>open_in_new</Icon>
                         </Link>
                       </Col>
                     </Row>

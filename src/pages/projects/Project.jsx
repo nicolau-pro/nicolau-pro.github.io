@@ -10,6 +10,7 @@ import { API_GetAwards, FilterAwardsByProjectId } from "../../data/awards";
 import { API_GetCompanyById } from "../../data/companies";
 import { useAppState } from "../../AppStateContext";
 import { breadcrumbs } from "../../data/variables";
+import Icon from "../../components/atoms/Icon";
 
 function Page(props) {
   const { setOutletReady } = useAppState();
@@ -89,7 +90,7 @@ function Page(props) {
                   <article className="gradient-text" key={award.id}>
                     <h4 className="large mt-1">
                       <span>{award.prize} </span>
-                      <span className="material-icons">{award.icon}</span>
+                      <Icon>{award.icon}</Icon>
                     </h4>
                     <p>{award.event}</p>
                     <p className="small">{award.description}</p>
@@ -136,7 +137,7 @@ function Page(props) {
                         backgroundImage: `url(/projects/${Project.videoTheme}/4.jpg)`,
                       }}
                     />
-                    <span className="material-icons">play_arrow</span>
+                    <Icon>play_arrow</Icon>
                   </div>
                 </Link>
               )}
@@ -160,7 +161,7 @@ function Page(props) {
                   to={Project.externalLink}
                 >
                   <span>Live Project</span>
-                  <span className="material-icons">open_in_new</span>
+                  <Icon>open_in_new</Icon>
                 </Link>
               )}
             </Col>
@@ -180,7 +181,7 @@ function Page(props) {
                 to={`/career/${Company.theme}`}
               >
                 <span>{Company.name}</span>
-                <span className="material-icons">arrow_forward_ios</span>
+                <Icon>arrow_forward_ios</Icon>
               </Link>
             </Col>
           </Row>

@@ -4,6 +4,7 @@ import Col from "../layout/Col";
 import { Link } from "react-router";
 import { ProjectPath } from "../../data/projects";
 import Line from "../layout/Line";
+import Icon from "../atoms/Icon";
 
 const Award = (props) => {
   const {
@@ -29,7 +30,7 @@ const Award = (props) => {
       <Col className="span-6 mobile-centered">
         <h3 className="gradient-text">
           <span className="prize">{Award.prize} </span>
-          <span className="material-icons">{Award.icon}</span>
+          <Icon>{Award.icon}</Icon>
         </h3>
         <h4 className="gradient-text">
           <span className="event"> {Award.event}</span>
@@ -47,7 +48,7 @@ const Award = (props) => {
                 aria-label={`Read more about my career at ${Company.name}`}
               >
                 TO PROJECT
-                <span className="material-icons">arrow_forward_ios</span>
+                <Icon>arrow_forward_ios</Icon>
               </Link>
             )}
             {companyButton && (
@@ -58,7 +59,7 @@ const Award = (props) => {
                 aria-label={`Read more about my career at ${Company.name}`}
               >
                 {Company.name}
-                <span className="material-icons">arrow_forward_ios</span>
+                <Icon>arrow_forward_ios</Icon>
               </Link>
             )}
           </Line>

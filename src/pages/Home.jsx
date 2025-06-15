@@ -7,6 +7,7 @@ import MetaTags from "../components/MetaTags";
 
 import { useAppState } from "../AppStateContext";
 import { Link } from "react-router";
+import Icon from "../components/atoms/Icon";
 
 function Page() {
   const { setOutletReady } = useAppState();
@@ -76,7 +77,7 @@ function Page() {
               >
                 <h2 className="h3 text-thin">
                   <span>CAREER </span>
-                  <span className="material-icons">arrow_forward_ios</span>
+                  <Icon>arrow_forward_ios</Icon>
                 </h2>
               </Link>
             </Col>
@@ -103,7 +104,7 @@ function Page() {
               >
                 <h2 className="h3 text-thin">
                   <span>PROJECTS </span>
-                  <span className="material-icons">arrow_forward_ios</span>
+                  <Icon>arrow_forward_ios</Icon>
                 </h2>
               </Link>
             </Col>
@@ -128,7 +129,7 @@ function Page() {
               >
                 <h2 className="h3 text-thin">
                   <span>AWARDS </span>
-                  <span className="material-icons">arrow_forward_ios</span>
+                  <Icon>arrow_forward_ios</Icon>
                 </h2>
               </Link>
             </Col>

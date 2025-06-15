@@ -9,6 +9,7 @@ import { API_GetProjects, ProjectPath } from "../../data/projects";
 import { API_GetAwards } from "../../data/awards";
 import { API_GetCompanies, FindCompanyById } from "../../data/companies";
 import { useAppState } from "../../AppStateContext";
+import Icon from "../../components/atoms/Icon";
 
 function Page() {
   const { setOutletReady } = useAppState();
@@ -100,9 +101,7 @@ function Page() {
                         aria-label={`To project: ${project.client} ${project.name}`}
                       >
                         <span>To Project</span>
-                        <span className="material-icons">
-                          arrow_forward_ios
-                        </span>
+                        <Icon>arrow_forward_ios</Icon>
                       </Link>
 
                       <Link
@@ -118,9 +117,7 @@ function Page() {
                         <span>
                           {FindCompanyById(Companies, project.companyId).name}
                         </span>
-                        <span className="material-icons">
-                          arrow_forward_ios
-                        </span>
+                        <Icon>arrow_forward_ios</Icon>
                       </Link>
                     </Line>
                   </Col>

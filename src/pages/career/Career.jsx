@@ -8,6 +8,7 @@ import { API_GetCompanies } from "../../data/companies";
 import { API_GetJobs } from "../../data/jobs";
 import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
 import { useAppState } from "../../AppStateContext";
+import Icon from "../../components/atoms/Icon";
 
 function Page() {
   const { setOutletReady } = useAppState();
@@ -98,7 +99,7 @@ function Page() {
                     to={`/career/${company.theme}`}
                   >
                     <span>Details</span>
-                    <span className="material-icons">arrow_forward_ios</span>
+                    <Icon>arrow_forward_ios</Icon>
                   </Link>
                 </Col>
               </Row>

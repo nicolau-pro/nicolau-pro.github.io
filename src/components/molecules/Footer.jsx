@@ -10,6 +10,7 @@ import { FooterProjectIds } from "../../data/variables";
 import ContactLinks from "./ContactLinks";
 
 import { useAppState } from "../../AppStateContext";
+import Icon from "../atoms/Icon";
 
 const Footer = () => {
   const { setFooterReady } = useAppState();
@@ -50,7 +51,7 @@ const Footer = () => {
             <Link to="/career">
               <h2 className="h3 text-thin">
                 <span>CAREER </span>
-                <span className="material-icons">timeline</span>
+                <Icon>timeline</Icon>
               </h2>
             </Link>
             {Companies.map((company) => (
@@ -63,7 +64,7 @@ const Footer = () => {
             <Link to="/projects">
               <h2 className="h3 text-thin">
                 <span>PROJECTS </span>
-                <span className="material-icons">view_in_ar</span>
+                <Icon>view_in_ar</Icon>
               </h2>
             </Link>
             {Projects.map((project) => (
@@ -79,7 +80,7 @@ const Footer = () => {
             <Link to="/awards">
               <h2 className="h3 text-thin">
                 <span>AWARDS </span>
-                <span className="material-icons">emoji_events</span>
+                <Icon>emoji_events</Icon>
               </h2>
             </Link>
 
@@ -87,12 +88,12 @@ const Footer = () => {
               My Awards...
             </Link>
 
-            <div className="mt-2 desktop-hidden" />
+            <div className="mt-2 de"></div>
 
             <Link to="/contact">
               <h2 className="h3 text-thin">
                 <span>CONTACT </span>
-                <span className="material-icons">account_circle</span>
+                <Icon>account_circle</Icon>
               </h2>
             </Link>
 
