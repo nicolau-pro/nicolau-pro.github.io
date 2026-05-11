@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
-
-type RouteChangeListenerProps = {
-  onPathChange: (_path: string) => void;
-};
+import type { RouteChangeListenerProps } from "./interfaces";
 
 export function RouteChangeListener({ onPathChange }: RouteChangeListenerProps): null {
   const location = useLocation();

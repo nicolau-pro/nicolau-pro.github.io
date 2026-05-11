@@ -1,4 +1,4 @@
-import type { Award, Id } from "../types";
+import type { Award, Id } from "../interfaces";
 
 async function API_GetAwards(): Promise<Award[] | null> {
   try {

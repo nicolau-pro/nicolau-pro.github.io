@@ -1,6 +1,7 @@
-import type { ComponentPropsWithoutRef, ReactElement } from "react";
+import type { ReactElement } from "react";
+import type { DivProps } from "../../interfaces";
 
-const Crosshatch = (props: ComponentPropsWithoutRef<"div">): ReactElement => {
+const Crosshatch = (props: DivProps): ReactElement => {
   const { className = "", ...rest } = props;
   return (
     <div className={["crosshatch", className].join(" ")} {...rest}>

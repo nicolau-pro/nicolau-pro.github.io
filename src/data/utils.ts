@@ -1,14 +1,16 @@
-import type { Id, Job, LooseRecord } from "../types";
+import type { Id, Job, LooseRecord } from "../interfaces";
 
-function FormatMonthYear(dateString: string): string {
-  const date = new Date(dateString);
+function FormatMonthYear(dateInput: string | Date | null): string {
+  if (!dateInput) return "";
+
+  const date = dateInput instanceof Date ? dateInput : new Date(dateInput);
   const now = new Date();
 
   if (date > now) {
     return "Present";
   }
 
-  const options = { year: "numeric", month: "long" };
+  const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long" };
   return date.toLocaleDateString(undefined, options);
 }
 

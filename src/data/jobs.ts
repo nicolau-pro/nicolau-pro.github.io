@@ -1,4 +1,4 @@
-import type { Id, Job } from "../types";
+import type { Id, Job } from "../interfaces";
 
 async function API_GetJobById(id: Id): Promise<Job | null> {
   try {

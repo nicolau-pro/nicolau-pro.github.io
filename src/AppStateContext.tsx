@@ -1,20 +1,10 @@
 import { createContext, useContext, useState } from "react";
-import type { Dispatch, ReactElement, ReactNode, SetStateAction } from "react";
-
-type AppState = {
-  HeaderReady: boolean;
-  setHeaderReady: Dispatch<SetStateAction<boolean>>;
-  OutletReady: boolean;
-  setOutletReady: Dispatch<SetStateAction<any>>;
-  FooterReady: boolean;
-  setFooterReady: Dispatch<SetStateAction<boolean>>;
-  CurrentPath: string | null;
-  setCurrentPath: Dispatch<SetStateAction<string | null>>;
-};
+import type { ReactElement } from "react";
+import type { AppChildren, AppState } from "./interfaces";
 
 const AppStateContext = createContext<AppState | null>(null);
 
-export const AppStateProvider = ({ children }: { children: ReactNode }): ReactElement => {
+export const AppStateProvider = ({ children }: AppChildren): ReactElement => {
   const [CurrentPath, setCurrentPath] = useState(null);
   const [HeaderReady, setHeaderReady] = useState(false);
   const [OutletReady, setOutletReady] = useState(false);

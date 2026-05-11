@@ -1,13 +1,7 @@
 import React from "react";
-import type { ReactNode } from "react";
+import type { IconProps } from "../../interfaces";
 
-function Icon({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}): React.ReactElement {
+function Icon({ children, className = "" }: IconProps): React.ReactElement {
   return (
     <span
       aria-hidden="true"

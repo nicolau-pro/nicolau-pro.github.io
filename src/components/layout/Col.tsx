@@ -1,6 +1,7 @@
-import type { ComponentPropsWithoutRef, ReactElement } from "react";
+import type { ReactElement } from "react";
+import type { DivProps } from "../../interfaces";
 
-const Col = (props: ComponentPropsWithoutRef<"div">): ReactElement => {
+const Col = (props: DivProps): ReactElement => {
   const { className = "", children, ...rest } = props;
   return (
     <div className={["col", className].join(" ")} {...rest}>

@@ -13,7 +13,7 @@ import { API_GetProjects, ProjectPath } from "./data/projects";
 
 import { useAppState } from "./AppStateContext";
 import { RouteChangeListener } from "./RouteChangeListener";
-import type { Company as CompanyType, Project as ProjectType } from "./types";
+import type { Company as CompanyType, Project as ProjectType } from "./interfaces";
 
 const rootPath = "/";
 

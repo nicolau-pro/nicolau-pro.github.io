@@ -1,4 +1,4 @@
-import type { Id, Tech } from "../types";
+import type { Id, Tech } from "../interfaces";
 
 async function API_GetTech(): Promise<Tech[] | null> {
   try {

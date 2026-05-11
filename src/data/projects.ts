@@ -1,4 +1,4 @@
-import type { Id, Project } from "../types";
+import type { Id, Project } from "../interfaces";
 
 async function API_GetProjects(): Promise<Project[] | null> {
   try {
