@@ -1,5 +1,5 @@
 import React from "react";
-import type { IconProps } from "../../interfaces";
+import type { IconProps } from "@/interfaces";
 
 function Icon({ children, className = "" }: IconProps): React.ReactElement {
   return (

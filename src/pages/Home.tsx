@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import Row from "../components/layout/Row";
-import Col from "../components/layout/Col";
-import Section from "../components/layout/Section";
-import Crosshatch from "../components/decorators/Crosshatch";
-import MetaTags from "../components/MetaTags";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
+import Section from "@/components/layout/Section";
+import Crosshatch from "@/components/decorators/Crosshatch";
+import MetaTags from "@/components/MetaTags";
 
-import { useAppState } from "../AppStateContext";
+import { useAppState } from "@/AppStateContext";
 import { Link } from "react-router";
-import Icon from "../components/atoms/Icon";
+import Icon from "@/components/atoms/Icon";
 
 function Page(): React.ReactElement {
   const { setOutletReady } = useAppState();

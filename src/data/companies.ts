@@ -1,4 +1,4 @@
-import type { Company, Id } from "../interfaces";
+import type { Company, Id } from "@/interfaces";
 
 async function API_GetCompanies(): Promise<Company[] | null> {
   try {

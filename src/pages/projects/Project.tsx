@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
-import Row from "../../components/layout/Row";
-import Col from "../../components/layout/Col";
-import Section from "../../components/layout/Section";
-import MetaTags from "../../components/MetaTags";
-import Crosshatch from "../../components/decorators/Crosshatch";
-import { API_GetProjectById, ProjectPath } from "../../data/projects";
-import { API_GetAwards, FilterAwardsByProjectId } from "../../data/awards";
-import { API_GetCompanyById } from "../../data/companies";
-import { useAppState } from "../../AppStateContext";
-import { breadcrumbs } from "../../data/variables";
-import Icon from "../../components/atoms/Icon";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
+import Section from "@/components/layout/Section";
+import MetaTags from "@/components/MetaTags";
+import Crosshatch from "@/components/decorators/Crosshatch";
+import { API_GetProjectById, ProjectPath } from "@/data/projects";
+import { API_GetAwards, FilterAwardsByProjectId } from "@/data/awards";
+import { API_GetCompanyById } from "@/data/companies";
+import { useAppState } from "@/AppStateContext";
+import { breadcrumbs } from "@/data/variables";
+import Icon from "@/components/atoms/Icon";
+import type { ProjectPageProps } from "@/interfaces";
 
-function Page(props: any): React.ReactElement {
+function Page(props: ProjectPageProps): React.ReactElement {
   const { setOutletReady } = useAppState();
 
   const [Project, setProject] = useState(null);

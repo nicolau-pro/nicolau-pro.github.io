@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import type { ReactElement } from "react";
-import type { AppChildren, AppState } from "./interfaces";
+import type { AppChildren, AppState } from "@/interfaces";
 
 const AppStateContext = createContext<AppState | null>(null);
 

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 import type { ReactElement } from "react";
-import Header from "../components/molecules/Header";
-import Footer from "../components/molecules/Footer";
-import { useAppState } from "../AppStateContext";
+import Header from "@/components/molecules/Header";
+import Footer from "@/components/molecules/Footer";
+import { useAppState } from "@/AppStateContext";
 
 function Dashboard(): ReactElement {
   const { HeaderReady, OutletReady, FooterReady } = useAppState();

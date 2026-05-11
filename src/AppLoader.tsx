@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
-import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
-import Company from "./pages/career/Company";
-import Career from "./pages/career/Career";
-import Project from "./pages/projects/Project";
-import Projects from "./pages/projects/Projects";
-import Awards from "./pages/awards/Awards";
-import Contact from "./pages/contact/Contact";
-import { API_GetCompanies } from "./data/companies";
-import { API_GetProjects, ProjectPath } from "./data/projects";
+import Dashboard from "@/pages/Dashboard";
+import Home from "@/pages/Home";
+import Company from "@/pages/career/Company";
+import Career from "@/pages/career/Career";
+import Project from "@/pages/projects/Project";
+import Projects from "@/pages/projects/Projects";
+import Awards from "@/pages/awards/Awards";
+import Contact from "@/pages/contact/Contact";
+import { API_GetCompanies } from "@/data/companies";
+import { API_GetProjects, ProjectPath } from "@/data/projects";
 
-import { useAppState } from "./AppStateContext";
-import { RouteChangeListener } from "./RouteChangeListener";
-import type { Company as CompanyType, Project as ProjectType } from "./interfaces";
+import { useAppState } from "@/AppStateContext";
+import { RouteChangeListener } from "@/RouteChangeListener";
+import type { Company as CompanyType, Project as ProjectType } from "@/interfaces";
 
 const rootPath = "/";
 

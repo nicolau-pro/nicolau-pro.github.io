@@ -1,4 +1,4 @@
-import type { Id, Job, LooseRecord } from "../interfaces";
+import type { Id, Job, LooseRecord } from "@/interfaces";
 
 function FormatMonthYear(dateInput: string | Date | null): string {
   if (!dateInput) return "";

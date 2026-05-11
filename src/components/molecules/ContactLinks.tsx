@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Link } from "react-router";
-import { Contact } from "../../data/variables";
-import Icon from "../atoms/Icon";
+import { Contact } from "@/data/variables";
+import Icon from "@/components/atoms/Icon";
 
 const ContactLinks = (): React.ReactElement => {
   return (

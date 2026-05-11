@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
-import Row from "../../components/layout/Row";
-import Line from "../../components/layout/Line";
-import Col from "../../components/layout/Col";
-import Section from "../../components/layout/Section";
-import MetaTags from "../../components/MetaTags";
-import { API_GetProjects, ProjectPath } from "../../data/projects";
-import { API_GetAwards } from "../../data/awards";
-import { API_GetCompanies, FindCompanyById } from "../../data/companies";
-import { useAppState } from "../../AppStateContext";
-import Icon from "../../components/atoms/Icon";
+import Row from "@/components/layout/Row";
+import Line from "@/components/layout/Line";
+import Col from "@/components/layout/Col";
+import Section from "@/components/layout/Section";
+import MetaTags from "@/components/MetaTags";
+import { API_GetProjects, ProjectPath } from "@/data/projects";
+import { API_GetAwards } from "@/data/awards";
+import { API_GetCompanies, FindCompanyById } from "@/data/companies";
+import { useAppState } from "@/AppStateContext";
+import Icon from "@/components/atoms/Icon";
 
 function Page(): React.ReactElement {
   const { setOutletReady } = useAppState();

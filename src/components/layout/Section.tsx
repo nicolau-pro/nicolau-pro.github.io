@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import type { SectionProps } from "../../interfaces";
+import type { SectionProps } from "@/interfaces";
 
 const Section = (props: SectionProps): ReactElement => {
   const { children, ...rest } = props;

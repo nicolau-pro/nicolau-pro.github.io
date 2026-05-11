@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import type { DivProps } from "../../interfaces";
+import type { DivProps } from "@/interfaces";
 
 const Crosshatch = (props: DivProps): ReactElement => {
   const { className = "", ...rest } = props;

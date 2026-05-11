@@ -1,4 +1,4 @@
-import type { Id, Testimonial } from "../interfaces";
+import type { Id, Testimonial } from "@/interfaces";
 
 async function API_GetTestimonials(): Promise<Testimonial[] | null> {
   try {

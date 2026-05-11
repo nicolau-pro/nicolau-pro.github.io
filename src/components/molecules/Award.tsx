@@ -1,12 +1,13 @@
 import React from "react";
-import Row from "../layout/Row";
-import Col from "../layout/Col";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
 import { Link } from "react-router";
-import { ProjectPath } from "../../data/projects";
-import Line from "../layout/Line";
-import Icon from "../atoms/Icon";
+import { ProjectPath } from "@/data/projects";
+import Line from "@/components/layout/Line";
+import Icon from "@/components/atoms/Icon";
+import type { AwardComponentProps } from "@/interfaces";
 
-const Award = (props: any): React.ReactElement => {
+const Award = (props: AwardComponentProps): React.ReactElement => {
   const {
     Award,
     Company,

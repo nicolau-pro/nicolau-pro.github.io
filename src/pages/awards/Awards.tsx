@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Row from "../../components/layout/Row";
-import Col from "../../components/layout/Col";
-import Section from "../../components/layout/Section";
-import MetaTags from "../../components/MetaTags";
-import Award from "../../components/molecules/Award";
-import Crosshatch from "../../components/decorators/Crosshatch";
-import { API_GetAwards } from "../../data/awards";
-import { API_GetCompanies, FindCompanyById } from "../../data/companies";
-import { API_GetProjects, FindProjectById } from "../../data/projects";
-import { useAppState } from "../../AppStateContext";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
+import Section from "@/components/layout/Section";
+import MetaTags from "@/components/MetaTags";
+import Award from "@/components/molecules/Award";
+import Crosshatch from "@/components/decorators/Crosshatch";
+import { API_GetAwards } from "@/data/awards";
+import { API_GetCompanies, FindCompanyById } from "@/data/companies";
+import { API_GetProjects, FindProjectById } from "@/data/projects";
+import { useAppState } from "@/AppStateContext";
 
 function Page(): React.ReactElement {
   const { setOutletReady } = useAppState();

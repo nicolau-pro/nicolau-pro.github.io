@@ -1,6 +1,6 @@
 import React from "react";
-import { MetaData, breadcrumbs } from "../data/variables";
-import type { MetaTagsProps } from "../interfaces";
+import { MetaData, breadcrumbs } from "@/data/variables";
+import type { MetaTagsProps } from "@/interfaces";
 
 function MetaTags(props: MetaTagsProps): React.ReactElement {
   const { section, description, image, url } = props;

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { rootPath } from "../../data/variables";
+import { rootPath } from "@/data/variables";
 import { Link } from "react-router";
-import { useAppState } from "../../AppStateContext";
-import Icon from "../atoms/Icon";
+import { useAppState } from "@/AppStateContext";
+import Icon from "@/components/atoms/Icon";
 
 const Header = (): React.ReactElement => {
   const { setHeaderReady, CurrentPath } = useAppState();

@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 
-import Row from "../../components/layout/Row";
-import Col from "../../components/layout/Col";
-import Section from "../../components/layout/Section";
-import MetaTags from "../../components/MetaTags";
-import Crosshatch from "../../components/decorators/Crosshatch";
-import Award from "../../components/molecules/Award";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
+import Section from "@/components/layout/Section";
+import MetaTags from "@/components/MetaTags";
+import Crosshatch from "@/components/decorators/Crosshatch";
+import Award from "@/components/molecules/Award";
 
-import { API_GetCompanyById } from "../../data/companies";
-import { API_GetJobsByCompanyId } from "../../data/jobs";
-import { API_GetProjects, FindProjectById } from "../../data/projects";
-import { API_GetTech } from "../../data/tech";
-import { API_GetTestimonialsByCompanyId } from "../../data/testimonials";
-import { API_GetAwardsByCompanyId } from "../../data/awards";
+import { API_GetCompanyById } from "@/data/companies";
+import { API_GetJobsByCompanyId } from "@/data/jobs";
+import { API_GetProjects, FindProjectById } from "@/data/projects";
+import { API_GetTech } from "@/data/tech";
+import { API_GetTestimonialsByCompanyId } from "@/data/testimonials";
+import { API_GetAwardsByCompanyId } from "@/data/awards";
 
-import { FormatMonthYear, FilterListByIds } from "../../data/utils";
-import { useAppState } from "../../AppStateContext";
-import { breadcrumbs } from "../../data/variables";
-import Icon from "../../components/atoms/Icon";
+import { FormatMonthYear, FilterListByIds } from "@/data/utils";
+import { useAppState } from "@/AppStateContext";
+import { breadcrumbs } from "@/data/variables";
+import Icon from "@/components/atoms/Icon";
+import type { CompanyPageProps } from "@/interfaces";
 
-function Page(props: any): React.ReactElement {
+function Page(props: CompanyPageProps): React.ReactElement {
   const { setOutletReady } = useAppState();
   const { companyId } = props;
 

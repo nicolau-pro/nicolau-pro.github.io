@@ -35,6 +35,14 @@ export interface MetaTagsProps {
   url: string;
 }
 
+export interface ProjectPageProps {
+  projectId: Id;
+}
+
+export interface CompanyPageProps {
+  companyId: Id;
+}
+
 export interface IconProps {
   children: ReactNode;
   className?: string;
@@ -61,6 +69,15 @@ export interface Award extends LooseRecord {
   id: Id;
   companyId?: Id;
   projectId?: Id;
+}
+
+export interface AwardComponentProps extends DivProps {
+  Award: Award;
+  Company?: Company;
+  Project?: Project;
+  links?: LooseRecord;
+  companyButton?: boolean;
+  projectButton?: boolean;
 }
 
 export interface Job extends LooseRecord {

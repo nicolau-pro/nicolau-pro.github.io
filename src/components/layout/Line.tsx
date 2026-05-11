@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import type { DivProps } from "../../interfaces";
+import type { DivProps } from "@/interfaces";
 
 const Line = (props: DivProps): ReactElement => {
   const { className = "", children, ...rest } = props;

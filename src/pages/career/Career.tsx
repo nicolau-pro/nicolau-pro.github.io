@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
-import Row from "../../components/layout/Row";
-import Col from "../../components/layout/Col";
-import Section from "../../components/layout/Section";
-import MetaTags from "../../components/MetaTags";
-import { API_GetCompanies } from "../../data/companies";
-import { API_GetJobs } from "../../data/jobs";
-import { FormatMonthYear, EmploymentPeriod } from "../../data/utils";
-import { useAppState } from "../../AppStateContext";
-import Icon from "../../components/atoms/Icon";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
+import Section from "@/components/layout/Section";
+import MetaTags from "@/components/MetaTags";
+import { API_GetCompanies } from "@/data/companies";
+import { API_GetJobs } from "@/data/jobs";
+import { FormatMonthYear, EmploymentPeriod } from "@/data/utils";
+import { useAppState } from "@/AppStateContext";
+import Icon from "@/components/atoms/Icon";
 
 function Page(): React.ReactElement {
   const { setOutletReady } = useAppState();

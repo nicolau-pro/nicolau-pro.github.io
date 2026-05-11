@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import Section from "../layout/Section";
-import Row from "../layout/Row";
-import Col from "../layout/Col";
+import Section from "@/components/layout/Section";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
 import { Link } from "react-router";
 
-import { API_GetCompanies } from "../../data/companies";
-import { API_GetProjects, ProjectPath } from "../../data/projects";
-import { FooterProjectIds } from "../../data/variables";
-import ContactLinks from "./ContactLinks";
+import { API_GetCompanies } from "@/data/companies";
+import { API_GetProjects, ProjectPath } from "@/data/projects";
+import { FooterProjectIds } from "@/data/variables";
+import ContactLinks from "@/components/molecules/ContactLinks";
 
-import { useAppState } from "../../AppStateContext";
-import Icon from "../atoms/Icon";
+import { useAppState } from "@/AppStateContext";
+import Icon from "@/components/atoms/Icon";
 
 const Footer = (): React.ReactElement => {
   const { setFooterReady } = useAppState();

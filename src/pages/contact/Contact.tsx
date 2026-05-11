@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 
-import Row from "../../components/layout/Row";
-import Col from "../../components/layout/Col";
-import Section from "../../components/layout/Section";
+import Row from "@/components/layout/Row";
+import Col from "@/components/layout/Col";
+import Section from "@/components/layout/Section";
 
-import MetaTags from "../../components/MetaTags";
-import Crosshatch from "../../components/decorators/Crosshatch";
-import ContactLinks from "../../components/molecules/ContactLinks";
+import MetaTags from "@/components/MetaTags";
+import Crosshatch from "@/components/decorators/Crosshatch";
+import ContactLinks from "@/components/molecules/ContactLinks";
 
-import { useAppState } from "../../AppStateContext";
+import { useAppState } from "@/AppStateContext";
 
 function Page(): React.ReactElement {
   const { setOutletReady } = useAppState();
