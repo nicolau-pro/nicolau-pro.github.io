@@ -6,8 +6,9 @@ const mysql = require("mysql2/promise");
 const { buildMysqlConfig } = require("./connection.cjs");
 
 const ROOT = __dirname;
-const SCHEMA_PATH = path.join(ROOT, "schema.sql");
-const SEED_PATH = path.join(ROOT, "seed-data.json");
+const DATABASE_DIR = path.join(ROOT, "database");
+const SCHEMA_PATH = path.join(DATABASE_DIR, "schema.sql");
+const SEED_PATH = path.join(DATABASE_DIR, "seed-data.json");
 const TABLE_ORDER = [
   "companies",
   "projects",
@@ -41,6 +42,8 @@ function normalizeValue(value) {
 }
 
 async function main() {
+  await fs.mkdir(DATABASE_DIR, { recursive: true });
+
   const connection = await mysql.createConnection({
     ...buildMysqlConfig(),
     user: process.env.DB_USER,

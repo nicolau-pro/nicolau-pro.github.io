@@ -1,9 +1,16 @@
 # Scripts
 
+## Quick Start
+
+- `npm i` - install the shared frontend/backend dependencies
+- `npm run db:up` - start the local MySQL container
+- `npm run db:restore` - load the saved database snapshot into MySQL
+- `node src/backend/index.cjs` - start the backend API on port 3000
+- `npm run dev` - start the frontend dev server
+
 ## Install
 
 - install `npm i`
-- add `.env` file in root with database credentials
 
 ## Local backend database
 
@@ -11,7 +18,13 @@
 - restore the saved snapshot: `npm run db:restore`
 - export the current database state: `npm run db:dump`
 - local DB settings live in `src/backend-db/.env.example`
+- snapshot files live in `src/backend-db/database/`
 - set `DB_SSL=false` when using local MySQL
+- the snapshot preserves IDs so foreign-key-style relationships stay stable
+- when the database content changes, rerun `npm run db:dump` and commit the updated files in `src/backend-db/database/`
+- copy `src/backend-db/.env.example` to your runtime `.env` or export the same variables in your shell
+- start MySQL with `docker compose -f src/backend-db/docker-compose.yml up -d`
+- restore the snapshot with `node src/backend-db/restore.cjs`
 
 ## Start backend
 
@@ -24,10 +37,6 @@
 - frontend: `npm run dev`
 - frontend API calls go through `/api` in development
 - set `VITE_API_BASE_URL` if you want the frontend to point at a different backend host
-
-## Start backend and frontend
-
-- frontend `npm run dev`
 
 ## Simple Vite build and preview
 
