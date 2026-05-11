@@ -1,8 +1,9 @@
 import type { Id, Tech } from "@/interfaces";
+import { apiPath } from "@/data/api";
 
 async function API_GetTech(): Promise<Tech[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/tech`);
+    const response = await fetch(apiPath("/tech"));
     if (!response.ok) {
       return null;
     }
@@ -16,7 +17,7 @@ async function API_GetTech(): Promise<Tech[] | null> {
 
 async function API_GetTechById(id: Id): Promise<Tech | null> {
   try {
-    const response = await fetch(`http://localhost:3000/tech/${id}`);
+    const response = await fetch(apiPath(`/tech/${id}`));
     if (!response.ok) {
       return null;
     }

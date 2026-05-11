@@ -1,8 +1,9 @@
 import type { Company, Id } from "@/interfaces";
+import { apiPath } from "@/data/api";
 
 async function API_GetCompanies(): Promise<Company[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/companies`);
+    const response = await fetch(apiPath("/companies"));
     if (!response.ok) {
       return null;
     }
@@ -16,7 +17,7 @@ async function API_GetCompanies(): Promise<Company[] | null> {
 
 async function API_GetCompanyById(id: Id): Promise<Company | null> {
   try {
-    const response = await fetch(`http://localhost:3000/companies/${id}`);
+    const response = await fetch(apiPath(`/companies/${id}`));
     if (!response.ok) {
       return null;
     }

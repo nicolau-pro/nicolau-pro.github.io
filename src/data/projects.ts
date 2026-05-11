@@ -1,8 +1,9 @@
 import type { Id, Project } from "@/interfaces";
+import { apiPath } from "@/data/api";
 
 async function API_GetProjects(): Promise<Project[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/projects`);
+    const response = await fetch(apiPath("/projects"));
     if (!response.ok) {
       return null;
     }
@@ -16,7 +17,7 @@ async function API_GetProjects(): Promise<Project[] | null> {
 
 async function API_GetProjectById(id: Id): Promise<Project | null> {
   try {
-    const response = await fetch(`http://localhost:3000/projects/${id}`);
+    const response = await fetch(apiPath(`/projects/${id}`));
     if (!response.ok) {
       return null;
     }

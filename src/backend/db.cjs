@@ -1,22 +1,8 @@
-const Sequelize = require("sequelize");
+require("dotenv").config();
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: "mysql",
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // Use `false` only for self-signed certs
-      },
-    },
-    logging: false,
-  }
-);
+const { createSequelize } = require("../backend-db/connection.cjs");
+
+const sequelize = createSequelize();
 
 sequelize
   .sync({ force: false })

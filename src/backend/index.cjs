@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger/swagger.json");
-const { Sequelize } = require("sequelize");
+const { createSequelize } = require("../backend-db/connection.cjs");
 
 const app = express();
 app.use(express.json());
@@ -17,23 +17,7 @@ app.use(cors()); // Allow requests from any origin
 // );
 
 // Sequelize setup
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: "mysql",
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // Use `false` only for self-signed certs
-      },
-    },
-    logging: false,
-  }
-);
+const sequelize = createSequelize();
 
 // Swagger route
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));

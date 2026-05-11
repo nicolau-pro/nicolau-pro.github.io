@@ -1,8 +1,9 @@
 import type { Id, Testimonial } from "@/interfaces";
+import { apiPath } from "@/data/api";
 
 async function API_GetTestimonials(): Promise<Testimonial[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/testimonials`);
+    const response = await fetch(apiPath("/testimonials"));
     if (!response.ok) {
       return null;
     }
@@ -16,7 +17,7 @@ async function API_GetTestimonials(): Promise<Testimonial[] | null> {
 
 async function API_GetTestimonialById(id: Id): Promise<Testimonial | null> {
   try {
-    const response = await fetch(`http://localhost:3000/testimonials/${id}`);
+    const response = await fetch(apiPath(`/testimonials/${id}`));
     if (!response.ok) {
       return null;
     }
@@ -30,7 +31,7 @@ async function API_GetTestimonialById(id: Id): Promise<Testimonial | null> {
 
 async function API_GetTestimonialsByCompanyId(companyId: Id): Promise<Testimonial[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/testimonials`);
+    const response = await fetch(apiPath("/testimonials"));
     if (!response.ok) {
       return null;
     }

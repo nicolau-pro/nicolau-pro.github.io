@@ -1,8 +1,9 @@
 import type { Id, Job } from "@/interfaces";
+import { apiPath } from "@/data/api";
 
 async function API_GetJobById(id: Id): Promise<Job | null> {
   try {
-    const response = await fetch(`http://localhost:3000/jobs/${id}`);
+    const response = await fetch(apiPath(`/jobs/${id}`));
     if (!response.ok) {
       return null;
     }
@@ -16,7 +17,7 @@ async function API_GetJobById(id: Id): Promise<Job | null> {
 
 async function API_GetJobs(): Promise<Job[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/jobs`);
+    const response = await fetch(apiPath("/jobs"));
     if (!response.ok) {
       return null;
     }
@@ -30,7 +31,7 @@ async function API_GetJobs(): Promise<Job[] | null> {
 
 async function API_GetJobsByCompanyId(companyId: Id): Promise<Job[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/jobs`);
+    const response = await fetch(apiPath("/jobs"));
     if (!response.ok) {
       return null;
     }

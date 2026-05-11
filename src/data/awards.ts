@@ -1,8 +1,9 @@
 import type { Award, Id } from "@/interfaces";
+import { apiPath } from "@/data/api";
 
 async function API_GetAwards(): Promise<Award[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/awards`);
+    const response = await fetch(apiPath("/awards"));
     if (!response.ok) {
       return null;
     }
@@ -16,7 +17,7 @@ async function API_GetAwards(): Promise<Award[] | null> {
 
 async function API_GetAwardById(id: Id): Promise<Award | null> {
   try {
-    const response = await fetch(`http://localhost:3000/awards/${id}`);
+    const response = await fetch(apiPath(`/awards/${id}`));
     if (!response.ok) {
       return null;
     }
@@ -30,7 +31,7 @@ async function API_GetAwardById(id: Id): Promise<Award | null> {
 
 async function API_GetAwardsByCompanyId(companyId: Id): Promise<Award[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/awards`);
+    const response = await fetch(apiPath("/awards"));
     if (!response.ok) {
       return null;
     }
@@ -47,7 +48,7 @@ async function API_GetAwardsByCompanyId(companyId: Id): Promise<Award[] | null> 
 
 async function API_GetAwardsByProjectId(projectId: Id): Promise<Award[] | null> {
   try {
-    const response = await fetch(`http://localhost:3000/awards`);
+    const response = await fetch(apiPath("/awards"));
     if (!response.ok) {
       return null;
     }

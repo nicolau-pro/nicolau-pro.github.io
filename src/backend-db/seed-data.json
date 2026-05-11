@@ -1,0 +1,1159 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Blippar",
+      "theme": "blippar",
+      "description": "One of the UK's first tech unicorns, specialises in Augmented Reality (AR) content creation and publishing to any smart phone, tablet and the web.",
+      "details": "It was founded in 2011 and I joined as employee number 16. By the time of its Series D round of funding in early 2016, Blippar had been doubling down on its broader machine learning and AI efforts, with 60 engineers in its San Francisco and Mountain View offices, and 300 employees spread across 14 offices globally, reaching 500 in 2018.",
+      "meta": {
+        "description": "One of the UK's first tech unicorns, specialises in Augmented Reality (AR) content creation and publishing to any smart phone, tablet and the web."
+      },
+      "createdAt": "2025-06-02 15:37:48",
+      "updatedAt": "2025-06-02 15:37:48"
+    },
+    {
+      "id": 2,
+      "name": "MRMC",
+      "theme": "mrmc",
+      "description": "Mark Roberts Motion Control is a leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
+      "details": "Delivering Oscar-Winning Engineering for over 50 Years! The leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture.",
+      "meta": {
+        "description": "Mark Roberts Motion Control (MRMC) is a leading manufacturer and cutting-edge solutions supplier for motion control, automation, broadcast robotics, volumetric and remote image capture."
+      },
+      "createdAt": "2025-06-02 15:38:24",
+      "updatedAt": "2025-06-02 15:38:24"
+    },
+    {
+      "id": 3,
+      "name": "NewDay Aquacard",
+      "theme": "newday-aquacard",
+      "description": "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.aquacard.co.uk/\">Aquacard.co.uk</a><br />Helping people move forward with credit.",
+      "details": "\"We're proud to serve close to 5 million customers across the UK through our diverse and growing business. So our purpose is straightforward, to help people move forward with credit. Our Customer Manifesto is made up of four core principles, we're a welcoming, understanding, knowing and rewarding business. These principles bring the Manifesto to life for our customers, colleagues and retail partners.\"",
+      "meta": {
+        "description": "Aquacard.co.uk Helping people move forward with credit"
+      },
+      "createdAt": "2025-06-02 15:39:09",
+      "updatedAt": "2025-06-02 15:39:09"
+    },
+    {
+      "id": 4,
+      "name": "Gain Credit Lending Stream",
+      "theme": "gain-credit-lending-stream",
+      "description": "A scaled global Fintech focused on responsible credit.",
+      "details": "Lending Stream is a 6-month digital loan provider in the UK. Serving as a viable alternative to payday loans since 2008, Lending Stream has been the go-to option for people in need of emergency funds; a fact acknowledged by the consistently high customer review ratings which it has received since inception. In December 2016, Lending Stream won the Alternative Lender of the Year at the F5 Awards.",
+      "meta": {
+        "description": "Gain Credit Lending Stream - A scaled global Fintech focused on responsible credit."
+      },
+      "createdAt": "2025-06-02 15:39:56",
+      "updatedAt": "2025-06-02 15:39:56"
+    },
+    {
+      "id": 5,
+      "name": "Motorway",
+      "theme": "motorway",
+      "description": "The biggest online-only used car marketplace based in the UK",
+      "details": "Motorway uses a selling platform to allow users to sell their car directly to dealers. I assisted in a short contract for the final push of its award wining platform providing crucial accessibility touches alongside key refinements and optimisations.",
+      "meta": {
+        "description": "Motorway - The biggest online-only used car marketplace based in the UK"
+      },
+      "createdAt": "2025-06-02 15:40:20",
+      "updatedAt": "2025-06-02 15:40:20"
+    },
+    {
+      "id": 6,
+      "name": "REALM.art",
+      "theme": "realm",
+      "description": "Part of the Metaverse, Realm is a cross chain, community driven open-source project that encourages collectors and creators to express their artistic vision in the purest form: their own magical virtual realm.",
+      "details": "REALM's mission is to empower everyone to thrive from Metaverse experiences that create real world impact. In REALM you can bring to life and trade NFTs in unique digital spaces dedicated to fashion, music, art, games and anything else you can imagine.The REALM Family brings a wealth of experience from the world best organisations and holds a unique edge in the emerging market of Web3. All driven by making the world a better place by simply having fun.",
+      "meta": {
+        "description": "Mobile-first Decentralised Metaverse empowering everyone to thrive from experiences that create real world impact."
+      },
+      "createdAt": "2025-06-08 06:12:49",
+      "updatedAt": "2025-06-08 06:46:01"
+    },
+    {
+      "id": 7,
+      "name": "Colibri Digital",
+      "theme": "colibri",
+      "description": "AI-Ready. Cloud-Powered. Data-Driven.",
+      "details": "Colibri Digital partners with forward-thinking organisations to transform how they use data, cloud and AI. From strategy to implementation, they help you unlock new value, drive operational excellence and future-proof your technology investments.",
+      "meta": {
+        "description": "Colibri Digital - AI-Ready. Cloud-Powered. Data-Driven."
+      },
+      "createdAt": "2025-06-14 19:41:06",
+      "updatedAt": "2025-06-14 19:41:06"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "client": "Stylist Magazine",
+      "name": "Olympic Edition",
+      "year": 2012,
+      "companyId": 1,
+      "paragraphs": [
+        "Stylist used the augmented reality app Blippar to present Olympic fever at its finest, with their exclusive blippable issue. Thrilling content throughout, including videos, polls, live Olympic leader boards and Blipp to Buys make this issue something really special.",
+        "My first award winning campaign!"
+      ],
+      "metaImage": "/social/project-stylist.jpg",
+      "metaDescription": "Stylist used the augmented reality app Blippar to present Olympic fever at its finest",
+      "videoLink": "https://youtu.be/HXIrDGeCWNo",
+      "videoTheme": "stylist",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:23:35",
+      "updatedAt": "2025-06-06 13:23:35"
+    },
+    {
+      "id": 2,
+      "client": "Monarch",
+      "name": "Mountain",
+      "year": 2012,
+      "companyId": 1,
+      "paragraphs": [
+        "In an aviation industry first WDMP created a direct marketing campaign to promote Monarch's new Ski routes that used Blippar to create a level of intrigue and excitement above the norm. The campaign provided an audience of tech-savvy skiers with an engaging and unique experience that also delivered useful information, giving a strong reason to interact for longer and ultimately click through to book."
+      ],
+      "metaImage": "/social/project-monarch.jpg",
+      "metaDescription": "Marketing campaign to promote Monarch's new Ski routes that used Blippar to create a level of intrigue and excitement above the norm",
+      "videoLink": "https://www.youtube.com/watch?v=O-SnImwhXE8",
+      "videoTheme": "monarch",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:27:49",
+      "updatedAt": "2025-06-06 13:27:49"
+    },
+    {
+      "id": 3,
+      "client": "JuiceBurst",
+      "name": "interactive Bottle",
+      "year": 2013,
+      "companyId": 1,
+      "paragraphs": [
+        "Soft drinks brand JuiceBurst has revamped its packaging to incorporate the latest augmented reality technology, allowing consumers to use their smart phones to interact with product. The Blippar-based technology, according to the brand's owner Purity Soft Drinks, is said to be a first in the category."
+      ],
+      "metaImage": "/social/project-juiceburst.jpg",
+      "metaDescription": "Soft drinks brand JuiceBurst has revamped its packaging to incorporate the latest augmented reality technology",
+      "videoLink": "https://youtu.be/ET282tAyBFk",
+      "videoTheme": "juiceburst",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:30:04",
+      "updatedAt": "2025-06-06 13:30:04"
+    },
+    {
+      "id": 4,
+      "client": "British Heart Foundation",
+      "name": "'No smoking day'",
+      "year": 2013,
+      "companyId": 1,
+      "paragraphs": [
+        "To mark No Smoking Day, the British Heart Foundation has rolled out a campaign with Blippar which aims to show smokers how much money they could save by giving up the habit, instead of focussing on the health aspect.",
+        "Those who blipp their packet of cigarettes will see it erupt in a cloud of digital smoke before being replaced with 3D representations of all the items the smoker could buy with the money saved if they would have quit.",
+        "The project is the first time ever that product packaging has been hijacked using augmented-reality for a charity campaign, with the Blippar code working by recognising the government health warning on cigarette packs."
+      ],
+      "metaImage": "/social/project-bhf.jpg",
+      "metaDescription": "To mark No Smoking Day, the British Heart Foundation has rolled out a campaign with Blippar",
+      "videoLink": "https://youtu.be/g185oKQrQtI",
+      "videoTheme": "bhf",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:32:27",
+      "updatedAt": "2025-06-06 13:32:27"
+    },
+    {
+      "id": 5,
+      "client": "Covergirl",
+      "name": "Hunger Games",
+      "year": 2013,
+      "companyId": 1,
+      "paragraphs": [
+        "To build consumer excitement, we teased the campaign in the September issue of Vogue. In a first of its kind execution, COVERGIRL created a show stopping high impact print unit, and using Blippar technology, a mobile and tablet-enabled augmented reality experience, we gave consumers real time access to coveted behind the scenes COVERGIRL how-to video content.",
+        "At the Capitol Beauty Studio a COVERGIRL owned destination, consumers were able to interact with each District look, engage with other Hunger Games/COVERGIRL fans and even design a look of their own. The same real time, superior augmented reality engagement experience was available to consumers in store, all while standing at COVERGIRL's “Blippar-ized” displays across 25,000 U.S. stores. Supported with TV, digital, social, mobile, OOH and Print, we blanketed the market so COVERGIRL would be noticed and win!"
+      ],
+      "metaImage": "/social/project-covergirl.jpg",
+      "metaDescription": "COVERGIRL's “Blippar-ized” displays across 25,000 U.S. stores",
+      "videoLink": "https://youtu.be/5ebnSQDwzcE",
+      "videoTheme": "covergirl",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:33:25",
+      "updatedAt": "2025-06-06 13:33:25"
+    },
+    {
+      "id": 6,
+      "client": "Pepsi Max",
+      "name": "Interactive Football Campaign",
+      "year": 2014,
+      "companyId": 1,
+      "paragraphs": [
+        "Pepsi Max's #FutbolNow campaign - which launched in the UK prior to the 2014 summer football season - got 2.4 million interactions from 1.2 million consumers in its seven-month run.",
+        "Fans spent 50,000 hours engaging with Pepsi Max content via the Blippar app - the time equivalent of over 35,000 football matches, an impressive figure which was calculated by The Drum.",
+        "The campaign turned 242 million Pepsi Max, Pepsi and Diet Pepsi cans and bottles into exciting digital experiences which users unlocked by blipping packaging with phones and tablets."
+      ],
+      "metaImage": "/social/project-pepsi.jpg",
+      "metaDescription": "Pepsi Max's #FutbolNow campaign",
+      "videoLink": "https://youtu.be/2oBSGEsO5fg",
+      "videoTheme": "pepsi",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:34:34",
+      "updatedAt": "2025-06-06 13:34:34"
+    },
+    {
+      "id": 7,
+      "client": "Pepsi",
+      "name": "'Pek Yakinda' Turkey",
+      "year": 2014,
+      "companyId": 1,
+      "paragraphs": [
+        "Blippar was the perfect fit, enabling us to pack exciting and exclusive Pek Yakinda digital content into Pepsi products, which our fans accessed using the mobile phone already sitting in their pocket. Blippar also provided us with powerful real-time user data by monitoring exactly how many people were interacting with the Pepsi Pek Yakinda blipps, where, when, for how long and how frequently. Tracking engagement metrics in this way has enabled us to measure return on investment like never before.",
+        "This campaign was by far the most successful bringing many awards and nominations, including Mobile World Congress 2015."
+      ],
+      "metaImage": "/social/project-pekyakinda.jpg",
+      "metaDescription": "Pek Yakinda digital content into Pepsi products via Augmented Reality",
+      "videoLink": "https://youtu.be/13MZuDXi560",
+      "videoTheme": "pekyakinda",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:35:58",
+      "updatedAt": "2025-06-06 14:24:55"
+    },
+    {
+      "id": 8,
+      "client": "MILO Champions",
+      "name": "Nestlé 'Activ Vietnam'",
+      "year": 2016,
+      "companyId": 1,
+      "paragraphs": [
+        "Following Nestlé Milo's “For a Powerful and Prosperous Vietnam” initiative, the Activ Vietnam programme encourages a dynamic lifestyle, such as regular exercising, especially among children of ages 6 to 17.",
+        "The programme's goal is to support sport events at localities, donate sports equipment to schools, and to help parents encourage their children to be more active.",
+        "I created the AR framework for dynamic loading of 2D and 3D assets and bone animations then went on location in Vietnam to train the personnel in charge of developing the app while creating detailed technical documentation."
+      ],
+      "metaImage": "/social/project-milo.jpg",
+      "metaDescription": "Milo's campaign “For a Powerful and Prosperous Vietnam”",
+      "videoLink": "https://youtu.be/NG9zCjQIk-M",
+      "videoTheme": "milo",
+      "image": null,
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:37:04",
+      "updatedAt": "2025-06-06 13:37:04"
+    },
+    {
+      "id": 9,
+      "client": "Blippar",
+      "name": "Developer Portal",
+      "year": 2017,
+      "companyId": 1,
+      "paragraphs": [
+        "Meant to bring AR to the world this portal was Blippar's way of opening its technology to anyone who wanted to build, develop and code augmented reality experiences.",
+        "I was the main architect of this project being tasked with its overall design, HTML/CSS development, creating content and demos. There is an extensive documentation that will guide you through AR creation, testing and publishing. The Examples section is filled with demos and tutorials that you can try or download, as well as a some tips and tricks to guide your through AR development. All my expereriecnce ans knowledge as an AR developer went into this alongside the content I created in the mentoring / teaching process I created for Blippar's developement teams around the world."
+      ],
+      "metaImage": "/social/project-blippar-developer-portal.jpg",
+      "metaDescription": "Blippar's Developer Portal for augmented reality experiences",
+      "videoLink": null,
+      "videoTheme": null,
+      "image": "/projects/blippar-portal.jpg",
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:38:00",
+      "updatedAt": "2025-06-06 13:38:00"
+    },
+    {
+      "id": 10,
+      "client": "MRMC",
+      "name": "FLAIR 7",
+      "year": 2014,
+      "companyId": 2,
+      "paragraphs": [
+        "Flair is MRMC's premier motion control software, the tool that trully makes your vision reality. An award winning control software alongside the revolutionary Bolt X robot in 2020.",
+        "Designed to give exceptional command over the camera movement, Flair precisely controls up to 500 axes of motion, is fully compatible with all of MRMC robots and works seamlessly with all CGI packages.",
+        "I was in charge creating the entire line of UX/UI components through an extensive requirement gathering that included most of the engineers of the company, creating 3D models of all the main robots and documenting the on-screen controls."
+      ],
+      "metaImage": "/social/project-mrmc-flair7.jpg",
+      "metaDescription": "Mark Roberts Motion Control's FLAIR 7 software UI",
+      "videoLink": null,
+      "videoTheme": null,
+      "image": "/projects/Flair_Square_Transprent_use.png",
+      "externalLink": "https://www.mrmoco.com/motion-control/flair/",
+      "createdAt": "2025-06-06 13:39:02",
+      "updatedAt": "2025-06-06 13:39:02"
+    },
+    {
+      "id": 11,
+      "client": "MRMC",
+      "name": "Orbital",
+      "year": 2014,
+      "companyId": 2,
+      "paragraphs": [
+        "The Orbital is a powerful robotic camera rig developed to capture high volume product shots and video. With programmable, saveable pre-sets, the Orbital brings production line efficiency, accuracy and reliability to the world of product photography. Create high volume consistent product images and videos at the touch of a button.",
+        "Assaff Rawner, the managing director praised my efforts on the project being able to solve a problem the whole company was trying to tackle for over 25 years - pre-emptive collision detection during move planning for Orbital."
+      ],
+      "metaImage": "/social/project-mrmc-orbital.jpg",
+      "metaDescription": "Mark Roberts Motion Control's Orbital robot Web UI",
+      "videoLink": null,
+      "videoTheme": null,
+      "image": "/projects/Orbital.png",
+      "externalLink": null,
+      "createdAt": "2025-06-06 13:39:42",
+      "updatedAt": "2025-06-06 13:39:42"
+    },
+    {
+      "id": 12,
+      "client": "NewDay",
+      "name": "Aquacard.co.uk",
+      "year": 2019,
+      "companyId": 3,
+      "paragraphs": [
+        "\"We're proud to serve close to 5 million customers across the UK through our diverse and growing business. So our purpose is straightforward, to help people move forward with credit. Our Customer Manifesto is made up of four core principles, we're a welcoming, understanding, knowing and rewarding business. These principles bring the Manifesto to life for our customers, colleagues and retail partners.\"",
+        "In a team of just two developers we created the award winning public facing website for https://www.aquacard.co.uk/ . It performed amazingly surpassing expected sales by 30%! It is amazingly fast to load on any device - far ahead of competitor's websites. The solution uses CMS with Umbraco ASP.net framework and passes all WCAG 2.0 accessibility standards.",
+        "The rebranding was also nominated in two categories at The UK Digital Experience Awards in 2020."
+      ],
+      "metaImage": "/social/project-newday-aquacard.jpg",
+      "metaDescription": "NewDay Aquacard.co.uk website",
+      "videoLink": "https://youtu.be/16j_K4DVAl0",
+      "videoTheme": "aquacard",
+      "image": null,
+      "externalLink": "https://www.aquacard.co.uk/",
+      "createdAt": "2025-06-06 13:40:29",
+      "updatedAt": "2025-06-06 13:40:29"
+    },
+    {
+      "id": 14,
+      "client": "Gain Credit",
+      "name": "Lendingstream.co.uk",
+      "year": 2019,
+      "companyId": 4,
+      "paragraphs": [
+        "The client facing website of Lending Stream was brought to the most modern and strict standards proving a very solid platform for content editors to push products and updates to the market quickly while positioning itself very high on Google rankings. At launch the website was not only fully semantic and conformant to W3C standards but got 100% Lighthouse score including SEO and Accessibility (for which it passes WCAG 2.1 AA / AAA standards).",
+        "The CMS and React middleware used make even dynamic pages load in under two seconds, while vector graphics and well compressed assets were used making it extremely responsive and pleasing as a user experience.",
+        "This revamp didn't go unnoticed and brought gold for the brand in 2021."
+      ],
+      "metaImage": "/social/project-gain-credit-landing-stream.jpg",
+      "metaDescription": "Gain Credit Lendingstream.co.uk website",
+      "videoLink": null,
+      "videoTheme": null,
+      "image": "/projects/Lendingstream.png",
+      "externalLink": "https://www.lendingstream.co.uk/",
+      "createdAt": "2025-06-06 13:44:47",
+      "updatedAt": "2025-06-06 13:44:47"
+    }
+  ],
+  "tech": [
+    {
+      "id": 1,
+      "name": "3DS Max",
+      "icon": "view_in_ar",
+      "createdAt": "2025-06-05 07:51:42",
+      "updatedAt": "2025-06-05 07:51:42"
+    },
+    {
+      "id": 2,
+      "name": "Accessibility",
+      "icon": "accessibility",
+      "createdAt": "2025-06-05 07:51:55",
+      "updatedAt": "2025-06-05 07:51:55"
+    },
+    {
+      "id": 3,
+      "name": "Adobe Audition",
+      "icon": "graphic_eq",
+      "createdAt": "2025-06-05 07:52:01",
+      "updatedAt": "2025-06-05 07:52:01"
+    },
+    {
+      "id": 4,
+      "name": "Adobe Illustrator",
+      "icon": "draw",
+      "createdAt": "2025-06-05 07:52:07",
+      "updatedAt": "2025-06-05 07:52:07"
+    },
+    {
+      "id": 5,
+      "name": "Adobe Photoshop",
+      "icon": "palette",
+      "createdAt": "2025-06-05 07:52:12",
+      "updatedAt": "2025-06-05 07:52:12"
+    },
+    {
+      "id": 6,
+      "name": "Adobe Premiere",
+      "icon": "movie",
+      "createdAt": "2025-06-05 07:52:26",
+      "updatedAt": "2025-06-05 07:52:26"
+    },
+    {
+      "id": 7,
+      "name": "Android",
+      "icon": "phone_android",
+      "createdAt": "2025-06-05 07:52:33",
+      "updatedAt": "2025-06-05 07:52:33"
+    },
+    {
+      "id": 8,
+      "name": "ASP .NET",
+      "icon": "cloud",
+      "createdAt": "2025-06-05 07:52:38",
+      "updatedAt": "2025-06-05 07:52:38"
+    },
+    {
+      "id": 9,
+      "name": "AZURE",
+      "icon": "cloud_queue",
+      "createdAt": "2025-06-05 07:52:43",
+      "updatedAt": "2025-06-05 07:52:43"
+    },
+    {
+      "id": 10,
+      "name": "Blender",
+      "icon": "3d_rotation",
+      "createdAt": "2025-06-05 07:52:47",
+      "updatedAt": "2025-06-05 07:52:47"
+    },
+    {
+      "id": 11,
+      "name": "C#",
+      "icon": "tag",
+      "createdAt": "2025-06-05 07:52:53",
+      "updatedAt": "2025-06-05 07:52:53"
+    },
+    {
+      "id": 12,
+      "name": "CSS",
+      "icon": "css",
+      "createdAt": "2025-06-05 07:52:57",
+      "updatedAt": "2025-06-05 07:52:57"
+    },
+    {
+      "id": 13,
+      "name": "GIT",
+      "icon": "fork_right",
+      "createdAt": "2025-06-05 07:53:01",
+      "updatedAt": "2025-06-05 07:53:01"
+    },
+    {
+      "id": 14,
+      "name": "HTML",
+      "icon": "html",
+      "createdAt": "2025-06-05 07:53:05",
+      "updatedAt": "2025-06-05 07:53:05"
+    },
+    {
+      "id": 15,
+      "name": "iOS",
+      "icon": "phone_iphone",
+      "createdAt": "2025-06-05 07:53:10",
+      "updatedAt": "2025-06-05 07:53:10"
+    },
+    {
+      "id": 16,
+      "name": "JavaScript",
+      "icon": "javascript",
+      "createdAt": "2025-06-05 07:53:15",
+      "updatedAt": "2025-06-05 07:53:15"
+    },
+    {
+      "id": 17,
+      "name": "NODE",
+      "icon": "hub",
+      "createdAt": "2025-06-05 07:53:19",
+      "updatedAt": "2025-06-05 07:53:19"
+    },
+    {
+      "id": 18,
+      "name": "PWA",
+      "icon": "install_mobile",
+      "createdAt": "2025-06-05 07:53:23",
+      "updatedAt": "2025-06-05 07:53:23"
+    },
+    {
+      "id": 19,
+      "name": "Python",
+      "icon": "format_indent_increase",
+      "createdAt": "2025-06-05 07:53:27",
+      "updatedAt": "2025-06-05 07:53:27"
+    },
+    {
+      "id": 20,
+      "name": "REACT",
+      "icon": "hive",
+      "createdAt": "2025-06-05 07:53:31",
+      "updatedAt": "2025-06-05 07:53:31"
+    },
+    {
+      "id": 21,
+      "name": "SCSS",
+      "icon": "css",
+      "createdAt": "2025-06-05 07:53:35",
+      "updatedAt": "2025-06-05 07:53:35"
+    },
+    {
+      "id": 22,
+      "name": "SEO",
+      "icon": "search",
+      "createdAt": "2025-06-05 07:53:39",
+      "updatedAt": "2025-06-05 07:53:39"
+    },
+    {
+      "id": 23,
+      "name": "Three.js",
+      "icon": "screenshot_monitor",
+      "createdAt": "2025-06-05 07:53:44",
+      "updatedAt": "2025-06-05 07:53:44"
+    },
+    {
+      "id": 24,
+      "name": "TypeScript",
+      "icon": "data_object",
+      "createdAt": "2025-06-05 07:53:47",
+      "updatedAt": "2025-06-05 07:53:47"
+    },
+    {
+      "id": 25,
+      "name": "Umbraco CMS",
+      "icon": "wysiwyg",
+      "createdAt": "2025-06-05 07:53:57",
+      "updatedAt": "2025-06-05 07:53:57"
+    },
+    {
+      "id": 26,
+      "name": "WebGL",
+      "icon": "laptop_mac",
+      "createdAt": "2025-06-05 07:54:00",
+      "updatedAt": "2025-06-05 07:54:00"
+    },
+    {
+      "id": 27,
+      "name": "Freemarker",
+      "icon": "code",
+      "createdAt": "2025-06-05 07:54:04",
+      "updatedAt": "2025-06-05 07:54:04"
+    },
+    {
+      "id": 28,
+      "name": "CMS",
+      "icon": "wysiwyg",
+      "createdAt": "2025-06-05 07:54:08",
+      "updatedAt": "2025-06-05 07:54:08"
+    },
+    {
+      "id": 29,
+      "name": "AMP",
+      "icon": "book_online",
+      "createdAt": "2025-06-05 07:54:12",
+      "updatedAt": "2025-06-05 07:54:12"
+    },
+    {
+      "id": 30,
+      "name": "WEBPACK",
+      "icon": "integration_instructions",
+      "createdAt": "2025-06-05 07:54:17",
+      "updatedAt": "2025-06-05 07:54:17"
+    },
+    {
+      "id": 31,
+      "name": "JEST",
+      "icon": "check_circle",
+      "createdAt": "2025-06-05 07:54:22",
+      "updatedAt": "2025-06-05 07:54:22"
+    },
+    {
+      "id": 32,
+      "name": "Unit Testing",
+      "icon": "fact_check",
+      "createdAt": "2025-06-05 07:54:25",
+      "updatedAt": "2025-06-05 07:54:25"
+    },
+    {
+      "id": 33,
+      "name": "Storybook",
+      "icon": "menu_book",
+      "createdAt": "2025-06-05 07:54:33",
+      "updatedAt": "2025-06-05 07:54:33"
+    },
+    {
+      "id": 34,
+      "name": "PM2",
+      "icon": "settings_power",
+      "createdAt": "2025-06-05 07:54:37",
+      "updatedAt": "2025-06-05 07:54:37"
+    },
+    {
+      "id": 35,
+      "name": "Expo",
+      "icon": "terminal",
+      "createdAt": "2025-06-08 06:22:45",
+      "updatedAt": "2025-06-08 06:22:45"
+    },
+    {
+      "id": 36,
+      "name": "Babylon 3D",
+      "icon": "3d_rotation",
+      "createdAt": "2025-06-08 06:23:49",
+      "updatedAt": "2025-06-08 06:23:49"
+    },
+    {
+      "id": 37,
+      "name": "Electron",
+      "icon": "filter_vintage",
+      "createdAt": "2025-06-08 06:25:12",
+      "updatedAt": "2025-06-08 06:25:12"
+    },
+    {
+      "id": 38,
+      "name": "Styled-components",
+      "icon": "brush",
+      "createdAt": "2025-06-08 06:26:09",
+      "updatedAt": "2025-06-08 06:26:09"
+    },
+    {
+      "id": 40,
+      "name": "Figma",
+      "icon": "format_shapes",
+      "createdAt": "2025-06-08 06:28:11",
+      "updatedAt": "2025-06-08 06:28:11"
+    },
+    {
+      "id": 41,
+      "name": "React Native",
+      "icon": "add_to_home_screen",
+      "createdAt": "2025-06-08 06:30:48",
+      "updatedAt": "2025-06-08 06:30:48"
+    },
+    {
+      "id": 42,
+      "name": "Nativebase",
+      "icon": "security_update_warning",
+      "createdAt": "2025-06-08 06:31:57",
+      "updatedAt": "2025-06-08 06:31:57"
+    },
+    {
+      "id": 43,
+      "name": "Databricks",
+      "icon": "dashboard",
+      "createdAt": "2025-06-14 19:34:04",
+      "updatedAt": "2025-06-14 19:34:04"
+    },
+    {
+      "id": 44,
+      "name": "VUE",
+      "icon": "wysiwyg",
+      "createdAt": "2025-06-14 19:36:37",
+      "updatedAt": "2025-06-14 19:36:37"
+    },
+    {
+      "id": 45,
+      "name": "Angular",
+      "icon": "text_snippet",
+      "createdAt": "2025-06-14 19:48:10",
+      "updatedAt": "2025-06-14 19:48:10"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "companyId": 1,
+      "title": "Lead Engineer/Senior Developer/UX-UI Specialist",
+      "dateFrom": "2014-05-01",
+      "dateTo": "2018-04-01",
+      "description": "Directed, mentored, and supported a team of developers in the UK, US, Turkey, and Japan. Significantly increased the social media presence of various services and products by managing key client campaigns. Initiated internal controls by establishing and adhering standards for development. Projected a polished and professional demeanour throughout the service to successfully manage client campaigns with minimal negative feedback and quick turnarounds.",
+      "bulletpoints": "[\"Streamlined and operationalized application functionalities by developing and optimizing Blippar's developer's portal, scripting front end languages (React/JS), and creating demos.\",\"Led development programme aimed at training, coaching, and mentoring team of developers across globe, including UK, USA, Turkey, Japan, and India, resulting in augmenting developers' skills for UX/UI functional design alongside building AR experiences.\",\"Originated and launched an automation system for asset compression that ensured the delivery of experiences on mobile 30 times faster.\",\"Commended by top management for exemplary performance and won many awards for big campaigns.\"]",
+      "tech": "[1,20,16,24,5,4,3,6,19,10,14,12,13,17,15,7]",
+      "createdAt": "2025-06-05 09:13:52",
+      "updatedAt": "2025-06-05 09:13:52"
+    },
+    {
+      "id": 2,
+      "companyId": 1,
+      "title": "Mobile Augmented Reality Developer / UX-UI Designer",
+      "dateFrom": "2012-05-01",
+      "dateTo": "2018-04-01",
+      "description": "Directed a competent team of three, including web designer, media specialist, and graphic artist and elevated the expertise and skill levels of the members through coaching and development activities.",
+      "bulletpoints": "[\"Defined UX/UI standards and supported the team with hands-on approach and follow-up for development.\",\"Optimized and enhanced departmental performance by overseeing writing standards, documentation as well as established staff induction sessions to boost staff skills and expertise.\",\"Attained numerous awards and countless nominations for cutting-edge campaigns.\"]",
+      "tech": "[1,16,5,4,3,6,19,10,14,12,13,17,15,7]",
+      "createdAt": "2025-06-05 09:14:27",
+      "updatedAt": "2025-06-05 09:14:27"
+    },
+    {
+      "id": 3,
+      "companyId": 2,
+      "title": "UX/UI Designer",
+      "dateFrom": "2018-04-01",
+      "dateTo": "2018-10-01",
+      "description": "Directed all UX/UI components including 3D models and full documentation for implementation with Flair, MRMC's premier motion control software. This involved extensive expert user and client feedback gathering and loopback.",
+      "bulletpoints": "[\"Designed exceptional command features over camera movement. Flair precisely controls up to 500 axes of motion, is fully compatible with all motion control rigs, heads and accessories. Interfaces seamlessly with CGI packages. “Flair is the tool that makes your vision reality.”\",\"Created UX/UI for new websites and company web presence aligned with modern trends and fully responsive. Developing email signature, newsletter templates, and publishing creative standards to accommodate for limitations due to email sharing.\"]",
+      "tech": "[4,5,1,13,26]",
+      "createdAt": "2025-06-05 09:14:34",
+      "updatedAt": "2025-06-05 09:14:34"
+    },
+    {
+      "id": 4,
+      "companyId": 3,
+      "title": "UX UI Front End Developer",
+      "dateFrom": "2018-10-01",
+      "dateTo": "2019-09-01",
+      "description": "Developed https://www.aquacard.co.uk/ in a team of two developers along with many UX/UI design tasks. The website surpassed expected sales by 30% and got multiple awards! With fast loading on any device - far ahead of similar websites.",
+      "bulletpoints": "[\"Used React for rapid prototyping and fragment creation/testing/AMP validation and Umbraco CMS with ASP.net, passes all WCAG 2.0 accessibility standards, AMP ready and SEO friendly.\"]",
+      "tech": "[20,14,25,11,8,21,16,22,2,18,13,17,9]",
+      "createdAt": "2025-06-05 09:14:41",
+      "updatedAt": "2025-06-05 09:14:41"
+    },
+    {
+      "id": 5,
+      "companyId": 5,
+      "title": "Senior Front End Engineer",
+      "dateFrom": "2021-02-01",
+      "dateTo": "2021-04-01",
+      "description": "Tasked with developing and augmenting the dealer's website https://pro.motorway.co.uk/.",
+      "bulletpoints": "[\"Adding new components, improving on the existing architecture and creating unit / snapshot tests for all the modules involved, working on both Mac and Windows machines for impeccable cross-browser support.\"]",
+      "tech": "[20,14,31,32,33,21,24,22,2,13,30,17,34]",
+      "createdAt": "2025-06-05 09:14:53",
+      "updatedAt": "2025-06-05 09:14:53"
+    },
+    {
+      "id": 6,
+      "companyId": 4,
+      "title": "Senior Front End Developer",
+      "dateFrom": "2019-10-01",
+      "dateTo": "2021-02-01",
+      "description": "Leading the front end development for the main products' websites in a complex international team.",
+      "bulletpoints": "[\"My role is to set standards for React driven pages, SASS modular/flexible styles and integrate in a CMS solution.\",\"The results are 100% responsive, accessible, performant, SEO friendly and PWA/AMP ready websites.\"]",
+      "tech": "[20,14,27,28,21,16,22,2,18,29,13,30,17]",
+      "createdAt": "2025-06-05 10:08:11",
+      "updatedAt": "2025-06-05 10:08:11"
+    },
+    {
+      "id": 7,
+      "companyId": 6,
+      "title": "Senior Front End Engineer / 3D Generalist",
+      "dateFrom": "2021-04-01",
+      "dateTo": "2021-08-01",
+      "description": "At REALM I was a Jack of all trades: Website component templates, NFTs generator and web view, Level modelling, 3D asset converter, Mobile app development.",
+      "bulletpoints": "[\"Created a full component/style structure for the upcoming public website using Expo and Typescript in a way that the team can later build its structure in record time while being sure of excellent cross-browser support and 100% accessible layouts. This architecture was thoroughly tested on Browserstack\",\"Built a complex system of uniquely assigning users 3D NFTs and displaying them in a web/mobile friendly way. Here is such an example. Modeling was done in 3DS Max and even though the initial build was done using Three.js, Babylon 3D was the chosen library for its support and versatility\",\"I took on the task of building, texturing and animating a whole level for the upcoming realms. I sketched views with the product owners and produced a full 3D build including texture mapping and animation\",\"The next challenge was creating a 3D converter with the purpose of unifying the 3D formats that arrive to the realms as NFTs. I created from scratch a utility monitoring program that would convert any 3D file via a Python script with Blender in the background and later upload to the user’s realm\",\"A side project was to contribute to the upcoming Realm mobile app by creating screen layouts using React Native and Nativebase. Even though new to React Native the challenge proved fun and lucrative\"]",
+      "tech": "[20,14,21,16,22,2,35,24,1,36,4,19,37,38,30,10,40,41,42]",
+      "createdAt": "2025-06-08 06:32:46",
+      "updatedAt": "2025-06-08 06:32:46"
+    },
+    {
+      "id": 8,
+      "companyId": 7,
+      "title": "Principal Engineer",
+      "dateFrom": "2021-08-01",
+      "dateTo": "2030-08-01",
+      "description": "Developing bespoke internal and client-facing websites for major Fintech clients alongside standardising development procedures for the project and perfecting UX/UI accessibility in design and web.",
+      "bulletpoints": "[\"Internal and external frontends in React, Vue and Angular\",\"Databricks development for data ingestion and dashboarding\",\"Working with the clients such as: McKinsey & Company, Axpo, De Havilland, William Hill and many more\"]",
+      "tech": "[43,44,20,17,14,32,21,16,22,2,13,30,45]",
+      "createdAt": "2025-06-14 19:50:30",
+      "updatedAt": "2025-06-14 20:10:32"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Erwan Maigret",
+      "companyId": 1,
+      "position": "Lead Augmented Reality API Engineer",
+      "link": "https://www.linkedin.com/in/erwanmaigret/",
+      "quote": "Nothing stops him",
+      "fullText": "Radu is the swiss-army knife of 3D and AR. You can ask him to build anything and he’ll manage to make it work in no time, covering all aspects from programming to 3D authoring and animation. On top of that he’s got a great sense of design and provides compelling solutions ready to be used as-is. He’s definitely a key contributor if you’re on aggressive schedule and need to cover complex technical challenges. Nothing stops him.",
+      "media": "Erwan",
+      "createdAt": "2025-06-05 12:35:47",
+      "updatedAt": "2025-06-05 12:35:47"
+    },
+    {
+      "id": 2,
+      "name": "Hermes Frangoudis",
+      "companyId": 1,
+      "position": "Augmented Reality Solutions engineer",
+      "link": "https://www.linkedin.com/in/hermesfrangoudis/",
+      "quote": "Never ceased to impress",
+      "fullText": "Worked with Radu on various projects over the years at Blippar. It was a pleasure getting to work with Radu, he never ceased to impress me with his deep graphics and 3D knowledge. Every project that we worked on Radu always managed to show me something new.",
+      "media": "Hermes",
+      "createdAt": "2025-06-05 12:36:08",
+      "updatedAt": "2025-06-05 12:36:08"
+    },
+    {
+      "id": 3,
+      "name": "Can Saner",
+      "companyId": 1,
+      "position": "Senior JS/AR Developer - Team Lead",
+      "link": "https://www.linkedin.com/in/cansaner/",
+      "quote": "Always impressed with his remarkable problem solving ability",
+      "fullText": "Radu worked with me at Blippar in many customer projects, on different fields such as managing image assets, 3D modelling, developing animations and coding pure Javascript. Radu takes a great deal of pride in making any digital scene and asset as realistic as it can be and he works very hard to achieve this through creative and innovative ways that no other can think of. He often offered to help other members in their projects and always impressed me with his remarkable problem solving ability.",
+      "media": "Can",
+      "createdAt": "2025-06-05 12:36:14",
+      "updatedAt": "2025-06-05 12:36:14"
+    },
+    {
+      "id": 4,
+      "name": "Assaff Rawner",
+      "companyId": 2,
+      "position": "CEO at Mark Roberts Motion Control",
+      "link": "https://www.linkedin.com/in/assaff-rawner-08371626/",
+      "quote": "Better than anyone I have ever met before or since",
+      "fullText": "Radu did some amazing UI/UX work for us at MRMC. Not only is he skilled at easily understand and breaking down complex software tasks into fantastic and beautiful UIs for our desktop robotic control software, he is also a very skilled developer and programmer in his own right and seemed to understand front-end website and web-app development better than anyone I have ever met before or since. It was a sad day when he left.",
+      "media": "Assaff",
+      "createdAt": "2025-06-05 12:36:20",
+      "updatedAt": "2025-06-05 12:36:20"
+    },
+    {
+      "id": 5,
+      "name": "Rashad Kabbara",
+      "companyId": 2,
+      "position": "Director of eCommerce Robotics / Head of Embedded Systems",
+      "link": "https://www.linkedin.com/in/assaff-rawner-08371626/",
+      "quote": "Produced amazing results in half the time I was expecting",
+      "fullText": "I had the pleasure to work with Radu on two cutting-edge robotic projects, in which he was responsible for the design, implementation and maintenance of the UI of a highly complex Software solution. Radu produced amazing results in often half the time I was expecting, showed a high degree of design integrity and attention to detail. I highly recommend Radu for any UI/UX, and hope to cross paths with him again on future projects!",
+      "media": "Rashad",
+      "createdAt": "2025-06-05 12:36:25",
+      "updatedAt": "2025-06-05 12:36:25"
+    },
+    {
+      "id": 6,
+      "name": "Erin Elahi",
+      "companyId": 3,
+      "position": "Digital Product Manager",
+      "link": "https://www.linkedin.com/in/erinelahi/",
+      "quote": "His domain knowledge and specialization make him an asset to the team",
+      "fullText": "Radu is a skilled UI developer with a strong passion for top-quality design. He has an excellent eye for details, and a dedication for working through requirements to deliver to a high, consistent standard. His domain knowledge and specialization make him an asset to the team.",
+      "media": "Erin",
+      "createdAt": "2025-06-05 12:36:31",
+      "updatedAt": "2025-06-05 12:36:31"
+    },
+    {
+      "id": 7,
+      "name": "Anouski Roberts",
+      "companyId": 3,
+      "position": "Senior Brand & Customer Strategist",
+      "link": "https://www.linkedin.com/in/anouski/",
+      "quote": "Radu is a joy to work with",
+      "fullText": "Radu is highly skilled, delivery focused and geared to think about continual optimisation for the customer. He taught me lots about applying digital accessibility and how this should impact brand guidelines. Radu is a joy to work with. I hope our work paths cross again!",
+      "media": "Anouski",
+      "createdAt": "2025-06-05 12:36:36",
+      "updatedAt": "2025-06-05 12:36:36"
+    },
+    {
+      "id": 8,
+      "name": "Chris deBoer",
+      "companyId": 4,
+      "position": "CEO Gain Credit",
+      "link": "https://www.linkedin.com/in/chrisdeboer/",
+      "quote": "Nice work Radu!",
+      "fullText": "Radu worked on a long-term project to re-engineer our front-end systems and modernize our architecture. He did a large body of work over an extended period of time and the results were a very robust system, much higher performance, and a much better overall experience for customers. Nice work Radu!",
+      "media": "Chris",
+      "createdAt": "2025-06-05 12:36:41",
+      "updatedAt": "2025-06-05 12:36:41"
+    },
+    {
+      "id": 9,
+      "name": "Tushar Das",
+      "companyId": 4,
+      "position": "Digital Lending, Marketing and Analytics manager",
+      "link": "https://www.linkedin.com/in/tushar-das/",
+      "quote": "Radu did some great work here",
+      "fullText": "Radu did some great work here at Gain Credit on redesigning our website architecture and helping us adopt a new CMS. He contributed strongly not just to the development side of things but also made some great contributions on the accessibility.",
+      "media": "Tushar",
+      "createdAt": "2025-06-05 12:36:45",
+      "updatedAt": "2025-06-05 12:36:45"
+    },
+    {
+      "id": 10,
+      "name": "Devaraj S. P.",
+      "companyId": 4,
+      "position": "Director of Architecture",
+      "link": "https://www.linkedin.com/in/devarajsp/",
+      "quote": "Radu is an excellent front-end engineer",
+      "fullText": "Radu is an excellent front-end engineer, who had a good focus on quality deliverables. He played a vital role in revamping the front end, bringing new front end technologies, and improving the customer experience. Thanks, Radu!",
+      "media": "Devaraj",
+      "createdAt": "2025-06-05 12:36:50",
+      "updatedAt": "2025-06-05 12:36:50"
+    },
+    {
+      "id": 11,
+      "name": "James Bush",
+      "companyId": 5,
+      "position": "Sales Director",
+      "link": "https://www.linkedin.com/in/james-bush-99754a42/",
+      "quote": "A huge thank you",
+      "fullText": "A huge thank you to our fantastic team for all your hard work throughout another challenging year. Everyone at Motorway is extremely passionate about giving our sellers and dealers the ultimate experience in buying and selling cars. To receive such a prestigious award, at an event like this, is a very proud moment for everyone across the business.",
+      "media": "JamesBush",
+      "createdAt": "2025-06-05 12:36:57",
+      "updatedAt": "2025-06-05 12:36:57"
+    },
+    {
+      "id": 12,
+      "name": "Milan Gruner",
+      "companyId": 6,
+      "position": "CTO / Lead Developer",
+      "link": "https://www.linkedin.com/in/milan-gruner/",
+      "quote": "A thirst for problem solving and creativity",
+      "fullText": "Radu has demonstrated a very thorough understanding of the varied tech stacks he worked on with us - be that developing React-based web frontends, creating 3D rendered object previews using BabylonJS, modelling detailed 3D objects and levels, or creating a versatile 3D asset import tool using open technologies like Blender and ElectronJS. He has shown a thirst for problem solving and creativity in the way he approaches the challenges ahead.",
+      "media": "Milan",
+      "createdAt": "2025-06-08 06:48:54",
+      "updatedAt": "2025-06-08 06:48:54"
+    },
+    {
+      "id": 13,
+      "name": "Abdus Choudhury",
+      "companyId": 7,
+      "position": "Senior Data Engineer",
+      "link": "https://www.linkedin.com/in/asc5/",
+      "quote": "A highly skilled Databricks engineer",
+      "fullText": "I had the pleasure of working closely with Radu over the past few months and I can confidently say that he is a highly skilled and dependable Databricks engineer who is well on his way to becoming a valuable asset as a Senior Databricks Engineer. He brings a solid mix of technical expertise and a collaborative mindset, consistently delivering high-quality work while contributing positively to team dynamics. Whether tackling complex data pipelines or offering thoughtful input during team discussions, Radu has always approached challenges with professionalism and a solutions-focused attitude. His ability to clearly communicate technical concepts and support others makes him a standout colleague and I would happily recommend him for any future opportunities.",
+      "media": "Abdus",
+      "createdAt": "2025-06-15 16:22:39",
+      "updatedAt": "2025-06-15 16:22:39"
+    }
+  ],
+  "awards": [
+    {
+      "id": 1,
+      "companyId": 1,
+      "projectId": 1,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "Effective Mobile Marketing Awards",
+      "year": 2012,
+      "description": "Best Mobile Augmented Reality Campaign / Solution",
+      "logo": "effective-mobile-marketing-awards.webp",
+      "createdAt": "2025-06-05 14:11:48",
+      "updatedAt": "2025-06-06 14:35:15"
+    },
+    {
+      "id": 2,
+      "companyId": 1,
+      "projectId": 2,
+      "prize": "Grand Prix WINNER",
+      "icon": "star",
+      "event": "The Drum Marketing Awards",
+      "year": 2013,
+      "description": "Best Augmented Reality Experience",
+      "logo": "dma-awards.webp",
+      "createdAt": "2025-06-05 14:12:11",
+      "updatedAt": "2025-06-06 14:35:41"
+    },
+    {
+      "id": 3,
+      "companyId": 1,
+      "projectId": 3,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "Beverage Innovation Awards @ Drinktec",
+      "year": 2013,
+      "description": "Best Technology Innovation",
+      "logo": "beverige-innovation-awards.webp",
+      "createdAt": "2025-06-05 14:12:16",
+      "updatedAt": "2025-06-06 14:35:53"
+    },
+    {
+      "id": 4,
+      "companyId": 1,
+      "projectId": 4,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "Corpcomms Digi Awards",
+      "year": 2013,
+      "description": "Best Use Of Mobile",
+      "logo": "compcomms-digi-awards.webp",
+      "createdAt": "2025-06-05 14:12:21",
+      "updatedAt": "2025-06-06 14:36:03"
+    },
+    {
+      "id": 5,
+      "companyId": 1,
+      "projectId": 5,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "Iab MIXX Awards",
+      "year": 2014,
+      "description": "Best Cross-Media Integration",
+      "logo": "iab-mixx-gold.webp",
+      "createdAt": "2025-06-05 14:12:28",
+      "updatedAt": "2025-06-06 14:36:14"
+    },
+    {
+      "id": 6,
+      "companyId": 1,
+      "projectId": 6,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "The Drum Network Awards",
+      "year": 2014,
+      "description": "Mobile Marketing Campaign / Strategy of the Year",
+      "logo": "the-drum-network-awards.webp",
+      "createdAt": "2025-06-05 14:12:34",
+      "updatedAt": "2025-06-06 14:36:23"
+    },
+    {
+      "id": 7,
+      "companyId": 1,
+      "projectId": 7,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "Digital Impact Award",
+      "year": 2015,
+      "description": "Best Use of Digital from the Food & Beverage Sector",
+      "logo": "digital-impact-awards.webp",
+      "createdAt": "2025-06-05 14:12:41",
+      "updatedAt": "2025-06-06 14:36:35"
+    },
+    {
+      "id": 8,
+      "companyId": 1,
+      "projectId": 7,
+      "prize": "SILVER",
+      "icon": "workspace_premium",
+      "event": "iab MIXX Awards Turkey",
+      "year": 2014,
+      "description": "Best Augmented Reality",
+      "logo": "iab-mixx-silver.webp",
+      "createdAt": "2025-06-05 14:12:47",
+      "updatedAt": "2025-06-07 10:52:36"
+    },
+    {
+      "id": 9,
+      "companyId": 1,
+      "projectId": 7,
+      "prize": "BRONZE",
+      "icon": "workspace_premium",
+      "event": "iab MIXX Awards Turkey",
+      "year": 2014,
+      "description": "Best Mobile Campaign",
+      "logo": "iab-mixx-bronze.webp",
+      "createdAt": "2025-06-05 14:12:52",
+      "updatedAt": "2025-06-06 14:37:03"
+    },
+    {
+      "id": 10,
+      "companyId": 1,
+      "projectId": 7,
+      "prize": "Finalist",
+      "icon": "verified",
+      "event": "Mobile World Congress",
+      "year": 2015,
+      "description": "Global Mobile Awards - Best Mobile Advertising or Marketing",
+      "logo": "global-mobile-awards.webp",
+      "createdAt": "2025-06-05 14:12:58",
+      "updatedAt": "2025-06-06 14:37:15"
+    },
+    {
+      "id": 11,
+      "companyId": 1,
+      "projectId": 8,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "APAC Effie",
+      "year": 2018,
+      "description": "Best Media Campaign",
+      "logo": "apac-effie.webp",
+      "createdAt": "2025-06-05 14:13:04",
+      "updatedAt": "2025-06-06 14:37:24"
+    },
+    {
+      "id": 12,
+      "companyId": 2,
+      "projectId": 10,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "NAB Show",
+      "year": 2020,
+      "description": "Product of the Year - Camera Support, Control and Accessories",
+      "logo": "nab-show.webp",
+      "createdAt": "2025-06-05 14:13:09",
+      "updatedAt": "2025-06-06 14:37:34"
+    },
+    {
+      "id": 13,
+      "companyId": 3,
+      "projectId": 12,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "The UK Digital Experience Awards",
+      "year": 2020,
+      "description": "Digital Change & Transformation",
+      "logo": "the-uk-digital-experience-awards.webp",
+      "createdAt": "2025-06-05 14:13:13",
+      "updatedAt": "2025-06-06 14:37:49"
+    },
+    {
+      "id": 14,
+      "companyId": 3,
+      "projectId": 12,
+      "prize": "Finalist",
+      "icon": "verified",
+      "event": "Card and Payments Awards",
+      "year": 2020,
+      "description": "Best Marketing Campaign of the Year",
+      "logo": "the-card-payments-awards.webp",
+      "createdAt": "2025-06-05 14:13:19",
+      "updatedAt": "2025-06-06 14:37:58"
+    },
+    {
+      "id": 15,
+      "companyId": 3,
+      "projectId": 12,
+      "prize": "Finalist",
+      "icon": "verified",
+      "event": "Card and Payments Awards",
+      "year": 2020,
+      "description": "Best Design of the Year",
+      "logo": "the-card-payments-awards.webp",
+      "createdAt": "2025-06-05 14:13:23",
+      "updatedAt": "2025-06-06 14:38:08"
+    },
+    {
+      "id": 16,
+      "companyId": 4,
+      "projectId": 14,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "The Credit Excellence Awards",
+      "year": 2021,
+      "description": "Responsible Lender",
+      "logo": "credit-excellence-awards.webp",
+      "createdAt": "2025-06-05 14:13:27",
+      "updatedAt": "2025-06-06 14:38:17"
+    },
+    {
+      "id": 17,
+      "companyId": 5,
+      "projectId": 0,
+      "prize": "GOLD Winner",
+      "icon": "emoji_events",
+      "event": "Motor Trader Industry Awards",
+      "year": 2021,
+      "description": "Online Used Car Trading Platform",
+      "logo": "motor-trader-industry-awards.webp",
+      "createdAt": "2025-06-05 14:13:31",
+      "updatedAt": "2025-06-07 17:50:14"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "email": "alice@example.com",
+      "age": 28,
+      "createdAt": "2025-06-02 09:53:11",
+      "updatedAt": "2025-06-02 09:53:11"
+    },
+    {
+      "id": 2,
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "email": "bob456@example.com",
+      "age": 34,
+      "createdAt": "2025-06-02 09:53:39",
+      "updatedAt": "2025-06-02 09:53:39"
+    },
+    {
+      "id": 3,
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "email": "charlie789@example.com",
+      "age": 22,
+      "createdAt": "2025-06-02 09:53:54",
+      "updatedAt": "2025-06-02 09:53:54"
+    }
+  ]
+}
