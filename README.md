@@ -3,6 +3,7 @@
 ## Install
 
 - install `npm i`
+- add .env file in root with credentials for database connection
 
 ## Start backend and frontend
 
@@ -23,4 +24,4 @@
 ## Preview
 
 - install `serve` (once) `npm install -g serve`
-- preview presite `serve .presite`
+- preview presite `serve .presite
