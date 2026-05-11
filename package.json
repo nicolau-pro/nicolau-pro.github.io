@@ -9,6 +9,7 @@
     "dev": "vite",
     "build-presite": "vite build && presite ./dist && python src/post.py",
     "build": "vite build",
+    "typecheck": "tsc --noEmit",
     "presite": "presite ./dist",
     "post-process": "python src/post.py",
     "lint": "eslint .",
@@ -36,6 +37,8 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "sass-embedded": "^1.89.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.2",
     "vite": "^7.0.5"
   },
   "presite": {
