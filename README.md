@@ -22,7 +22,7 @@
 ## Start frontend
 
 - frontend: `npm run dev`
-- frontend API calls proxy to the local backend in development
+- frontend API calls go through `/api` in development
 - set `VITE_API_BASE_URL` if you want the frontend to point at a different backend host
 
 ## Start backend and frontend

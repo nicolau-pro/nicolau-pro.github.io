@@ -8,12 +8,11 @@ export default defineConfig({
   base: "/",
   server: {
     proxy: {
-      "/companies": "http://localhost:3000",
-      "/jobs": "http://localhost:3000",
-      "/tech": "http://localhost:3000",
-      "/testimonials": "http://localhost:3000",
-      "/awards": "http://localhost:3000",
-      "/projects": "http://localhost:3000",
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
       "/api-docs": "http://localhost:3000",
     },
   },
